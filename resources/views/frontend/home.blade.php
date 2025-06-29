@@ -1,0 +1,930 @@
+@extends('layouts.frontend')
+@section('frontend')
+<!-- tmp banner area start -->
+<div class="rpp-banner-three-area">
+    <div class="container">
+        <div class="banner-three-main-wrapper">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="inner">
+                        <span class="sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">Hello i’m</span>
+                        <h1 class="title tmp-scroll-trigger tmp-fade-in animation-order-2">Brooklyn Simmons</h1>
+                        <div class="button-area-banner-three tmp-scroll-trigger tmp-fade-in animation-order-3">
+                            <a class="tmp-btn hover-icon-reverse radius-round" href="https://inversweb.com/product/html/reeni/portfolio-details.html">
+                                <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">View Portfolio</span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="banner-right-content">
+                        <div class="about-me tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <h3 class="title">About Me</h3>
+                            <p class="para tmp-title-split">A personal <span>portfolio</span> is a collection of to your work, that
+                                is achievements, and a skills that <span>web design</span> highlights in your </p>
+                        </div>
+                        <div class="find-me-on mt--40 tmp-scroll-trigger tmp-fade-in animation-order-2">
+                            <h2 class="find-me-on-title">Find me on</h2>
+                            <div class="social-link banner">
+                                <a href="index-03.html#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="index-03.html#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="index-03.html#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="index-03.html#"><i class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-benner-img-three">
+                <img class="tmp-scroll-trigger tmp-zoom-in animation-order-2" src="{{ asset('frontend/assets/images/banner/banner-user-image-three.png')}}" alt="banner-img-3">
+            </div>
+            <h2 class="texts-one up-down-2">WEB DESIGN</h2>
+            <h2 class="texts-two up-down">WEB DESIGN</h2>
+        </div>
+    </div>
+</div>
+<!-- tmp banner area end -->
+
+<!-- Tpm Service Area Start -->
+<section class="service-area tmp-section-gap">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-1 tmp-link-animation">
+                    <div class="service-card-icon">
+                        <i class="fa-light fa-pen-ruler"></i>
+                    </div>
+                    <h4 class="service-title"><a href="service-details.html">Web Design</a></h4>
+                    <p class="service-para">120 Projects</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-2 tmp-link-animation">
+                    <div class="service-card-icon">
+                        <i class="fa-light fa-bezier-curve"></i>
+                    </div>
+                    <h4 class="service-title"><a href="service-details.html">Ui/Ux Design</a></h4>
+                    <p class="service-para">241 Projects</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-3 tmp-link-animation">
+                    <div class="service-card-icon">
+                        <i class="fa-light fa-lightbulb"></i>
+                    </div>
+                    <h4 class="service-title"><a href="service-details.html">Web Research</a></h4>
+                    <p class="service-para">240 Projects</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="service-card-v1 tmp-scroll-trigger tmp-fade-in animation-order-4 tmp-link-animation">
+                    <div class="service-card-icon">
+                        <i class="fa-light fa-envelope"></i>
+                    </div>
+                    <h4 class="service-title"><a href="service-details.html">Marketing</a></h4>
+                    <p class="service-para">331 Prodect</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tpm Service Area End -->
+
+<!-- Tpm Counter Area Start -->
+<section class="counter-area">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-12 col-lg-6 col-xl-6 col-xxl-6">
+                <div class="year-of-expariance-wrapper bg-blur-style-one tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <div class="year-expariance-wrap">
+                        <!-- <h2 class="year-number"><span class="counter">25 </span> </h2> -->
+                        <h2 class="counter year-number"><span class="odometer" data-count="25">00</span>
+                        </h2>
+                        <h3 class="year-title">Years Of <br> experience</h3>
+                    </div>
+                    <p class="year-para">Business consulting consultants provide expert advice and guida the a
+                        businesses to help theme their performance efficiency</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-6 col-xxl-6">
+                <div class="counter-area-right-content">
+                    <div class="row g-5">
+                        <div class="col-lg-6 col-sm-6 col-12">
+                            <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                <h3 class="counter counter-title"><span class="odometer" data-count="20">00</span>k+
+                                </h3>
+                                <p class="counter-para">Our Project Complete</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-12">
+                            <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                                <h3 class="counter counter-title"><span class="odometer" data-count="10">00</span>k+
+                                </h3>
+                                <p class="counter-para">Our Natural Products</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-12">
+                            <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                                <h3 class="counter counter-title"><span class="odometer" data-count="200">00</span>+
+                                </h3>
+                                <p class="counter-para">Clients Reviews</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-12">
+                            <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                <h3 class="counter counter-title"><span class="odometer" data-count="1000">00</span>+
+                                </h3>
+                                <p class="counter-para">our Satisfied Clientd</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tpm Counter Area End -->
+
+<!-- Tpm Latest Service Area Start -->
+<section class="latest-service-area tmp-section-gapTop">
+    <div class="container">
+        <div class="section-head mb--60">
+            <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                <span class="subtitle">Latest Service</span>
+            </div>
+            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Inspiring The World One Project</h2>
+            <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3"> Business consulting consultants provide expert advice and guida
+                businesses to help them improve their performance, efficiency, and organizational </p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <h2 class="service-card-num"><span>01.</span>A Portfolio of Creativity</h2>
+                    <p class="service-para">Business consulting consultants provide expert advice and guida the a
+                        businesses to help theme their performance efficiency</p>
+                </div>
+                <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <h2 class="service-card-num"><span>02.</span>My Portfolio of Innovation</h2>
+                    <p class="service-para">My work is driven by the belief that thoughtful design and strategic planning can empower brands, transform businesses</p>
+                </div>
+                <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <h2 class="service-card-num"><span>03.</span>A Showcase of My Projects</h2>
+                    <p class="service-para">In this portfolio, you’ll find a curated selection of projects that highlight my skills in [Main Areas, e.g., responsive web design</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="service-card-user-image">
+                    <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1" src="{{ asset('frontend/assets/images/services/latest-services-user-image-two.png')}}" alt="latest-user-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tpm Latest Service Area End -->
+
+<!-- tmp skill area start -->
+<div class="tmp-skill-area tmp-section-gapTop">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="progress-wrapper">
+                    <div class="content">
+                        <h2 class="custom-title mb--30 tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            Design Skill <span><img src="{{ asset('frontend/assets/images/custom-line/custom-line.png')}}" alt="custom-line"></span>
+                        </h2>
+                        <!-- Start Single Progress Charts -->
+                        <div class="progress-charts">
+                            <h6 class="heading heading-h6">
+                                PHOTOSHOT</h6>
+                            <div class="progress">
+                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 100%; visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="percent-label">100%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Progress Charts -->
+
+                        <!-- Start Single Progress Charts -->
+                        <div class="progress-charts">
+                            <h6 class="heading heading-h6">
+                                FIGMA</h6>
+                            <div class="progress">
+                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.6s" data-wow-delay=".4s" role="progressbar" style="width: 95%; visibility: visible; animation-duration: 0.6s; animation-delay: 0.4s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="percent-label">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Progress Charts -->
+
+                        <!-- Start Single Progress Charts -->
+                        <div class="progress-charts">
+                            <h6 class="heading heading-h6">
+                                ADOBE XD</h6>
+                            <div class="progress">
+                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay=".5s" role="progressbar" style="width: 60%; visibility: visible; animation-duration: 0.7s; animation-delay: 0.5s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="percent-label">60%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Progress Charts -->
+
+                        <!-- Start Single Progress Charts -->
+                        <div class="progress-charts">
+                            <h6 class="heading heading-h6">
+                                ADOBE ILLUSTRATOR</h6>
+                            <div class="progress">
+                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".6s" role="progressbar" style="width: 70%; visibility: visible; animation-duration: 0.8s; animation-delay: 0.6s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="percent-label">70%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Progress Charts -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="progress-wrapper">
+                    <div class="content">
+                        <h2 class="custom-title mb--30 tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            Development Skill <span><img src="{{ asset('frontend/assets/images/custom-line/custom-line.png')}}" alt="custom-line"></span>
+                        </h2>
+                        <!-- Start Single Progress Charts -->
+                        <div class="progress-charts">
+                            <h6 class="heading heading-h6">
+                                HTML</h6>
+                            <div class="progress">
+                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 100%; visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="percent-label">100%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Progress Charts -->
+
+                        <!-- Start Single Progress Charts -->
+                        <div class="progress-charts">
+                            <h6 class="heading heading-h6">
+                                CSS</h6>
+                            <div class="progress">
+                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.6s" data-wow-delay=".4s" role="progressbar" style="width: 95%; visibility: visible; animation-duration: 0.6s; animation-delay: 0.4s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="percent-label">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Progress Charts -->
+
+                        <!-- Start Single Progress Charts -->
+                        <div class="progress-charts">
+                            <h6 class="heading heading-h6">
+                                Javascript</h6>
+                            <div class="progress">
+                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay=".5s" role="progressbar" style="width: 60%; visibility: visible; animation-duration: 0.7s; animation-delay: 0.5s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="percent-label">60%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Progress Charts -->
+
+                        <!-- Start Single Progress Charts -->
+                        <div class="progress-charts">
+                            <h6 class="heading heading-h6">
+                                Php/Wordpress</h6>
+                            <div class="progress">
+                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".6s" role="progressbar" style="width: 70%; visibility: visible; animation-duration: 0.8s; animation-delay: 0.6s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="percent-label">70%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Progress Charts -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- tmp skill area end -->
+
+<!-- Tpm Education Experience Area Start -->
+<section class="education-experience tmp-section-gapTop">
+    <div class="container">
+        <h2 class="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">Education <span><img src="{{ asset('frontend/assets/images/custom-line/custom-line.png')}}"
+                    alt="custom-line"></span>
+        </h2>
+        <div class="row g-5">
+            <div class="col-lg-6 col-sm-6">
+                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <h4 class="edu-sub-title">Trainer Marketing</h4>
+                    <h2 class="edu-title">2005-2009</h2>
+                    <p class="edu-para">A personal portfolio is a curated collection of an individual's professional
+                        work, showcasing their skills, experience A personal portfolio.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <h4 class="edu-sub-title">Assistant Director</h4>
+                    <h2 class="edu-title">2010-2014</h2>
+                    <p class="edu-para">Each project here showcases my commitment to excellence and adaptability, tailored to meet each client’s unique needs.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <h4 class="edu-sub-title">Design Assistant</h4>
+                    <h2 class="edu-title">2008-2012</h2>
+                    <p class="edu-para">I’ve had the privilege of working with various clients, from startups to established companies, helping bring their visions to life.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                    <h4 class="edu-sub-title">Design Assistant</h4>
+                    <h2 class="edu-title">2008-2012</h2>
+                    <p class="edu-para">Each project here showcases my commitment to excellence and adaptability, tailored to meet each client’s unique needs a personal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="experiences-wrapper v2">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="experiences-wrap-right-content">
+                        <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1" src="{{ asset('frontend/assets/images/experiences/expert-img-two.jpg')}}" alt="expert-img">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="experiences-wrap-left-content">
+
+                        <h2 class="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">Experiences <span><img
+                                    src="{{ asset('frontend/assets/images/custom-line/custom-line.png')}}" alt="custom-line"></span></h2>
+                        <div class="experience-content tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <p class="ex-subtitle">experience</p>
+                            <h2 class="ex-name">Fatima Asrafy</h2>
+                            <h3 class="ex-title">UI/UX Designer</h3>
+                            <p class="ex-para">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                desi dolore eu fugiat nulla pariatu Duis aute irure</p>
+                        </div>
+
+                        <div class="experience-content tmp-scroll-trigger tmp-fade-in animation-order-2">
+                            <p class="ex-subtitle">experience</p>
+                            <h2 class="ex-name">Fatima Asrafy</h2>
+                            <h3 class="ex-title">UI/UX Designer</h3>
+                            <p class="ex-para">Interested in working together? Let’s bring your ideas to life! Contact me, and let’s start building something.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tpm Education Experience Area End -->
+
+<!-- Tpm Our Supported Company Area Start -->
+<div class="our-supported-company-area tmp-section-gap">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-1.svg')}}" alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-2.svg')}}" alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-3.svg')}}" alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-4">
+                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-4.svg')}}" alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-5">
+                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-5.svg')}}" alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-6">
+                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-6.svg')}}" alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-7">
+                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-7.svg')}}" alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-8">
+                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-8.svg')}}" alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Tpm Our Supported Company Area End -->
+
+
+<div class="tpm-custom-box-bg">
+    <!-- Tpm Latest Portfolio Area Start -->
+    <div class="latest-portfolio-area custom-column-grid">
+        <div class="container">
+            <div class="section-head mb--60">
+                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <span class="subtitle">Latest Portfolio</span>
+                </div>
+                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Transforming Ideas into Exceptional </h2>
+                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">Business consulting consultants provide expert advice and guida
+                    businesses to help them improve their performance, efficiency, and organizational</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <div class="portfoli-card-img">
+                            <div class="img-box v2">
+                                <a href="project-details.html">
+                                    <img class="img-primary hidden-on-mobile" src="{{ asset('frontend/assets/images/latest-portfolio/portfoli-img-1.jpg')}}" alt="Blog Thumbnail">
+                                    <img class="img-secondary" src="{{ asset('frontend/assets/images/latest-portfolio/portfoli-img-1.jpg')}}" alt="BLog Thumbnail">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-content-wrap">
+                            <div class="content-left">
+                                <h3 class="portfolio-card-title"><a class="link" href="project-details.html">My Journey as a Creator</a>
+                                </h3>
+                                <p class="portfoli-card-para">Development Coaches</p>
+                            </div>
+                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                <div class="btn-inner">
+                                    <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
+                                    <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="latest-portfolio-card mt--100 mt_sm--0 mt_md--50 tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <div class="portfoli-card-img">
+                            <div class="img-box v2">
+                                <a href="project-details.html">
+                                    <img class="img-primary hidden-on-mobile" src="{{ asset('frontend/assets/images/latest-portfolio/portfoli-img-2.jpg')}}" alt="Blog Thumbnail">
+                                    <img class="img-secondary" src="{{ asset('frontend/assets/images/latest-portfolio/portfoli-img-2.jpg')}}" alt="BLog Thumbnail">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card-content-wrap">
+                            <div class="content-left">
+                                <h3 class="portfolio-card-title"><a class="link" href="project-details.html">My Professional Portfolio
+                                </h3>
+                                <p class="portfoli-card-para"> Development Coaches</p>
+                            </div>
+                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                <div class="btn-inner">
+                                    <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
+                                    <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <div class="portfoli-card-img">
+                            <div class="img-box v2">
+                                <a href="project-details.html">
+                                    <img class="img-primary hidden-on-mobile" src="{{ asset('frontend/assets/images/latest-portfolio/portfoli-img-3.jpg')}}" alt="Blog Thumbnail">
+                                    <img class="img-secondary" src="{{ asset('frontend/assets/images/latest-portfolio/portfoli-img-3.jpg')}}" alt="BLog Thumbnail">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-content-wrap">
+                            <div class="content-left">
+                                <h3 class="portfolio-card-title"><a class="link" href="project-details.html">My Portfolio of Innovation</a>
+                                </h3>
+                                <p class="portfoli-card-para">App Development</p>
+                            </div>
+                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                <div class="btn-inner">
+                                    <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
+                                    <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="latest-portfolio-card mt--100 mt_sm--0 mt_md--50 tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <div class="portfoli-card-img">
+                            <div class="img-box v2">
+                                <a href="project-details.html">
+                                    <img class="img-primary hidden-on-mobile" src="{{ asset('frontend/assets/images/latest-portfolio/portfoli-img-4.jpg')}}" alt="Blog Thumbnail">
+                                    <img class="img-secondary" src="{{ asset('frontend/assets/images/latest-portfolio/portfoli-img-4.jpg')}}" alt="BLog Thumbnail">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-content-wrap">
+                            <div class="content-left">
+                                <h3 class="portfolio-card-title"><a class="link" href="project-details.html">A Portfolio of Creativity and Passion</a>
+                                </h3>
+                                <p class="portfoli-card-para">Business Development</p>
+                            </div>
+                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                <div class="btn-inner">
+                                    <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
+                                    <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tpm Latest Portfolio Area End -->
+
+
+    <!-- Tpm My Skill Area Start -->
+    <section class="my-skill tmp-section-gapTop">
+        <div class="container">
+            <div class="section-head text-align-left mb--60">
+                <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <span class="subtitle">My Skill</span>
+                </div>
+                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Elevated Designs Personalized <br> the best Experiences</h2>
+            </div>
+            <div class="services-widget v1">
+                <div class="service-item current tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <div class="my-skill-card">
+                        <div class="card-icon">
+                            <i class="fa-light fa-building-columns"></i>
+                        </div>
+                        <div class="card-title">
+                            <h3 class="main-title">Ui/visual Design</h3>
+                            <p class="sub-title">21 Done</p>
+                        </div>
+                        <p class="card-para">My work is driven by the belief that thoughtful design and strategic planning can empower brands strategic planning can empower brands</p>
+                        <a href="index-03.html#" class="read-more-btn">Read More <span class="read-more-icon"><i
+                                    class="fa-solid fa-angle-right"></i></span></a>
+                    </div>
+                    <button class="service-link modal-popup"></button>
+                </div>
+                <div class="service-item tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <div class="my-skill-card">
+                        <div class="card-icon">
+                            <i class="fa-light fa-calendar"></i>
+                        </div>
+                        <div class="card-title">
+                            <h3 class="main-title">Ui/visual Design</h3>
+                            <p class="sub-title">21 Done</p>
+                        </div>
+                        <p class="card-para">In this portfolio, you’ll find a curated selection of projects that highlight my skills in [Main Areas, e.g., responsive web design</p>
+                        <a href="index-03.html#" class="read-more-btn">Read More <span class="read-more-icon"><i
+                                    class="fa-solid fa-angle-right"></i></span></a>
+                    </div>
+                    <button class="service-link modal-popup"></button>
+                </div>
+                <div class="service-item tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <div class="my-skill-card">
+                        <div class="card-icon">
+                            <i class="fa-light fa-pen-nib"></i>
+                        </div>
+                        <div class="card-title">
+                            <h3 class="main-title">Motion Design</h3>
+                            <p class="sub-title">20 Done</p>
+                        </div>
+                        <p class="card-para">Each project here showcases my commitment to excellence and adaptability, tailored to meet each client’s unique needs</p>
+                        <a href="index-03.html#" class="read-more-btn">Read More <span class="read-more-icon"><i
+                                    class="fa-solid fa-angle-right"></i></span></a>
+                    </div>
+                    <button class="service-link modal-popup"></button>
+                </div>
+                <div class="active-bg wow fadeInUp mleave"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Tpm My Skill Area End -->
+</div>
+
+
+<!-- Tpm My Price plan Start -->
+<section class="our-price-plan-area tmp-section-gapTop">
+    <div class="container">
+        <div class="section-head mb--50">
+            <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                <span class="subtitle">My Price plan</span>
+            </div>
+            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Enhancing Collaboration <br> between Remote</h2>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="price-plan-card tmponhover blur-style-two tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <span class="price-sub-title">Starter</span>
+                    <h3 class="main-price">$ 5.00</h3>
+                    <p class="per-month">Per Month</p>
+                    <div class="check-box">
+                        <ul>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">5 Social Media Account</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">Free Platform Access</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">24/7 Customer Support</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tmp-button-here">
+                        <a class="tmp-btn hover-icon-reverse btn-border btn-md radius-round" href="contact.html">
+                            <span class="icon-reverse-wrapper">
+                                <span class="btn-text">Get Started</span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 tmp-scroll-trigger tmp-fade-in animation-order-2">
+                <div class="price-plan-card tmponhover blur-style-two active">
+                    <span class="price-sub-title">Basic</span>
+                    <h3 class="main-price">$ 230.00</h3>
+                    <p class="per-month">Per Month</p>
+                    <div class="check-box">
+                        <ul>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">5 Social Media Account</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">Free Platform Access</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">Marketing Platform</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">24/7 Customer Support</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">Life time support</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tmp-button-here">
+                        <a class="tmp-btn hover-icon-reverse btn-md radius-round" href="contact.html">
+                            <span class="icon-reverse-wrapper">
+                                <span class="btn-text">Get Started</span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="price-plan-card tmponhover blur-style-two tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <span class="price-sub-title">Premium</span>
+                    <h3 class="main-price">$ 45.00</h3>
+                    <p class="per-month">Per Month</p>
+                    <div class="check-box">
+                        <ul>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">5 Social Media Account</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">Free Platform Access</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-box-item">
+                                    <div class="box-icon">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+                                    <p class="box-para">24/7 Customer Support</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tmp-button-here">
+                        <a class="tmp-btn hover-icon-reverse btn-border btn-md radius-round" href="contact.html">
+                            <span class="icon-reverse-wrapper">
+                                <span class="btn-text">Get Started</span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tpm My Price plan End -->
+
+<!-- Tpm Testimonial Area Start -->
+<section class="testimonial-area tmp-section-gapTop">
+    <div class="container">
+        <div class="section-head mb--50">
+            <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                <span class="subtitle">Our Testimonial</span>
+            </div>
+            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Enhancing Collaboration <br> between Remote</h2>
+        </div>
+        <div class="row g-5">
+            <!-- Start Single Testimonial  -->
+
+            <div class="col-lg-12">
+                <div class="swiper-testimonials-area-wrapper-card">
+                    <div class="swiper swiper-testimonials-2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="testimonial-card tmponhover style-2 tmp-scroll-trigger animation-order-1">
+                                    <div class="content">
+                                        <div class="testimonital-icon">
+                                            <img src="{{ asset('frontend/assets/images/icons/quote.svg')}}" alt="testimonial-icon">
+                                        </div>
+                                        <h2 class="text-doc">A personal portfolio is a curated collection of an individual's professional work, showcasing their skilA personal portfolio is a curated collection of an individual's professional work, showcasing their skills, </h2>
+                                        <h3 class="card-title">Cameron Williamson</h3>
+                                        <p class="card-para">Ui/Ux Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial-card tmponhover style-2 tmp-scroll-trigger animation-order-2">
+                                    <div class="content">
+                                        <div class="testimonital-icon">
+                                            <img src="{{ asset('frontend/assets/images/icons/quote.svg')}}" alt="testimonial-icon">
+                                        </div>
+                                        <h2 class="text-doc">A personal portfolio is a curated collection of an individual's professional work, showcasing their skilA personal portfolio is a curated collection of an individual's professional work, showcasing their skills, </h2>
+                                        <h3 class="card-title">Leslie Alexander</h3>
+                                        <p class="card-para">Ui/Ux Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial-card tmponhover style-2 tmp-scroll-trigger animation-order-1">
+                                    <div class="content">
+                                        <div class="testimonital-icon">
+                                            <img src="{{ asset('frontend/assets/images/icons/quote.svg')}}" alt="testimonial-icon">
+                                        </div>
+                                        <h2 class="text-doc">A personal portfolio is a curated collection of an individual's professional work, showcasing their skilA personal portfolio is a curated collection of an individual's professional work, showcasing their skills, </h2>
+                                        <h3 class="card-title">Cameron Williamson</h3>
+                                        <p class="card-para">Ui/Ux Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial-card tmponhover style-2 tmp-scroll-trigger animation-order-2">
+                                    <div class="content">
+                                        <div class="testimonital-icon">
+                                            <img src="{{ asset('frontend/assets/images/icons/quote.svg')}}" alt="testimonial-icon">
+                                        </div>
+                                        <h2 class="text-doc">A personal portfolio is a curated collection of an individual's professional work, showcasing their skilA personal portfolio is a curated collection of an individual's professional work, showcasing their skills, </h2>
+                                        <h3 class="card-title">Leslie Alexander</h3>
+                                        <p class="card-para">Ui/Ux Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Single Testimonial  -->
+
+        </div>
+    </div>
+</section>
+<!-- Tpm Testimonial Area End -->
+
+<!-- Tpm Blog and news Area Start -->
+<section class="blog-and-news-are tmp-section-gap">
+    <div class="container">
+        <div class="section-head mb--50">
+            <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                <span class="subtitle">Blog and news</span>
+            </div>
+            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Elevating Personal Branding the <br> through Powerful Portfolios</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="blog-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <div class="img-box">
+                        <a href="blog-details.html">
+                            <img class="img-primary hidden-on-mobile" src="{{ asset('frontend/assets/images/blog/blog-img-4.jpg')}}" alt="Blog Thumbnail">
+                            <img class="img-secondary" src="{{ asset('frontend/assets/images/blog/blog-img-4.jpg')}}" alt="BLog Thumbnail">
+                        </a>
+                        <ul class="blog-tags">
+                            <li><span class="tag-icon"><i class="fa-regular fa-user"></i></span>Mesbah</li>
+                            <li><span class="tag-icon"><i class="fa-solid fa-calendar-days"></i></span>April 10</li>
+                        </ul>
+                    </div>
+                    <div class="blog-content-wrap">
+                        <h3 class="blog-title v2"><a class="link" href="blog-details.html">Let’s bring your ideas to life! Contact me, and let’s</a></h3>
+                        <a href="blog-details.html" class="read-more-btn v2">Read More <span
+                                class="read-more-icon"><i class="fa-solid fa-angle-right"></i></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="blog-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <div class="img-box">
+                        <a href="blog-details.html">
+                            <img class="img-primary hidden-on-mobile" src="{{ asset('frontend/assets/images/blog/blog-img-5.jpg')}}" alt="Blog Thumbnail">
+                            <img class="img-secondary" src="{{ asset('frontend/assets/images/blog/blog-img-5.jpg')}}" alt="BLog Thumbnail">
+                        </a>
+                        <ul class="blog-tags">
+                            <li><span class="tag-icon"><i class="fa-regular fa-user"></i></span>Mesbah</li>
+                            <li><span class="tag-icon"><i class="fa-solid fa-calendar-days"></i></span>April 10</li>
+                        </ul>
+                    </div>
+                    <div class="blog-content-wrap">
+                        <h3 class="blog-title v2"><a class="link" href="blog-details.html">Inspiring the World, One Project at a
+                                Time for the
+                                man</a></h3>
+                        <a href="blog-details.html" class="read-more-btn v2">Read More <span
+                                class="read-more-icon"><i class="fa-solid fa-angle-right"></i></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="blog-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <div class="img-box">
+                        <a href="blog-details.html">
+                            <img class="img-primary hidden-on-mobile" src="{{ asset('frontend/assets/images/blog/blog-img-6.jpg')}}" alt="Blog Thumbnail">
+                            <img class="img-secondary" src="{{ asset('frontend/assets/images/blog/blog-img-6.jpg')}}" alt="BLog Thumbnail">
+                        </a>
+                        <ul class="blog-tags">
+                            <li><span class="tag-icon"><i class="fa-regular fa-user"></i></span>Mesbah</li>
+                            <li><span class="tag-icon"><i class="fa-solid fa-calendar-days"></i></span>April 10</li>
+                        </ul>
+                    </div>
+                    <div class="blog-content-wrap">
+                        <h3 class="blog-title v2"><a class="link" href="blog-details.html">Each one showcases my approach and dedication man</a></h3>
+                        <a href="blog-details.html" class="read-more-btn v2">Read More <span
+                                class="read-more-icon"><i class="fa-solid fa-angle-right"></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tpm Blog and news Area End -->
+@endsection
