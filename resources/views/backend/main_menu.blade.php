@@ -1,6 +1,6 @@
 <ul id="side-menu">
     <li>
-        <a href="">
+        <a href="{{ route('dashboard') }}">
             <i data-feather="home"></i>
             <span>Dashboard</span>
         </a>
@@ -8,39 +8,21 @@
 
     <li class="menu-title">Pages</li>
     <li>
+        <a href="{{ route('banner.index') }}">
+            <i data-feather="image"></i>
+            <span>Banner</span>
+        </a>
+    </li>
+    <li>
         <a href="index.html#sidebarExpages" data-bs-toggle="collapse">
             <i data-feather="file-text"></i>
-            <span> Utility </span>
+            <span>Texpati</span>
             <span class="menu-arrow"></span>
         </a>
         <div class="collapse" id="sidebarExpages">
             <ul class="nav-second-level">
                 <li>
-                    <a class='tp-link' href='pages-starter'>Starter</a>
-                </li>
-                <li>
-                    <a class='tp-link' href='pages-profile'>Profile</a>
-                </li>
-                <li>
-                    <a class='tp-link' href='pages-pricing'>Pricing</a>
-                </li>
-                <li>
-                    <a class='tp-link' href='pages-timeline'>Timeline</a>
-                </li>
-                <li>
-                    <a class='tp-link' href='pages-invoice'>Invoice</a>
-                </li>
-                <li>
-                    <a class='tp-link' href='pages-faqs'>FAQs</a>
-                </li>
-                <li>
-                    <a class='tp-link' href='pages-gallery'>Gallery</a>
-                </li>
-                <li>
-                    <a class='tp-link' href='pages-maintenance'>Maintenance</a>
-                </li>
-                <li>
-                    <a class='tp-link' href='pages-coming-soon'>Coming Soon</a>
+                    <a class='tp-link' href='#'>Banner</a>
                 </li>
             </ul>
         </div>

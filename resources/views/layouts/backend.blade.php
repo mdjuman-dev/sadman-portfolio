@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard | Silva - Responsive Admin Dashboard Template</title>
+    <title>@yield('title') - {{ env('APP_NAME') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
     <meta name="author" content="Zoyothemes" />
@@ -14,6 +14,11 @@
 
     <link href="{{ asset('backend/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
     <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/css/notyf.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/css/rte_theme_default.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/css/filepond.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/css/filepond-plugin-image-preview.css') }}" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -80,10 +85,16 @@
                                 <div class="dropdown-divider"></div>
 
                                 <!-- item-->
-                                <a class='dropdown-item notify-item' href='auth-logout'>
+                                <a class="dropdown-item notify-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="mdi mdi-location-exit fs-16 align-middle"></i>
                                     <span>Logout</span>
                                 </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+
 
                             </div>
                         </li>
@@ -153,8 +164,8 @@
     <!-- END wrapper -->
 
     <!-- Vendor -->
-    <script src="https://apexcharts.com/samples/assets/stock-prices.js"></script>
     <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
+    <script src="https://apexcharts.com/samples/assets/stock-prices.js"></script>
     <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
@@ -164,6 +175,65 @@
     <script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/pages/crm-dashboard.init.js') }}"></script>
     <script src="{{ asset('backend/assets/js/app.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/select2.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/rte.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/notyf.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/filepond.jquery.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/filepond-plugin-image-preview.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/filepond.js') }}"></script>
+    <script>
+        const notyf = new Notyf({
+            duration: 5000,
+            ripple: true,
+            dismissible: true,
+            position: {
+                x: 'right',
+                y: 'top',
+            },
+            types: [{
+                    type: 'success',
+                    background: 'green',
+                    icon: {
+                        className: 'mdi mdi-check-circle-outline',
+                        tagName: 'span',
+                        color: 'white'
+                    }
+                },
+                {
+                    type: 'error',
+                    background: '#d32f2f',
+                    icon: {
+                        className: 'mdi mdi-alert-circle-outline',
+                        tagName: 'span',
+                        color: 'white'
+                    }
+                }
+            ]
+        });
+
+        @if(session('success'))
+        notyf.success({
+            message: "{{ session('success') }}",
+            icon: {
+                className: 'mdi mdi-check-circle-outline',
+                tagName: 'span',
+                color: 'white'
+            }
+        });
+        @endif
+
+        @if(session('error'))
+        notyf.error({
+            message: "{{ session('error') }}",
+            icon: {
+                className: 'mdi mdi-alert-circle-outline',
+                tagName: 'span',
+                color: 'white'
+            }
+        });
+        @endif
+    </script>
+    @stack('scripts')
 </body>
 
 </html>

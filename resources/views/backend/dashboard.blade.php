@@ -1,4 +1,5 @@
 @extends('layouts.backend')
+@section('title','Dashboard')
 @section('backend')
 <div class="content">
     <!-- Start Content-->
