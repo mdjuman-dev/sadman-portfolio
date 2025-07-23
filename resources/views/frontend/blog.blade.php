@@ -379,25 +379,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="signle-side-bar tmponhover">
-                        <div class="header">
-                            <h3 class="title">Tags</h3>
-                        </div>
-                        <div class="body">
-                            <div class="tags-wrapper">
-                                <a href="blog.html#" class="tag-link">All Project</a>
-                                <a href="blog.html#" class="tag-link">Resume</a>
-                                <a href="blog.html#" class="tag-link">Graphics</a>
-                                <a href="blog.html#" class="tag-link">Web Design</a>
-                                <a href="blog.html#" class="tag-link">CV</a>
-                                <a href="blog.html#" class="tag-link">Starts</a>
-                                <a href="blog.html#" class="tag-link">Creative Portfolio</a>
-                                <a href="blog.html#" class="tag-link">Portfolio</a>
-                                <a href="blog.html#" class="tag-link">CV Card</a>
-                                <a href="blog.html#" class="tag-link">Start shape</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

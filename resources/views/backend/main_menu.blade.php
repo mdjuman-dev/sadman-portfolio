@@ -16,13 +16,13 @@
     <li>
         <a href="index.html#sidebarExpages" data-bs-toggle="collapse">
             <i data-feather="file-text"></i>
-            <span>Texpati</span>
+            <span>??</span>
             <span class="menu-arrow"></span>
         </a>
         <div class="collapse" id="sidebarExpages">
             <ul class="nav-second-level">
                 <li>
-                    <a class='tp-link' href='#'>Banner</a>
+                    <a class='tp-link' href='#'>??</a>
                 </li>
             </ul>
         </div>
