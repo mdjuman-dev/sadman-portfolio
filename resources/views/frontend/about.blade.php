@@ -320,7 +320,27 @@
 
 <!-- Tpm Get In touch start -->
 <section class="get-in-touch-area tmp-section-gapBottom">
-    @include('frontend.get-in-touch')
+    <div class="container">
+        <div class="contact-get-in-touch-wrap">
+            <div class="get-in-touch-wrapper tmponhover">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="section-head text-align-left">
+                            <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                <span class="subtitle">GET IN TOUCH</span>
+                            </div>
+                            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Elevate your brand with Me </h2>
+                            <p class="description tmp-scroll-trigger tmp-fade-in animation-order-3">ished fact that a reader will be
+                                distrol acted bioiiy desig
+                                ished fact that a reader will acted ished fact that a reader will be distrol
+                                acted </p>
+                        </div>
+                    </div>
+                    <livewire:contact-form />
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- Tpm Get In touch End -->
 @endsection

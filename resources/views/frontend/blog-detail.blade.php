@@ -8,7 +8,7 @@
                 <div class="breadcrumb-inner text-center">
                     <h1 class="title split-collab">Blog Details</h1>
                     <ul class="page-list">
-                        <li class="tmp-breadcrumb-item"><a href="https://inversweb.com/">Home</a></li>
+                        <li class="tmp-breadcrumb-item"><a href="{{ route('home') }}" wire:navigate>Home</a></li>
                         <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
                         <li class="tmp-breadcrumb-item active">Blog Details</li>
                     </ul>
@@ -26,7 +26,7 @@
             <div class="col-lg-8">
                 <div class="blog-details-left-area">
                     <div class="thumbnail-top">
-                        <img src="{{ asset('frontend/assets/images/blog/details/01.png')}}" alt="Corporate_business">
+                        <img src="{{ asset('frontend/assets/images/blog/blog-img-4.jpg')}}" alt="Corporate_business">
                     </div>
                     <div class="blog-details-discription">
                         <div class="blog-classic-tag">

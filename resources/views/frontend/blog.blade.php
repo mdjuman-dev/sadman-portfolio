@@ -1,99 +1,5 @@
 @extends('layouts.frontend')
 @section('frontend')
-<!-- tpm-header-area start -->
-
-
-<div class="d-block d-xl-none">
-    <div class="tmp-popup-mobile-menu">
-        <div class="inner">
-            <div class="header-top">
-                <div class="logo">
-                    <a href="index.html" class="logo-area">
-                        <img class="logo-dark" src="{{ asset('frontend/assets/images/logo/white-logo-reeni.png')}}" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
-                        <img class="logo-white" src="{{ asset('frontend/assets/images/logo/logo-white.png')}}" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
-                    </a>
-
-                </div>
-                <div class="close-menu">
-                    <button class="close-button tmp-round-action-btn">
-                        <i class="fa-sharp fa-light fa-xmark"></i>
-                    </button>
-                </div>
-            </div>
-            <ul class="tmp-mainmenu">
-                <li>
-                    <a href="blog.html#">Home
-                    </a>
-                    <!-- <ul class="submenu">
-            <li><a href="index.html">Home 01</a></li>
-            <li><a href="index-02.html">Home 02</a></li>
-            <li><a href="index-03.html">Home 03</a></li>
-            <li><a href="index-04.html">Home 04</a></li>
-            <li><a href="index-05.html">Home 05</a></li>
-            <li><a href="index-06.html">Home 06</a></li>
-            <li><a href="index-07.html">Home 07</a></li>
-            <li><a href="index-08.html">Home 08</a></li>
-            <li><a href="index-09.html">Home 09</a></li>
-            <li><a href="index-10.html">Home 10</a></li>
-            <li><a href="index-11.html">Home 11</a></li>
-            <li><a href="index-12.html">Home 12</a></li>
-            <li><a href="index-13.html">Home 13</a></li>
-        </ul> -->
-                </li>
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-                <li class="has-dropdown">
-                    <a href="blog.html#">Services
-                        <i class="fa-regular fa-chevron-down"></i>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="service.html">Service</a></li>
-                        <li><a href="service-details.html">Service Details</a></li>
-                    </ul>
-                </li>
-                <li class="has-dropdown">
-                    <a href="blog.html#">Blog
-                        <i class="fa-regular fa-chevron-down"></i>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="blog.html">Blog Classic</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
-                <li class="has-dropdown">
-                    <a href="blog.html#">Project
-                        <i class="fa-regular fa-chevron-down"></i>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="project.html">Project</a></li>
-                        <li><a href="project-details.html">Project Details</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-            </ul>
-
-
-            <div class="social-wrapper mt--40">
-                <span class="subtitle">find with me</span>
-                <div class="social-link">
-                    <a href="blog.html#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="blog.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="blog.html#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="blog.html#"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
-            </div>
-            <!-- social area end -->
-
-
-
-        </div>
-    </div>
-</div>
-
-
 <!-- Breadcrumb Area Start -->
 <div class="breadcrumb-area breadcrumb-bg">
     <div class="container">
@@ -102,7 +8,7 @@
                 <div class="breadcrumb-inner text-center">
                     <h1 class="title split-collab">Blog Classic</h1>
                     <ul class="page-list">
-                        <li class="tmp-breadcrumb-item"><a href="https://inversweb.com/">Home</a></li>
+                        <li class="tmp-breadcrumb-item"><a href="{{ route('home') }}" wire:navigate>Home</a></li>
                         <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
                         <li class="tmp-breadcrumb-item active">Blog Classic</li>
                     </ul>
@@ -118,7 +24,7 @@
             <div class="col-lg-8">
                 <div class="blog-classic-card tmp-scroll-trigger tmponhover tmp-fade-in animation-order-1">
                     <div class="img-box">
-                        <a href="blog-details.html">
+                        <a href="{{ route('blog-datails') }}" wire:navigate>
                             <img class="img-primary hidden-on-mobile" src="{{ asset('frontend/assets/images/blog/blog-classic-card-img-1.jpg')}}" alt="Blog Thumbnail">
                             <img class="img-secondary" src="{{ asset('frontend/assets/images/blog/blog-classic-card-img-1.jpg')}}" alt="BLog Thumbnail">
                         </a>

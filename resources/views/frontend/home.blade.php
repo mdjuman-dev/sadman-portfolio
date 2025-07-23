@@ -10,7 +10,7 @@
                         <span class="sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">Hello i’m</span>
                         <h1 class="title tmp-scroll-trigger tmp-fade-in animation-order-2">Brooklyn Simmons</h1>
                         <div class="button-area-banner-three tmp-scroll-trigger tmp-fade-in animation-order-3">
-                            <a class="tmp-btn hover-icon-reverse radius-round" href="https://inversweb.com/product/html/reeni/portfolio-details.html">
+                            <a class="tmp-btn hover-icon-reverse radius-round" href="{{ route('project') }}" wire:navigate>
                                 <span class="icon-reverse-wrapper">
                                     <span class="btn-text">View Portfolio</span>
                                     <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
@@ -517,7 +517,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
                     <div class="img-box">
-                        <a href="blog-details.html">
+                        <a href="{{route('blog-datails')}}" wire:navigate>
                             <img class="img-primary hidden-on-mobile" src="{{ asset('frontend/assets/images/blog/blog-img-4.jpg')}}" alt="Blog Thumbnail">
                             <img class="img-secondary" src="{{ asset('frontend/assets/images/blog/blog-img-4.jpg')}}" alt="BLog Thumbnail">
                         </a>
@@ -578,6 +578,26 @@
 </section>
 <!-- Tpm Blog and news Area End -->
 <section class="get-in-touch-area tmp-section-gapBottom">
-    @include('frontend.get-in-touch')
+    <div class="container">
+        <div class="contact-get-in-touch-wrap">
+            <div class="get-in-touch-wrapper tmponhover">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="section-head text-align-left">
+                            <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                                <span class="subtitle">GET IN TOUCH</span>
+                            </div>
+                            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Elevate your brand with Me </h2>
+                            <p class="description tmp-scroll-trigger tmp-fade-in animation-order-3">ished fact that a reader will be
+                                distrol acted bioiiy desig
+                                ished fact that a reader will acted ished fact that a reader will be distrol
+                                acted </p>
+                        </div>
+                    </div>
+                    <livewire:contact-form />
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 @endsection
