@@ -12,4 +12,7 @@ Route::controller(MainHomeController::class)->group(function () {
     Route::get('/project', 'project')->name('project');
     Route::get('/blog', 'blog')->name('blog');
     Route::get('/contact', 'contact')->name('contact');
+    Route::get('/blog-datails', 'blogDatails')->name('blog-datails');
+    Route::get('/service-datails', 'serviceDatails')->name('service-datails');
+    Route::get('/project-datails', 'projectDatails')->name('project-datails');
 });

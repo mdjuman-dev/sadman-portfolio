@@ -31,4 +31,16 @@ class MainHomeController extends Controller
     {
         return view('frontend.project');
     }
+    function blogDatails()
+    {
+        return view('frontend.blog-detail');
+    }
+    function serviceDatails()
+    {
+        return view('frontend.service-detail');
+    }
+    function projectDatails()
+    {
+        return view('frontend.project-detail');
+    }
 }

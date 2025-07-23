@@ -8,7 +8,7 @@
     <meta name="description" content="#">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg')}}">
 
-    <title>@yield('title') - {{ env("APP_NAME") }}</title>
+    <title> {{ env("APP_NAME") }}</title>
     <!-- Bootstrap min css -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/vendor/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/swiper.css') }}">
