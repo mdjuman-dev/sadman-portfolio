@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Skill;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class MainHomeController extends Controller
 {
     function home()
     {
-        return view('frontend.home');
+        $skills = Skill::select('id', 'name', 'percentage', 'category', 'duration', 'delay', 'status')->where('status', true)->get();
+        return view('frontend.home', compact('skills'));
     }
     function about()
     {
-        return view('frontend.about');
+        $skills = Skill::select('id', 'name', 'percentage', 'category', 'duration', 'delay', 'status')->where('status', true)->get();
+        return view('frontend.about', compact('skills'));
     }
     function services()
     {
