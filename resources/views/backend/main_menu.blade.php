@@ -13,24 +13,11 @@
             <span>Banner</span>
         </a>
     </li>
-    <li>
-        <a href="index.html#sidebarExpages" data-bs-toggle="collapse">
-            <i data-feather="file-text"></i>
-            <span>??</span>
-            <span class="menu-arrow"></span>
-        </a>
-        <div class="collapse" id="sidebarExpages">
-            <ul class="nav-second-level">
-                <li>
-                    <a class='tp-link' href='#'>??</a>
-                </li>
-            </ul>
-        </div>
     </li>
-    <!-- //*Skills Section -->
+    <!--//*Skills Section -->
     <li>
         <a href="index.html#skill" data-bs-toggle="collapse">
-        <i data-feather="tool"></i>
+            <i data-feather="tool"></i>
             <span>Skills</span>
             <span class="menu-arrow"></span>
         </a>
@@ -48,7 +35,7 @@
     <!-- //*Education Section -->
     <li>
         <a href="index.html#education" data-bs-toggle="collapse">
-        <i data-feather="book-open"></i>
+            <i data-feather="book-open"></i>
             <span>Education</span>
             <span class="menu-arrow"></span>
         </a>
@@ -62,5 +49,32 @@
                 </li>
             </ul>
         </div>
+    </li>
+
+    <!--//*Blog Menu -->
+    <li>
+        <a href="index.html#blog" data-bs-toggle="collapse">
+            <i data-feather="book-open"></i>
+            <span>Blog</span>
+            <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="blog">
+            <ul class="nav-second-level">
+                <li>
+                    <a class='tp-link' href='{{ route('blog.index') }}'>Add Blog</a>
+                </li>
+                <li>
+                    <a class='tp-link' href='{{ route('blog.allBlog') }}'>All Blog</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+
+    <!-- Category -->
+    <li>
+        <a href="{{ route('category.index') }}">
+            <i data-feather="layout"></i>
+            <span>Category</span>
+        </a>
     </li>
 </ul>

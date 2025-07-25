@@ -5,6 +5,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\backend\BannerController;
+use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\Category;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\EducationController;
 
 Route::middleware('auth')->prefix('admin/')->group(function () {
@@ -44,6 +47,20 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
         Route::get('/edit/{id}',  'edit')->name('edit');
         Route::put('/update/{id}',  'update')->name('update');
         Route::delete('/delete/{id}',  'destroy')->name('destroy');
+    });
+
+    //*Blog Routes
+    Route::controller(BlogController::class)->prefix('blog/')->name('blog.')->group(function () {
+        Route::get('/{id?}',  'index')->name('index');
+        Route::get('/all-blog',  'allBlog')->name('allBlog');
+        Route::post('/store-update',  'storeOrUpdate')->name('storeOrUpdate');
+        Route::get('/delete/{id}',  'delete')->name('delete');
+    });
+    //*Blog Routes
+    Route::controller(CategoryController::class)->prefix('category/')->name('category.')->group(function () {
+        Route::get('/{id?}',  'index')->name('index');
+        Route::post('/store-update/{id?}',  'storeOrUpdate')->name('storeOrUpdate');
+        Route::get('/delete/{id}',  'delete')->name('delete');
     });
 });
 
