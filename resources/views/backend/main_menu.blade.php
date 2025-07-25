@@ -45,4 +45,22 @@
             </ul>
         </div>
     </li>
+    <!-- //*Education Section -->
+    <li>
+        <a href="index.html#education" data-bs-toggle="collapse">
+        <i data-feather="book-open"></i>
+            <span>Education</span>
+            <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="education">
+            <ul class="nav-second-level">
+                <li>
+                    <a class='tp-link' href='{{ route('education.create') }}'>Add Education</a>
+                </li>
+                <li>
+                    <a class='tp-link' href='{{ route('education.index') }}'>All Education</a>
+                </li>
+            </ul>
+        </div>
+    </li>
 </ul>

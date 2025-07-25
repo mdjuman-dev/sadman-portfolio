@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\HomeController;
-use App\Http\Controllers\backend\BannerController;
 use App\Http\Controllers\Backend\SkillController;
+use App\Http\Controllers\backend\BannerController;
+use App\Http\Controllers\Backend\EducationController;
 
 Route::middleware('auth')->prefix('admin/')->group(function () {
 
@@ -27,6 +28,16 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
 
     //*Skill Routes
     Route::controller(SkillController::class)->prefix('skill/')->name('skill.')->group(function () {
+        Route::get('/',  'index')->name('index');
+        Route::get('/create',  'create')->name('create');
+        Route::post('/store',  'store')->name('store');
+        Route::get('/edit/{id}',  'edit')->name('edit');
+        Route::put('/update/{id}',  'update')->name('update');
+        Route::delete('/delete/{id}',  'destroy')->name('destroy');
+    });
+
+    //*Education Routes
+    Route::controller(EducationController::class)->prefix('education/')->name('education.')->group(function () {
         Route::get('/',  'index')->name('index');
         Route::get('/create',  'create')->name('create');
         Route::post('/store',  'store')->name('store');

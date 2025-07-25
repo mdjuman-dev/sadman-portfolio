@@ -27,7 +27,11 @@
                                     <td>{{ $skill->percentage }}%</td>
                                     <td>{{ $skill->duration }}s</td>
                                     <td>{{ $skill->delay }}s</td>
-                                    <td>{{ $skill->status ? 'Active' : 'Inactive' }}</td>
+                                    <td>
+                                        <span class="badge {{ $skill->status ? 'bg-success' : 'bg-secondary' }}">
+                                            {{ $skill->status ? 'Active' : 'Inactive' }}
+                                        </span>
+                                    <td>
                                     <td>
                                         <a href="{{ route('skill.edit', $skill->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                         <form action="{{ route('skill.destroy', $skill->id) }}" method="POST" style="display:inline;">
