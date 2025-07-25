@@ -185,6 +185,7 @@
 <!-- Tpm Latest Service Area End -->
 
 <!-- tmp skill area start -->
+ @if(count($skills) > 0)
 <div class="tmp-skill-area tmp-section-gapTop">
     <div class="container">
         <div class="row g-5">
@@ -195,51 +196,25 @@
                             Design Skill <span><img src="{{ asset('frontend/assets/images/custom-line/custom-line.png')}}" alt="custom-line"></span>
                         </h2>
                         <!-- Start Single Progress Charts -->
+                        @foreach ($skills as $skill)
+                        @if($skill->category === 'design')
                         <div class="progress-charts">
-                            <h6 class="heading heading-h6">
-                                PHOTOSHOT</h6>
+                            <h6 class="heading heading-h6">{{ $skill->name }}</h6>
                             <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 100%; visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="percent-label">100%</span>
+                                <div class="progress-bar wow fadeInLeft"
+                                    data-wow-duration="{{ $skill->duration }}s"
+                                    data-wow-delay="{{ $skill->delay }}s"
+                                    role="progressbar"
+                                    style="width: {{ $skill->percentage }}%; visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;"
+                                    aria-valuenow="{{ $skill->percentage }}"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <span class="percent-label">{{ $skill->percentage }}%</span>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                            <h6 class="heading heading-h6">
-                                FIGMA</h6>
-                            <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.6s" data-wow-delay=".4s" role="progressbar" style="width: 95%; visibility: visible; animation-duration: 0.6s; animation-delay: 0.4s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="percent-label">95%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                            <h6 class="heading heading-h6">
-                                ADOBE XD</h6>
-                            <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay=".5s" role="progressbar" style="width: 60%; visibility: visible; animation-duration: 0.7s; animation-delay: 0.5s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="percent-label">60%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                            <h6 class="heading heading-h6">
-                                ADOBE ILLUSTRATOR</h6>
-                            <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".6s" role="progressbar" style="width: 70%; visibility: visible; animation-duration: 0.8s; animation-delay: 0.6s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="percent-label">70%</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endif
+                        @endforeach
                         <!-- End Single Progress Charts -->
 
                     </div>
@@ -251,53 +226,25 @@
                         <h2 class="custom-title mb--30 tmp-scroll-trigger tmp-fade-in animation-order-1">
                             Development Skill <span><img src="{{ asset('frontend/assets/images/custom-line/custom-line.png')}}" alt="custom-line"></span>
                         </h2>
-                        <!-- Start Single Progress Charts -->
+                        @foreach ($skills as $skill)
+                        @if($skill->category === 'development')
                         <div class="progress-charts">
-                            <h6 class="heading heading-h6">
-                                HTML</h6>
+                            <h6 class="heading heading-h6">{{ $skill->name }}</h6>
                             <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 100%; visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="percent-label">100%</span>
+                                <div class="progress-bar wow fadeInLeft"
+                                    data-wow-duration="{{ $skill->duration }}s"
+                                    data-wow-delay="{{ $skill->delay }}s"
+                                    role="progressbar"
+                                    style="width: {{ $skill->percentage }}%; visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;"
+                                    aria-valuenow="{{ $skill->percentage }}"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <span class="percent-label">{{ $skill->percentage }}%</span>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                            <h6 class="heading heading-h6">
-                                CSS</h6>
-                            <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.6s" data-wow-delay=".4s" role="progressbar" style="width: 95%; visibility: visible; animation-duration: 0.6s; animation-delay: 0.4s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="percent-label">95%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                            <h6 class="heading heading-h6">
-                                Javascript</h6>
-                            <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay=".5s" role="progressbar" style="width: 60%; visibility: visible; animation-duration: 0.7s; animation-delay: 0.5s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="percent-label">60%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                            <h6 class="heading heading-h6">
-                                Php/Wordpress</h6>
-                            <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".6s" role="progressbar" style="width: 70%; visibility: visible; animation-duration: 0.8s; animation-delay: 0.6s; animation-name: fadeInLeft;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="percent-label">70%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
+                        @endif
+                        @endforeach
 
                     </div>
                 </div>
@@ -305,44 +252,26 @@
         </div>
     </div>
 </div>
+@endif
 <!-- tmp skill area end -->
 
 <!-- Tpm Education Experience Area Start -->
+ @if(count($educations) > 0)
 <section class="education-experience tmp-section-gapTop">
     <div class="container">
         <h2 class="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">Education <span><img src="{{ asset('frontend/assets/images/custom-line/custom-line.png')}}"
                     alt="custom-line"></span>
         </h2>
         <div class="row g-5">
+            @foreach ($educations as $education)
             <div class="col-lg-6 col-sm-6">
                 <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    <h4 class="edu-sub-title">Trainer Marketing</h4>
-                    <h2 class="edu-title">2005-2009</h2>
-                    <p class="edu-para">A personal portfolio is a curated collection of an individual's professional
-                        work, showcasing their skills, experience A personal portfolio.</p>
+                    <h4 class="edu-sub-title">{{ $education->degree }}</h4>
+                    <h2 class="edu-title">{{ $education->institution . ' | ' . $education->start_date . '-' . $education->end_date }}</h2>
+                    <p class="edu-para">{{ $education->description }}</p>
                 </div>
-            </div>
-            <div class="col-lg-6 col-sm-6">
-                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
-                    <h4 class="edu-sub-title">Assistant Director</h4>
-                    <h2 class="edu-title">2010-2014</h2>
-                    <p class="edu-para">Each project here showcases my commitment to excellence and adaptability, tailored to meet each client’s unique needs.</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-sm-6">
-                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
-                    <h4 class="edu-sub-title">Design Assistant</h4>
-                    <h2 class="edu-title">2008-2012</h2>
-                    <p class="edu-para">I’ve had the privilege of working with various clients, from startups to established companies, helping bring their visions to life.</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-sm-6">
-                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
-                    <h4 class="edu-sub-title">Design Assistant</h4>
-                    <h2 class="edu-title">2008-2012</h2>
-                    <p class="edu-para">Each project here showcases my commitment to excellence and adaptability, tailored to meet each client’s unique needs a personal.</p>
-                </div>
-            </div>
+            </div>            
+            @endforeach
         </div>
         <div class="experiences-wrapper v2">
             <div class="row">
@@ -377,6 +306,7 @@
         </div>
     </div>
 </section>
+@endif
 <!-- Tpm Education Experience Area End -->
 
 <!-- Tpm Our Supported Company Area Start -->
