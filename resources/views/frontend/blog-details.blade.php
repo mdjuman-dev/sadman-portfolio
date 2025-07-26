@@ -84,7 +84,7 @@
                                     </div>
                                     <div class="btn-content">
                                         <span class="para">Previous post</span>
-                                        <h4 class="title">{{ $prevPost->title }}</h4>
+                                        <h4 class="title">{{ Str::limit($prevPost->title,15) }}</h4>
                                     </div>
                                 </a>
                                 @else
@@ -104,7 +104,7 @@
                                 <a wire:navigate href="{{ route('blog.details', $nextPost->slug) }}" class="next-btn">
                                     <div class="btn-content">
                                         <span class="para">Next post</span>
-                                        <h4 class="title">{{ $nextPost->title }}</h4>
+                                        <h4 class="title">{{ Str::limit($nextPost->title,15) }}</h4>
                                     </div>
                                     <div class="tmp-arrow-btn">
                                         <i class="fa-solid fa-arrow-right"></i>

@@ -51,10 +51,12 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
 
     //*Blog Routes
     Route::controller(BlogController::class)->prefix('blog/')->name('blog.')->group(function () {
+        Route::get('/view-blog-post/{slug}',  'viewBlogPost')->name('viewBlogPost');
         Route::get('/all-blog',  'allBlog')->name('allBlog');
         Route::get('/{id?}',  'index')->name('index');
         Route::post('/store-update/{id?}',  'storeOrUpdate')->name('storeOrUpdate');
         Route::get('/delete/{id}',  'delete')->name('delete');
+        Route::get('/delete-comment/{id}',  'deleteComment')->name('comment.delete');
     });
 
     //*Category Routes

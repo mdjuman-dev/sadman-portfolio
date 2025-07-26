@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\BlogComment;
 use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
@@ -21,9 +22,17 @@ class BlogController extends Controller
         return view('backend.blog.index', compact('categories', 'editBlog'));
     }
 
+
+
+    function viewBlogPost($slug)
+    {
+        $blogs = Blog::latest()->with('comments', 'likes', 'views',)->where('slug', $slug)->firstOrFail();
+        return view('backend.blog.view', compact('blogs'));
+    }
+
     function allBlog()
     {
-        $blogs = Blog::with('category')->get();
+        $blogs = Blog::with('category', 'comments', 'likes', 'dislikes', 'views')->latest()->get();
         return view('backend.blog.all-blog', compact('blogs'));
     }
     function storeOrUpdate(Request $request, $id = null)
@@ -75,5 +84,10 @@ class BlogController extends Controller
         }
         $blog->delete();
         return redirect()->route('blog.allBlog')->with('success', 'Blog deleted successfully.');
+    }
+    function deleteComment($id)
+    {
+        BlogComment::findOrFail($id)->delete();
+        return back()->with('success', 'Blog deleted successfully.');
     }
 }
