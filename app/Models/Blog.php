@@ -10,7 +10,7 @@ class Blog extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(BlogComment::class);
     }
 
     public function category()

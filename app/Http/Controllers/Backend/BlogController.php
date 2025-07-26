@@ -40,7 +40,7 @@ class BlogController extends Controller
 
         $blog = Blog::findOrNew($id);
         $blog->title = $request->title;
-        $blog->slug = Str::slug($request->title); // Slug generate
+        $blog->slug = Str::slug($request->title);
         $blog->category_id = $request->category_id;
         $blog->content = $request->content;
         $blog->meta_title = $request->meta_title;
@@ -63,7 +63,7 @@ class BlogController extends Controller
         $blog->save();
 
         $msg = $id ? 'Blog updated successfully.' : 'Blog created successfully.';
-        return redirect()->route('blog.index')->with('success', $msg);
+        return redirect()->route('blog.allBlog')->with('success', $msg);
     }
 
     function delete($id)
@@ -74,6 +74,6 @@ class BlogController extends Controller
             Storage::disk('public')->delete($blog->image);
         }
         $blog->delete();
-        return redirect()->route('blog.index')->with('success', 'Blog deleted successfully.');
+        return redirect()->route('blog.allBlog')->with('success', 'Blog deleted successfully.');
     }
 }

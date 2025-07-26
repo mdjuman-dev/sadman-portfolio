@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/vendor/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/vendor/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
+    <link href="{{ asset('backend/assets/css/notyf.min.css') }}" rel="stylesheet" type="text/css" />
     @livewireStyles
 </head>
 
@@ -371,6 +372,7 @@
     <script src="{{ asset('frontend/assets/js/vendor/backtop.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/plugins/text-type.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/notyf.min.js') }}"></script>
     @livewireScripts
     @stack('scripts')
 </body>

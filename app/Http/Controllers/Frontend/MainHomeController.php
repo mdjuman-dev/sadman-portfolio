@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Blog;
 use App\Models\Skill;
 use App\Models\Education;
 use Illuminate\Http\Request;
@@ -24,10 +25,7 @@ class MainHomeController extends Controller
     {
         return view('frontend.services');
     }
-    function blog()
-    {
-        return view('frontend.blog');
-    }
+   
     function contact()
     {
         return view('frontend.contact');

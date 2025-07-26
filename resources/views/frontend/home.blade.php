@@ -185,7 +185,7 @@
 <!-- Tpm Latest Service Area End -->
 
 <!-- tmp skill area start -->
- @if(count($skills) > 0)
+@if(count($skills) > 0)
 <div class="tmp-skill-area tmp-section-gapTop">
     <div class="container">
         <div class="row g-5">
@@ -256,7 +256,7 @@
 <!-- tmp skill area end -->
 
 <!-- Tpm Education Experience Area Start -->
- @if(count($educations) > 0)
+@if(count($educations) > 0)
 <section class="education-experience tmp-section-gapTop">
     <div class="container">
         <h2 class="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">Education <span><img src="{{ asset('frontend/assets/images/custom-line/custom-line.png')}}"
@@ -270,7 +270,7 @@
                     <h2 class="edu-title">{{ $education->institution . ' | ' . $education->start_date . '-' . $education->end_date }}</h2>
                     <p class="edu-para">{{ $education->description }}</p>
                 </div>
-            </div>            
+            </div>
             @endforeach
         </div>
         <div class="experiences-wrapper v2">
@@ -447,7 +447,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
                     <div class="img-box">
-                        <a href="{{route('blog-datails')}}" wire:navigate>
+                        <a href="" wire:navigate>
                             <img class="img-primary hidden-on-mobile" src="{{ asset('frontend/assets/images/blog/blog-img-4.jpg')}}" alt="Blog Thumbnail">
                             <img class="img-secondary" src="{{ asset('frontend/assets/images/blog/blog-img-4.jpg')}}" alt="BLog Thumbnail">
                         </a>

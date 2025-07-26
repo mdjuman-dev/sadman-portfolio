@@ -22,13 +22,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-
-                @foreach ($blogs as $key=>$blog )
+                @foreach ($category as $items )
+                @foreach ($items->blog as $key => $items )
                 <div class="blog-classic-card tmp-scroll-trigger tmponhover tmp-fade-in animation-order-{{++$key}}">
                     <div class="img-box">
-                        <a href="{{ route('blog.details',$blog->slug) }}" wire:navigate>
-                            <img class="img-primary hidden-on-mobile" src="{{ asset('storage/'.$blog->image)}}" alt="Blog Thumbnail">
-                            <img class="img-secondary" src="{{ asset('storage/'.$blog->image)}}" alt="BLog Thumbnail">
+                        <a href="{{ route('blog.details', $items->slug) }}" wire:navigate>
+                            <img class="img-primary hidden-on-mobile" src="{{ asset('storage/'.$items->image)}}" alt="Blog Thumbnail">
+                            <img class="img-secondary" src="{{ asset('storage/'.$items->image)}}" alt="Blog Thumbnail">
                         </a>
                     </div>
                     <div class="blog-classic-content">
@@ -37,30 +37,27 @@
                                 <li>
                                     <div class="tag-wrap">
                                         <i class="fa-solid fa-tag"></i>
-                                        <h4 class="tag-title">{{$blog->category->name}}</h4>
+                                        <h4 class="tag-title">{{ $items->category->name }}</h4>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="tag-wrap">
                                         <i class="fa-regular fa-comment"></i>
-                                        <h4 class="tag-title">Comments ({{ count($blog->comments) }})</h4>
+                                        <h4 class="tag-title">Comments ({{ count($items->comments) }})</h4>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="tag-wrap">
                                         <i class="fa-solid fa-calendar-day"></i>
-                                        <h4 class="tag-title">Publish ({{ time_short($blog->created_at) }})</h4>
+                                        <h4 class="tag-title">Publish ({{ time_short($items->created_at) }})</h4>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <h2 class="title"><a href="blog.html#">{{$blog->title}}</a>
-                        </h2>
-                        <p class="para">{!! Str::limit($blog->content,100) !!}</p>
-
-
+                        <h2 class="title"><a href="blog.html#">{{ $items->title }}</a></h2>
+                        <p class="para">{!! Str::limit($items->content, 100) !!}</p>
                         <div class="tmp-button-here">
-                            <a wire:navigate class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="{{route('blog.details',$blog->slug)}}">
+                            <a wire:navigate class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="{{ route('blog.details', $items->slug) }}">
                                 <span class="icon-reverse-wrapper">
                                     <span class="btn-text">Read More</span>
                                     <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
@@ -71,17 +68,19 @@
                     </div>
                 </div>
                 @endforeach
+                @endforeach
+
                 <div class="tmp-pagination-button">
                     {{-- Previous Page Link --}}
-                    @if ($blogs->onFirstPage())
+                    @if ($category->onFirstPage())
                     <span class="pagination-btn disabled"><i class="fa-sharp fa-regular fa-arrow-left"></i></span>
                     @else
-                    <a wire:navigate href="{{ $blogs->previousPageUrl() }}" class="pagination-btn"><i class="fa-sharp fa-regular fa-arrow-left"></i></a>
+                    <a wire:navigate href="{{ $category->previousPageUrl() }}" class="pagination-btn"><i class="fa-sharp fa-regular fa-arrow-left"></i></a>
                     @endif
 
                     {{-- Page Number Links --}}
-                    @foreach ($blogs->getUrlRange(1, $blogs->lastPage()) as $page => $url)
-                    @if ($page == $blogs->currentPage())
+                    @foreach ($category->getUrlRange(1, $category->lastPage()) as $page => $url)
+                    @if ($page == $category->currentPage())
                     <span class="pagination-btn active">{{ $page }}</span>
                     @else
                     <a wire:navigate href="{{ $url }}" class="pagination-btn">{{ $page }}</a>
@@ -89,8 +88,8 @@
                     @endforeach
 
                     {{-- Next Page Link --}}
-                    @if ($blogs->hasMorePages())
-                    <a wire:navigate href="{{ $blogs->nextPageUrl() }}" class="pagination-btn"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    @if ($category->hasMorePages())
+                    <a wire:navigate href="{{ $category->nextPageUrl() }}" class="pagination-btn"><i class="fa-sharp fa-regular fa-arrow-right"></i></a>
                     @else
                     <span class="pagination-btn disabled"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
                     @endif
@@ -98,14 +97,6 @@
             </div>
             <div class="col-lg-4">
                 <div class="tmp-sidebar">
-                    <div class="signle-side-bar search-area tmponhover">
-                        <div class="body">
-                            <div class="search-area">
-                                <input type="text" placeholder="Type here" required>
-                                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                            </div>
-                        </div>
-                    </div>
                     <div class="signle-side-bar recent-post-area tmponhover">
                         <div class="header">
                             <h3 class="title">Recent Post</h3>
@@ -120,7 +111,6 @@
                                 <span class="post-num">({{count($category->blog)}})</span>
                             </a>
                             @endforeach
-
                         </div>
                     </div>
                     <div class="signle-side-bar recent-post-area tmponhover">

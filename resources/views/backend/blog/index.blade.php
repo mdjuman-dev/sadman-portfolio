@@ -106,11 +106,9 @@
     // FilePond Init
     FilePond.registerPlugin(FilePondPluginImagePreview);
 
-    $('.file-pond').each(function() {
-        fileInput.filepond({
-            storeAsFile: true,
-            allowReorder: true,
-        });
+    $('.file-pond').filepond({
+        storeAsFile: true,
+        allowReorder: true,
     });
 </script>
 @endpush

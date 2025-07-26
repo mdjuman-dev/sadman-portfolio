@@ -64,7 +64,7 @@
                     <a class='tp-link' href='{{ route('blog.index') }}'>Add Blog</a>
                 </li>
                 <li>
-                    <a class='tp-link' href='{{ route('blog.allBlog') }}'>All Blog</a>
+                    <a class='tp-link' href='{{ route('blog.allBlog') }}'>All Blogs</a>
                 </li>
             </ul>
         </div>

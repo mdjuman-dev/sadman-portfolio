@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
@@ -21,11 +22,13 @@ class CategoryController extends Controller
     function storeOrUpdate(Request $request, $id = null)
     {
         $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'slug' => 'unique:categories,slug,' . $id,
         ]);
 
         $category = Category::findOrNew($id);
         $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
         if ($id) {
             $category->status = $request->has('status');
         }
