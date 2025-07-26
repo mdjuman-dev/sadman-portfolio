@@ -19,6 +19,7 @@
     <link href="{{ asset('backend/assets/css/rte_theme_default.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/assets/css/filepond.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/assets/css/filepond-plugin-image-preview.css') }}" rel="stylesheet" type="text/css" />
+    @stack('css')
 
 </head>
 

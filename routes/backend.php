@@ -51,12 +51,13 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
 
     //*Blog Routes
     Route::controller(BlogController::class)->prefix('blog/')->name('blog.')->group(function () {
-        Route::get('/{id?}',  'index')->name('index');
         Route::get('/all-blog',  'allBlog')->name('allBlog');
-        Route::post('/store-update',  'storeOrUpdate')->name('storeOrUpdate');
+        Route::get('/{id?}',  'index')->name('index');
+        Route::post('/store-update/{id?}',  'storeOrUpdate')->name('storeOrUpdate');
         Route::get('/delete/{id}',  'delete')->name('delete');
     });
-    //*Blog Routes
+
+    //*Category Routes
     Route::controller(CategoryController::class)->prefix('category/')->name('category.')->group(function () {
         Route::get('/{id?}',  'index')->name('index');
         Route::post('/store-update/{id?}',  'storeOrUpdate')->name('storeOrUpdate');

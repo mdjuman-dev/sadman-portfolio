@@ -14,7 +14,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Category Name<span class="text-danger">*</span></label>
-                                <input name="name" type="text" class="form-control" value="{{ old('name',$editCategory->name) }}" placeholder="Name">
+                                <input name="name" type="text" class="form-control" value="{{ old('name',$editCategory?->name) }}" placeholder="Name">
                                 @error('name')
                                 <small>{{ $message }}</small>
                                 @enderror
