@@ -6,11 +6,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-inner text-center">
-                    <h1 class="title split-collab">Blog Classic</h1>
+                    <h1 class="title split-collab">Explore Blogs</h1>
                     <ul class="page-list">
                         <li class="tmp-breadcrumb-item"><a href="{{ route('home') }}" wire:navigate>Home</a></li>
                         <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
-                        <li class="tmp-breadcrumb-item active">Blog Classic</li>
+                        <li class="tmp-breadcrumb-item active">Explore Blogs</li>
                     </ul>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                                 </li>
                                 <li>
                                     <div class="tag-wrap">
-                                        <i class="fa-regular fa-comment"></i>
+                                        <i class="fa-solid fa-comment"></i>
                                         <h4 class="tag-title">Comments ({{ count($items->comments) }})</h4>
                                     </div>
                                 </li>
@@ -50,6 +50,12 @@
                                     <div class="tag-wrap">
                                         <i class="fa-solid fa-calendar-day"></i>
                                         <h4 class="tag-title">Publish ({{ time_short($items->created_at) }})</h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tag-wrap">
+                                        <i class=" fa-solid fa-heart"></i>
+                                        <h4 class="tag-title">Likes ({{ count($items->likes) }})</h4>
                                     </div>
                                 </li>
                             </ul>
@@ -73,7 +79,9 @@
                 <div class="tmp-pagination-button">
                     {{-- Previous Page Link --}}
                     @if ($category->onFirstPage())
-                    <span class="pagination-btn disabled"><i class="fa-sharp fa-regular fa-arrow-left"></i></span>
+                    <span class="pagination-btn disabled">
+                        <i class="fa-sharp fa-regular fa-arrow-left"></i>
+                    </span>
                     @else
                     <a wire:navigate href="{{ $category->previousPageUrl() }}" class="pagination-btn"><i class="fa-sharp fa-regular fa-arrow-left"></i></a>
                     @endif
@@ -103,7 +111,7 @@
                         </div>
                         <div class="body">
                             @foreach ($categories as $category)
-                            <a href="{{route('category.blog',$category->slug)}}" class="single-post">
+                            <a wire:navigate href="{{route('category.blog',$category->slug)}}" class="single-post">
                                 <span class="single-post-left">
                                     <i class="fa-solid fa-arrow-right"></i>
                                     <span class="post-title">{{$category->name}}</span>
@@ -118,45 +126,21 @@
                             <h3 class="title">Recent Post</h3>
                         </div>
                         <div class="body">
+                            @foreach ($blogs as $items)
                             <div class="single-post-card tmp-hover-link">
                                 <div class="single-post-card-img">
-                                    <img src="{{ asset('frontend/assets/images/blog/single-post-card-img-1.png')}}" alt="">
+                                    <img src="{{ asset('storage/'.$items->image)}}" alt="">
                                 </div>
                                 <div class="single-post-right">
                                     <div class="single-post-top">
                                         <i class="fa-regular fa-folder-open"></i>
-                                        <p class="post-title">Category</p>
+                                        <p class="post-title">{{$items->category->name}}</p>
                                     </div>
-                                    <h3 class="post-title"><a class="link" href="blog.html#">Sustainable Solutions: Designing for Tomorrow</a>
+                                    <h3 class="post-title"><a class="link" href="{{ route('blog.details',$items->slug) }}">{{ Str::limit($items->title,50) }}</a>
                                     </h3>
                                 </div>
                             </div>
-                            <div class="single-post-card tmp-hover-link">
-                                <div class="single-post-card-img">
-                                    <img src="{{ asset('frontend/assets/images/blog/single-post-card-img-2.png')}}" alt="">
-                                </div>
-                                <div class="single-post-right">
-                                    <div class="single-post-top">
-                                        <i class="fa-regular fa-folder-open"></i>
-                                        <p class="post-title">Category</p>
-                                    </div>
-                                    <h3 class="post-title"><a class="link" href="blog.html#">Technological Innovations: Shaping the Future</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="single-post-card tmp-hover-link">
-                                <div class="single-post-card-img">
-                                    <img src="{{ asset('frontend/assets/images/blog/single-post-card-img-3.png')}}" alt="">
-                                </div>
-                                <div class="single-post-right">
-                                    <div class="single-post-top">
-                                        <i class="fa-regular fa-folder-open"></i>
-                                        <p class="post-title">Category</p>
-                                    </div>
-                                    <h3 class="post-title"><a class="link" href="blog.html#">Adventure Awaits Exploring the Great Outdoors</a>
-                                    </h3>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="signle-side-bar tmponhover">

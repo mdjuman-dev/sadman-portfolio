@@ -53,6 +53,12 @@
                                         <h4 class="tag-title">Comments ({{count($blogDetails->comments)}})</h4>
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="tag-wrap">
+                                        <i class="fa-solid fa-calendar-day"></i>
+                                        <h4 class="tag-title">Views ({{ $viewCount}})</h4>
+                                    </div>
+                                </li>
                             </ul>
                             <livewire:blog-like-components :blog="$blogDetails" />
                         </div>
@@ -127,13 +133,13 @@
                                 <h3 class="tag-title">Keyword:</h3>
                                 <ul>
                                     <li>
-                                        <p class="tag"><a href="blog-details.html#">Interiour</a></p>
+                                        <p class="tag"><a wire:navigate href="blog-details.html#">Interiour</a></p>
                                     </li>
                                     <li>
-                                        <p class="tag"><a href="blog-details.html#">Ux design</a></p>
+                                        <p class="tag"><a wire:navigate href="blog-details.html#">Ux design</a></p>
                                     </li>
                                     <li>
-                                        <p class="tag"><a href="blog-details.html#">Graphics</a></p>
+                                        <p class="tag"><a wire:navigate href="blog-details.html#">Graphics</a></p>
                                     </li>
                                 </ul>
                             </div>
@@ -172,7 +178,7 @@
                         </div>
                         <div class="body">
                             @foreach ($categories as $category)
-                            <a href="{{route('category.blog',$category->slug)}}" class="single-post">
+                            <a wire:navigate href="{{route('category.blog',$category->slug)}}" class="single-post">
                                 <span class="single-post-left">
                                     <i class="fa-solid fa-arrow-right"></i>
                                     <span class="post-title">{{$category->name}}</span>
@@ -187,68 +193,23 @@
                             <h3 class="title">Recent Post</h3>
                         </div>
                         <div class="body">
+                            @foreach ($blogs as $items)
                             <div class="single-post-card tmp-hover-link">
                                 <div class="single-post-card-img">
-                                    <img src="{{ asset('frontend/assets/images/blog/single-post-card-img-1.png')}}" alt="">
+                                    <img src="{{ asset('storage/'.$items->image)}}" alt="">
                                 </div>
                                 <div class="single-post-right">
                                     <div class="single-post-top">
                                         <i class="fa-regular fa-folder-open"></i>
-                                        <p class="post-title">Category</p>
+                                        <p class="post-title">{{$items->category->name}}</p>
                                     </div>
-                                    <h3 class="post-title"><a class="link" href="blog-details.html#">Sustainable Solutions: Designing for Tomorrow</a>
+                                    <h3 class="post-title"><a class="link" href="{{ route('blog.details',$items->slug) }}">{{ Str::limit($items->title,50) }}</a>
                                     </h3>
                                 </div>
                             </div>
-                            <div class="single-post-card tmp-hover-link">
-                                <div class="single-post-card-img">
-                                    <img src="{{ asset('frontend/assets/images/blog/single-post-card-img-2.png')}}" alt="">
-                                </div>
-                                <div class="single-post-right">
-                                    <div class="single-post-top">
-                                        <i class="fa-regular fa-folder-open"></i>
-                                        <p class="post-title">Category</p>
-                                    </div>
-                                    <h3 class="post-title"><a class="link" href="blog-details.html#">Technological Innovations: Shaping the Future</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="single-post-card tmp-hover-link">
-                                <div class="single-post-card-img">
-                                    <img src="{{ asset('frontend/assets/images/blog/single-post-card-img-3.png')}}" alt="">
-                                </div>
-                                <div class="single-post-right">
-                                    <div class="single-post-top">
-                                        <i class="fa-regular fa-folder-open"></i>
-                                        <p class="post-title">Category</p>
-                                    </div>
-                                    <h3 class="post-title"><a class="link" href="blog-details.html#">Adventure Awaits Exploring the Great Outdoors</a>
-                                    </h3>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-
-                    <!--   <div class="signle-side-bar tmponhover">
-                        <div class="header">
-                            <h3 class="title">Tags</h3>
-                        </div>
-                        <div class="body">
-                            <div class="tags-wrapper">
-                                <a href="blog-details.html#" class="tag-link">All Project</a>
-                                <a href="blog-details.html#" class="tag-link">Resume</a>
-                                <a href="blog-details.html#" class="tag-link">Graphics</a>
-                                <a href="blog-details.html#" class="tag-link">Web Design</a>
-                                <a href="blog-details.html#" class="tag-link">CV</a>
-                                <a href="blog-details.html#" class="tag-link">Starts</a>
-                                <a href="blog-details.html#" class="tag-link">Creative Portfolio</a>
-                                <a href="blog-details.html#" class="tag-link">Portfolio</a>
-                                <a href="blog-details.html#" class="tag-link">CV Card</a>
-                                <a href="blog-details.html#" class="tag-link">Start shape</a>
-                            </div>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
         </div>

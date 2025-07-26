@@ -45,4 +45,8 @@ class Blog extends Model
             ->where('type', $type)
             ->exists();
     }
+    public function views()
+    {
+        return $this->hasMany(BlogView::class);
+    }
 }
