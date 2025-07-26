@@ -53,10 +53,8 @@
                                         <h4 class="tag-title">Comments ({{count($blogDetails->comments)}})</h4>
                                     </div>
                                 </li>
-                                <li>
-                                    <livewire:blog-like-components :blog="$blogDetails" />
-                                </li>
                             </ul>
+                            <livewire:blog-like-components :blog="$blogDetails" />
                         </div>
                         <h3 class="title split-collab">{{ $blogDetails->title }}</h3>
                         <p class="disc">

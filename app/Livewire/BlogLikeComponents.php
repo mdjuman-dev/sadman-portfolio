@@ -9,33 +9,41 @@ use Illuminate\Support\Facades\Request;
 
 class BlogLikeComponents extends Component
 {
-    public $blog;
-    public $liked;
+    public $blog, $liked, $disliked;
 
     public function mount(Blog $blog)
     {
         $this->blog = $blog;
-        $this->liked = $blog->isLikedByIp($this->getIp());
+        $ip = $this->getIp();
+
+        $this->liked = $blog->isReactedByIp($ip, 'like');
+        $this->disliked = $blog->isReactedByIp($ip, 'dislike');
     }
 
-    public function toggleLike()
+    public function react($type)
     {
         $ip = $this->getIp();
 
-        $like = BlogLike::where('blog_id', $this->blog->id)
+        // delete previous reaction
+        BlogLike::where('blog_id', $this->blog->id)
             ->where('ip_address', $ip)
-            ->first();
+            ->delete();
 
-        if ($like) {
-            $like->delete();
-            $this->liked = false;
-        } else {
-            BlogLike::create([
-                'blog_id' => $this->blog->id,
-                'ip_address' => $ip,
-            ]);
-            $this->liked = true;
-        }
+        // set new reaction
+        BlogLike::create([
+            'blog_id' => $this->blog->id,
+            'ip_address' => $ip,
+            'type' => $type,
+        ]);
+
+        $this->updateReactionState();
+    }
+
+    public function updateReactionState()
+    {
+        $ip = $this->getIp();
+        $this->liked = $this->blog->isReactedByIp($ip, 'like');
+        $this->disliked = $this->blog->isReactedByIp($ip, 'dislike');
     }
 
     public function getIp()
@@ -47,6 +55,7 @@ class BlogLikeComponents extends Component
     {
         return view('livewire.blog-like-components', [
             'likeCount' => $this->blog->likes()->count(),
+            'dislikeCount' => $this->blog->dislikes()->count(),
         ]);
     }
 }

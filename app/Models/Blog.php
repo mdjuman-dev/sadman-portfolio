@@ -17,10 +17,7 @@ class Blog extends Model
     {
         return $this->belongsTo(Category::class);
     }
-    public function likes()
-    {
-        return $this->hasMany(BlogLike::class);
-    }
+
 
     public function totalLikes()
     {
@@ -30,5 +27,22 @@ class Blog extends Model
     public function isLikedByIp($ip)
     {
         return $this->likes()->where('ip_address', $ip)->exists();
+    }
+    public function likes()
+    {
+        return $this->hasMany(BlogLike::class)->where('type', 'like');
+    }
+
+    public function dislikes()
+    {
+        return $this->hasMany(BlogLike::class)->where('type', 'dislike');
+    }
+
+    public function isReactedByIp($ip, $type)
+    {
+        return $this->hasMany(BlogLike::class)
+            ->where('ip_address', $ip)
+            ->where('type', $type)
+            ->exists();
     }
 }

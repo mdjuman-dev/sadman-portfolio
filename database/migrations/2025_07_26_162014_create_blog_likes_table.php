@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('blog_likes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('blog_id')->constrained()->onDelete('cascade');
+            $table->string('type')->default('like'); // 'like' or 'dislike'
             $table->string('ip_address');
             $table->timestamps();
 
