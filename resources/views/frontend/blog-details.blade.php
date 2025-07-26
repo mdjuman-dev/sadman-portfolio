@@ -40,7 +40,7 @@
                     <div class="blog-details-discription" style="padding: 20px 0">
                         <div class="blog-classic-tag">
                             <h4 class="title">By Stanio lainto</h4>
-                            <ul>
+                            <ul style="align-items: baseline;">
                                 <li>
                                     <div class="tag-wrap">
                                         <i class="fa-solid fa-tag"></i>
@@ -52,6 +52,9 @@
                                         <i class="fa-solid fa-calendar-day"></i>
                                         <h4 class="tag-title">Comments ({{count($blogDetails->comments)}})</h4>
                                     </div>
+                                </li>
+                                <li>
+                                    <livewire:blog-like-components :blog="$blogDetails" />
                                 </li>
                             </ul>
                         </div>

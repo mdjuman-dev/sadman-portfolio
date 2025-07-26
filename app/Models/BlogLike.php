@@ -4,19 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class BlogLike extends Model
 {
-    protected $guarded = ['id'];
-
-    public function comments()
-    {
-        return $this->hasMany(BlogComment::class);
-    }
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+    protected $guarded = ['ip'];
     public function likes()
     {
         return $this->hasMany(BlogLike::class);

@@ -13,7 +13,7 @@ class BlogController extends Controller
 
     function blog()
     {
-        $blogs = Blog::where('status', true)->with('category', 'comments')->paginate(1);
+        $blogs = Blog::where('status', true)->with('category', 'comments')->paginate(6);
         $categories = Category::where('status', true)->with('blog')->latest()->get();
         return view('frontend.blog', compact('blogs', 'categories'));
     }
