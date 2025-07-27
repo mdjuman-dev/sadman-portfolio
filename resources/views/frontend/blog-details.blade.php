@@ -81,7 +81,7 @@
                                 <li>
                                     <div class="tag-wrap">
                                         <i class="fa-solid fa-tag"></i>
-                                        <span class="tag-title">{{ $blogDetails->category->name }}</span>
+                                        <span class="tag-title"><a wire:navigate href="{{ route('category.blog',$blogDetails->category->slug) }}">{{ $blogDetails->category->name }}</a></span>
                                     </div>
                                 </li>
                                 <li>
@@ -116,14 +116,14 @@
                             <div class="our-portfolio-swiper-btn-wrap">
 
                                 {{-- Previous Post --}}
-                                @if (isset($prevPost->slug))
-                                <a wire:navigate href="{{ route('blog.details', $prevPost->slug) }}" class="prev-btn">
+                                @if (isset($nextPost->slug))
+                                <a wire:navigate href="{{ route('blog.details', $nextPost->slug) }}" class="prev-btn">
                                     <div class="tmp-arrow-btn">
                                         <i class="fa-solid fa-arrow-left"></i>
                                     </div>
                                     <div class="btn-content">
                                         <span class="para">Previous post</span>
-                                        <h4 class="title">{{ Str::limit($prevPost->title,15) }}</h4>
+                                        <h4 class="title">{{ Str::limit($nextPost->title,15) }}</h4>
                                     </div>
                                 </a>
                                 @else
@@ -139,11 +139,11 @@
                                 @endif
 
                                 {{-- Next Post --}}
-                                @if (isset($nextPost->slug))
-                                <a wire:navigate href="{{ route('blog.details', $nextPost->slug) }}" class="next-btn">
+                                @if (isset($prevPost->slug))
+                                <a wire:navigate href="{{ route('blog.details', $prevPost->slug) }}" class="next-btn">
                                     <div class="btn-content">
                                         <span class="para">Next post</span>
-                                        <h4 class="title">{{ Str::limit($nextPost->title,15) }}</h4>
+                                        <h4 class="title">{{ Str::limit($prevPost->title,15) }}</h4>
                                     </div>
                                     <div class="tmp-arrow-btn">
                                         <i class="fa-solid fa-arrow-right"></i>
@@ -242,7 +242,7 @@
                                         <i class="fa-regular fa-folder-open"></i>
                                         <p class="post-title">{{$items->category->name}}</p>
                                     </div>
-                                    <h3 class="post-title"><a class="link" href="{{ route('blog.details',$items->slug) }}">{{ Str::limit($items->title,50) }}</a>
+                                    <h3 class="post-title"><a wire:navigate class="link" href="{{ route('blog.details',$items->slug) }}">{{ Str::limit($items->title,50) }}</a>
                                     </h3>
                                 </div>
                             </div>

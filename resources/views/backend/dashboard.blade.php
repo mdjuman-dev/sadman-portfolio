@@ -528,9 +528,7 @@
                                 </div>
                                 <div class="d-flex flex-column">
                                     <small>
-                                        <script>
-                                            document.write(new Date().getFullYear() - 1)
-                                        </script>
+
                                     </small>
                                     <h6 class="mb-0 fs-15">$32.5k</h6>
                                 </div>
@@ -551,9 +549,7 @@
                                 </div>
                                 <div class="d-flex flex-column">
                                     <small>
-                                        <script>
-                                            document.write(new Date().getFullYear() - 2)
-                                        </script>
+
                                     </small>
                                     <h6 class="mb-0 fs-15">$41.2k</h6>
                                 </div>

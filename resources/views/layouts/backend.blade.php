@@ -19,8 +19,19 @@
     <link href="{{ asset('backend/assets/css/rte_theme_default.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/assets/css/filepond.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/assets/css/filepond-plugin-image-preview.css') }}" rel="stylesheet" type="text/css" />
+    @livewireStyles
     @stack('css')
+    <style>
+        #nprogress .bar {
+            background: linear-gradient(to right, #287f71, #287f71) !important;
+            height: 4px !important;
+            border-radius: 5px;
+        }
 
+        #nprogress .peg {
+            box-shadow: 0 0 10px #287f71, 0 0 5px #287f71 !important;
+        }
+    </style>
 </head>
 
 <!-- body start -->
@@ -234,6 +245,7 @@
         });
         @endif
     </script>
+    @livewireScripts
     @stack('scripts')
 </body>
 

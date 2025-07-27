@@ -18,6 +18,17 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
     <link href="{{ asset('backend/assets/css/notyf.min.css') }}" rel="stylesheet" type="text/css" />
     @livewireStyles
+    <style>
+        #nprogress .bar {
+            background: linear-gradient(to right, #ff494a, #ff494a) !important;
+            height: 4px !important;
+            border-radius: 5px;
+        }
+
+        #nprogress .peg {
+            box-shadow: 0 0 10px #ff494a, 0 0 5px #ff494a !important;
+        }
+    </style>
 </head>
 
 <body class="color-primary-2nd">

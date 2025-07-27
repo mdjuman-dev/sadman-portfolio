@@ -1,6 +1,6 @@
 <ul id="side-menu">
     <li>
-        <a href="{{ route('dashboard') }}">
+        <a wire:navigate href="{{ route('dashboard') }}">
             <i data-feather="home"></i>
             <span>Dashboard</span>
         </a>
@@ -8,7 +8,7 @@
 
     <li class="menu-title">Pages</li>
     <li>
-        <a href="{{ route('banner.index') }}">
+        <a wire:navigate href="{{ route('banner.index') }}">
             <i data-feather="image"></i>
             <span>Banner</span>
         </a>
@@ -16,7 +16,7 @@
     </li>
     <!--//*Skills Section -->
     <li>
-        <a href="index.html#skill" data-bs-toggle="collapse">
+        <a href="#skill" data-bs-toggle="collapse">
             <i data-feather="tool"></i>
             <span>Skills</span>
             <span class="menu-arrow"></span>
@@ -24,17 +24,17 @@
         <div class="collapse" id="skill">
             <ul class="nav-second-level">
                 <li>
-                    <a class='tp-link' href='{{ route('skill.create') }}'>Add Skill</a>
+                    <a wire:navigate class='tp-link' href='{{ route('skill.create') }}'>Add Skill</a>
                 </li>
                 <li>
-                    <a class='tp-link' href='{{ route('skill.index') }}'>All Skills</a>
+                    <a wire:navigate class='tp-link' href='{{ route('skill.index') }}'>All Skills</a>
                 </li>
             </ul>
         </div>
     </li>
     <!-- //*Education Section -->
     <li>
-        <a href="index.html#education" data-bs-toggle="collapse">
+        <a href="#education" data-bs-toggle="collapse">
             <i data-feather="book-open"></i>
             <span>Education</span>
             <span class="menu-arrow"></span>
@@ -42,10 +42,10 @@
         <div class="collapse" id="education">
             <ul class="nav-second-level">
                 <li>
-                    <a class='tp-link' href='{{ route('education.create') }}'>Add Education</a>
+                    <a wire:navigate class='tp-link' href='{{ route('education.create') }}'>Add Education</a>
                 </li>
                 <li>
-                    <a class='tp-link' href='{{ route('education.index') }}'>All Education</a>
+                    <a wire:navigate class='tp-link' href='{{ route('education.index') }}'>All Education</a>
                 </li>
             </ul>
         </div>
@@ -53,7 +53,7 @@
 
     <!--//*Blog Menu -->
     <li>
-        <a href="index.html#blog" data-bs-toggle="collapse">
+        <a href="#blog" data-bs-toggle="collapse">
             <i data-feather="book-open"></i>
             <span>Blog</span>
             <span class="menu-arrow"></span>
@@ -61,10 +61,10 @@
         <div class="collapse" id="blog">
             <ul class="nav-second-level">
                 <li>
-                    <a class='tp-link' href='{{ route('blog.index') }}'>Add Blog</a>
+                    <a wire:navigate class='tp-link' href='{{ route('blog.index') }}'>Add Blog</a>
                 </li>
                 <li>
-                    <a class='tp-link' href='{{ route('blog.allBlog') }}'>All Blogs</a>
+                    <a wire:navigate class='tp-link' href='{{ route('blog.allBlog') }}'>All Blogs</a>
                 </li>
             </ul>
         </div>
@@ -72,7 +72,7 @@
 
     <!-- Category -->
     <li>
-        <a href="{{ route('category.index') }}">
+        <a wire:navigate href="{{ route('category.index') }}">
             <i data-feather="layout"></i>
             <span>Category</span>
         </a>

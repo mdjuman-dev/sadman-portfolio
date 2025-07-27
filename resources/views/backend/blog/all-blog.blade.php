@@ -60,17 +60,17 @@
                     <td class="align-middle">{!! general_status($blog->status) !!}</td>
 
                     <td class="align-middle">
-                        <a class="btn btn-sm btn-outline-info me-1"
+                        <a wire:navigate class="btn btn-sm btn-outline-info me-1"
                             href="{{ route('blog.viewBlogPost', $blog->slug) }}"
                             title="View">
                             <i class="mdi mdi-eye"></i>
                         </a>
-                        <a class="btn btn-sm btn-outline-primary me-1"
+                        <a wire:navigate class="btn btn-sm btn-outline-primary me-1"
                             href="{{ route('blog.index', $blog->id) }}"
                             title="Edit">
                             <i class="mdi mdi-pencil"></i>
                         </a>
-                        <a onclick="return confirm('Are you sure you want to delete this blog post?');"
+                        <a wire:navigate onclick="return confirm('Are you sure you want to delete this blog post?');"
                             class="btn btn-sm btn-outline-danger"
                             href="{{ route('blog.delete', $blog->id) }}"
                             title="Delete">

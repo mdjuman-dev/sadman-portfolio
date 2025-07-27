@@ -37,7 +37,7 @@
                                 <li>
                                     <div class="tag-wrap">
                                         <i class="fa-solid fa-tag"></i>
-                                        <h4 class="tag-title">{{ $items->category->name }}</h4>
+                                        <h4 class="tag-title"><a wire:navigate href="{{ route('category.blog',$items->category->slug) }}">{{ $items->category->name }}</a></h4>
                                     </div>
                                 </li>
                                 <li>
@@ -60,7 +60,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <h2 class="title"><a href="blog.html#">{{ $items->title }}</a></h2>
+                        <h2 class="title"><a wire:navigate href="{{ route('blog.details',$items->slug) }}">{{ $items->title }}</a></h2>
                         <p class="para">{!! Str::limit($items->content, 200) !!}</p>
                         <div class="tmp-button-here">
                             <a wire:navigate class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="{{ route('blog.details', $items->slug) }}">

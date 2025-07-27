@@ -42,7 +42,7 @@
                                 <li> <!-- Category -->
                                     <div class="tag-wrap">
                                         <i class="fa-solid fa-tag"></i>
-                                        <h4 class="tag-title">{{ $blog->category->name }}</h4>
+                                        <h4 class="tag-title"><a wire:navigate href="{{ route('category.blog',$blog->category->slug) }}">{{ $blog->category->name }}</a></h4>
                                     </div>
                                 </li>
                                 <li> <!-- Comments -->
@@ -65,7 +65,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <h2 class="title"><a href="blog.html#">{{$blog->title}}</a>
+                        <h2 class="title"><a wire:navigate href="blog.html#">{{$blog->title}}</a>
                         </h2>
                         <p class="para">{!! Str::limit($blog->content,300) !!}</p>
 
@@ -145,7 +145,7 @@
                                         <i class="fa-regular fa-folder-open"></i>
                                         <p class="post-title">{{$items->category->name}}</p>
                                     </div>
-                                    <h3 class="post-title"><a class="link" href="{{ route('blog.details',$items->slug) }}">{{ Str::limit($items->title,50) }}</a>
+                                    <h3 class="post-title"><a wire:navigate class="link" href="{{ route('blog.details',$items->slug) }}">{{ Str::limit($items->title,50) }}</a>
                                     </h3>
                                 </div>
                             </div>
