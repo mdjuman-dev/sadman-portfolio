@@ -66,4 +66,6 @@ class BlogController extends Controller
         $blogs = Blog::where('status', true)->with('category')->latest()->get();
         return view('frontend.category-by-blog', compact('categories', 'category', 'blogs'));
     }
+
+   
 }

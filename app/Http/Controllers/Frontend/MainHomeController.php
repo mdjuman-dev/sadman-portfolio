@@ -10,12 +10,7 @@ use App\Http\Controllers\Controller;
 
 class MainHomeController extends Controller
 {
-    function home()
-    {
-        $skills = Skill::select('id', 'name', 'percentage', 'category', 'duration', 'delay', 'status')->where('status', true)->get();
-        $educations = Education::select('id', 'degree', 'institution', 'start_date', 'end_date', 'description')->where('status', true)->get();
-        return view('frontend.home', compact('skills', 'educations'));
-    }
+    
     function about()
     {
         $skills = Skill::select('id', 'name', 'percentage', 'category', 'duration', 'delay', 'status')->where('status', true)->get();
@@ -25,7 +20,7 @@ class MainHomeController extends Controller
     {
         return view('frontend.services');
     }
-   
+
     function contact()
     {
         return view('frontend.contact');

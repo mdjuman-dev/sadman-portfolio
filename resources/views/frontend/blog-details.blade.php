@@ -6,6 +6,42 @@
         pointer-events: none;
         cursor: default;
     }
+
+    .blog-meta-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 0;
+        margin: 12px 0;
+        list-style: none;
+    }
+
+    .blog-meta-list li {
+        display: flex;
+        align-items: center;
+    }
+
+    .tag-wrap {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background-color: #f9f9f9;
+        /* optional background */
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #333;
+        transition: background-color 0.3s;
+    }
+
+    .tag-wrap:hover {
+        background-color: #f0f0f0;
+    }
+
+    .tag-title {
+        font-weight: 500;
+        margin: 0;
+    }
 </style>
 @endpush
 @section('frontend')
@@ -39,28 +75,31 @@
                     </div>
                     <div class="blog-details-discription" style="padding: 20px 0">
                         <div class="blog-classic-tag">
-                            <h4 class="title">By Stanio lainto</h4>
-                            <ul style="align-items: baseline;">
+                            <h4 class="title">By Stanio Lainto</h4>
+
+                            <ul class="blog-meta-list">
                                 <li>
                                     <div class="tag-wrap">
                                         <i class="fa-solid fa-tag"></i>
-                                        <h4 class="tag-title">{{$blogDetails->category->name}}</h4>
+                                        <span class="tag-title">{{ $blogDetails->category->name }}</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="tag-wrap">
-                                        <i class="fa-solid fa-calendar-day"></i>
-                                        <h4 class="tag-title">Comments ({{count($blogDetails->comments)}})</h4>
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span class="tag-title">Comments ({{ count($blogDetails->comments) }})</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="tag-wrap">
-                                        <i class="fa-solid fa-calendar-day"></i>
-                                        <h4 class="tag-title">Views ({{ $viewCount}})</h4>
+                                        <i class="fa-regular fa-eye"></i>
+                                        <span class="tag-title">Views ({{ $viewCount }})</span>
                                     </div>
                                 </li>
                             </ul>
+
                             <livewire:blog-like-components :blog="$blogDetails" />
+
                         </div>
                         <h3 class="title split-collab">{{ $blogDetails->title }}</h3>
                         <p class="disc">

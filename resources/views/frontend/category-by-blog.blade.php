@@ -61,7 +61,7 @@
                             </ul>
                         </div>
                         <h2 class="title"><a href="blog.html#">{{ $items->title }}</a></h2>
-                        <p class="para">{!! Str::limit($items->content, 100) !!}</p>
+                        <p class="para">{!! Str::limit($items->content, 200) !!}</p>
                         <div class="tmp-button-here">
                             <a wire:navigate class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="{{ route('blog.details', $items->slug) }}">
                                 <span class="icon-reverse-wrapper">

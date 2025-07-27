@@ -22,7 +22,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-
                 @foreach ($blogs as $key=>$blog )
                 <div class="blog-classic-card tmp-scroll-trigger tmponhover tmp-fade-in animation-order-{{++$key}}">
                     <div class="img-box">
@@ -33,43 +32,42 @@
                     </div>
                     <div class="blog-classic-content">
                         <div class="blog-classic-tag">
-                            <ul>
-                                <li>
+                            <ul class="blog-meta-list">
+                                <li> <!-- Publish -->
                                     <div class="tag-wrap">
-                                        <i class="fa-solid fa-tag"></i>
-                                        <h4 class="tag-title">{{$blog->category->name}}</h4>
+                                        <i class="fa-solid fa-calendar-day"></i>
+                                        <h4 class="tag-title">Published ({{ time_short($blog->created_at) }})</h4>
                                     </div>
                                 </li>
-                                <li>
+                                <li> <!-- Category -->
+                                    <div class="tag-wrap">
+                                        <i class="fa-solid fa-tag"></i>
+                                        <h4 class="tag-title">{{ $blog->category->name }}</h4>
+                                    </div>
+                                </li>
+                                <li> <!-- Comments -->
                                     <div class="tag-wrap">
                                         <i class="fa-solid fa-comment"></i>
                                         <h4 class="tag-title">Comments ({{ count($blog->comments) }})</h4>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="tag-wrap">
-                                        <i class="fa-solid fa-calendar-day"></i>
-                                        <h4 class="tag-title">Publish ({{ time_short($blog->created_at) }})</h4>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="tag-wrap">
-                                        <i class=" fa-solid fa-heart"></i>
-                                        <h4 class="tag-title">Likes ({{ count($blog->likes) }})</h4>
-                                    </div>
-                                </li>
-                                <li>
-
+                                <li> <!-- Views -->
                                     <div class="tag-wrap">
                                         <i class="fa-regular fa-eye"></i>
-                                        <h4 class="tag-title">View ({{ count($blog->views) }})</h4>
+                                        <h4 class="tag-title">Views ({{ count($blog->views) }})</h4>
+                                    </div>
+                                </li>
+                                <li> <!-- Likes -->
+                                    <div class="tag-wrap">
+                                        <i class="fa-solid fa-heart"></i>
+                                        <h4 class="tag-title">Likes ({{ count($blog->likes) }})</h4>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <h2 class="title"><a href="blog.html#">{{$blog->title}}</a>
                         </h2>
-                        <p class="para">{!! Str::limit($blog->content,100) !!}</p>
+                        <p class="para">{!! Str::limit($blog->content,300) !!}</p>
 
 
                         <div class="tmp-button-here">
@@ -112,13 +110,9 @@
             <div class="col-lg-4">
                 <div class="tmp-sidebar">
                     <div class="signle-side-bar search-area tmponhover">
-                        <div class="body">
-                            <div class="search-area">
-                                <input type="text" placeholder="Type here" required>
-                                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                            </div>
-                        </div>
+                        <livewire:blog-search />
                     </div>
+
                     <div class="signle-side-bar recent-post-area tmponhover">
                         <div class="header">
                             <h3 class="title">Recent Post</h3>
