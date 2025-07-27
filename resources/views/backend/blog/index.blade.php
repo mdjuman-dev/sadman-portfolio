@@ -1,5 +1,6 @@
 @extends('layouts.backend')
-@section('title', 'Blog Post')
+@section('title', ($editBlog ? 'Update' : 'Create') . ' Blog |')
+
 
 @section('backend')
 <div class="card">

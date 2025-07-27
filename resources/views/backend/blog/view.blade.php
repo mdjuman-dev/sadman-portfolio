@@ -1,5 +1,5 @@
 @extends('layouts.backend')
-@section('title', 'All Blog Post')
+@section('title', 'View Blog Details |')
 
 @section('backend')
 <div class="card mt-4 shadow-lg border-0 rounded-4">

@@ -1,5 +1,5 @@
 @extends('layouts.backend')
-@section('title', 'All Blog Post |')
+@section('title', 'All Blogs |')
 @section('backend')
 <div class="card">
     <div class="card-header">

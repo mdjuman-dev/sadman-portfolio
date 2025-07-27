@@ -1,5 +1,5 @@
 @extends('layouts.backend')
-@section('title', 'Skills')
+@section('title', 'Skills |')
 @section('backend')
 <div class="container-fluid mt-2">
     <div class="row">
@@ -10,6 +10,7 @@
                     <table class="table table-responsive">
                         <thead class="text-center">
                             <tr>
+                                <th>Sl</th>
                                 <th>Skill Name</th>
                                 <th>Category</th>
                                 <th>Percentage</th>
@@ -20,27 +21,28 @@
                             </tr>
                         </thead>
                         <tbody class="text-center">
-                            @foreach($skills as $skill)
-                                <tr>
-                                    <td>{{ $skill->name }}</td>
-                                    <td>{{ ucfirst($skill->category) }}</td>
-                                    <td>{{ $skill->percentage }}%</td>
-                                    <td>{{ $skill->duration }}s</td>
-                                    <td>{{ $skill->delay }}s</td>
-                                    <td>
-                                        <span class="badge {{ $skill->status ? 'bg-success' : 'bg-secondary' }}">
-                                            {{ $skill->status ? 'Active' : 'Inactive' }}
-                                        </span>
-                                    <td>
-                                    <td>
-                                        <a href="{{ route('skill.edit', $skill->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                        <form action="{{ route('skill.destroy', $skill->id) }}" method="POST" style="display:inline;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button onclick="return confirm('Are you sure want to delete this skill?')" type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
+                            @foreach($skills as $key=>$skill)
+                            <tr>
+                                <td>{{ ++$key }}</td>
+                                <td>{{ $skill->name }}</td>
+                                <td>{{ ucfirst($skill->category) }}</td>
+                                <td>{{ $skill->percentage }}%</td>
+                                <td>{{ $skill->duration }}s</td>
+                                <td>{{ $skill->delay }}s</td>
+                                <td>
+                                    <span class="badge {{ $skill->status ? 'bg-success' : 'bg-secondary' }}">
+                                        {{ $skill->status ? 'Active' : 'Inactive' }}
+                                    </span>
+                                <td>
+                                <td>
+                                    <a href="{{ route('skill.edit', $skill->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <form action="{{ route('skill.destroy', $skill->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button onclick="return confirm('Are you sure want to delete this skill?')" type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
