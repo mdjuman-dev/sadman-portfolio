@@ -63,8 +63,8 @@
                 type: 'success',
                 background: 'green',
                 icon: {
-                    className: 'mdi mdi-check-circle-outline',
-                    tagName: 'span',
+                    className: 'fa-solid fa-circle-check',
+                    tagName: 'i',
                     color: 'white'
                 }
             }]
@@ -74,8 +74,8 @@
             notyf.success({
                 message: "Comment submitted successfully!",
                 icon: {
-                    className: 'mdi mdi-check-circle-outline',
-                    tagName: 'span',
+                    className: 'fa-solid fa-circle-check',
+                    tagName: 'i',
                     color: 'white'
                 }
             });

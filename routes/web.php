@@ -1,15 +1,16 @@
 <?php
 
+use App\Livewire\Comment;
+use App\Livewire\ContactForm;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\MainHomeController;
-use App\Livewire\Comment;
-use Illuminate\Support\Facades\Route;
 
 
 
 Route::controller(MainHomeController::class)->group(function () {
-
     Route::get('/about', 'about')->name('about');
     Route::get('/services', 'services')->name('services');
     Route::get('/project', 'project')->name('project');
@@ -26,3 +27,4 @@ Route::controller(BlogController::class)->group(function () {
     Route::get('/blog/{category}', 'categoryByBlog')->name('category.blog');
 });
 Route::post('/comment', [Comment::class])->name('comment');
+Route::get('/contact', ContactForm::class)->name('contact');

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/vendor/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/vendor/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
-    <link href="{{ asset('backend/assets/css/notyf.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/notyf.min.css') }}" type="text/css" />
     @livewireStyles
     <style>
         #nprogress .bar {
