@@ -9,8 +9,5 @@ class technology extends Model
 {
     protected $guarded = ['id'];
 
-    function project()
-    {
-        return $this->hasMany(Project::class);
-    }
+
 }

@@ -69,6 +69,24 @@
             </ul>
         </div>
     </li>
+    <!--//*Project Menu -->
+    <li>
+        <a href="#project" data-bs-toggle="collapse">
+            <i data-feather="book-open"></i>
+            <span>Project</span>
+            <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="project">
+            <ul class="nav-second-level">
+                <li>
+                    <a wire:navigate class='tp-link' href='{{ route('project.index') }}'>Add Project</a>
+                </li>
+                <li>
+                    <a wire:navigate class='tp-link' href='{{ route('project.allProject') }}'>All Projects</a>
+                </li>
+            </ul>
+        </div>
+    </li>
 
     <!-- Category -->
     <li>

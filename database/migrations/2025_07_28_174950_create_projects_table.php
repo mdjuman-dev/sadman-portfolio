@@ -14,11 +14,15 @@ return new class extends Migration {
             $table->id();
             $table->string('image');
             $table->mediumText('title');
+            $table->string('slug')->unique();
             $table->longText('content');
-            $table->string('technology')->nullable();
+            $table->json('technology')->nullable();
             $table->string('author')->nullable();
-            $table->date('date')->nullable();
             $table->string('live_link')->nullable();
+            $table->string('meta_title')->nullable();
+            $table->string('meta_keyword')->nullable();
+            $table->longText('meta_description')->nullable();
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

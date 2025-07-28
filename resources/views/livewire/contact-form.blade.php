@@ -5,23 +5,21 @@
             <div class="contact-form-wrapper row">
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input class="input-field" type="text" placeholder="Your Name" wire:model.defer="name" required>
+                        <input class="input-field" type="text" placeholder="Your Name" wire:model.defer="name">
                         @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input class="input-field" type="number" placeholder="Phone Number" wire:model.defer="number"
-                            required>
+                        <input class="input-field" type="number" placeholder="Phone Number" wire:model.defer="number">
                         @error('number') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input class="input-field" type="email" placeholder="Your Email" wire:model.defer="email"
-                            required>
+                        <input class="input-field" type="email" placeholder="Your Email" wire:model.defer="email">
                         @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 </div>
@@ -35,8 +33,7 @@
 
                 <div class="col-lg-12">
                     <div class="form-group">
-                        <textarea class="input-field" placeholder="Your Message" wire:model.defer="message"
-                            required></textarea>
+                        <textarea class="input-field" placeholder="Your Message" wire:model.defer="message"></textarea>
                         @error('message') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 </div>

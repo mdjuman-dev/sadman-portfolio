@@ -1,90 +1,80 @@
 @extends('layouts.backend')
 @section('title', 'All Blogs |')
 @section('backend')
-    <div class="card">
-        <div class="card-header">
-            <h5 class="card-title"></h5>
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">All Blog Posts</h5>
+            <a href="{{ route('blog.index') }}" class="btn btn-sm btn-primary">
+                <i class="mdi mdi-plus"></i> New Blog
+            </a>
         </div>
-        <div class="card-body table-responsive table-card">
-            <table class="table  table-striped table-hover text-center align-middle shadow-sm">
-                <thead class="text-muted table-light">
+        <div class="card-body table-responsive">
+            <table class="table table-hover align-middle text-center table-bordered">
+                <thead class="table-light">
                     <tr>
-                        <th scope="col">Sl</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Content</th>
-                        <th scope="col">Likes</th>
-                        <th scope="col">Dis Likes</th>
-                        <th scope="col">Views</th>
-                        <th scope="col">Comments</th>
-                        <th scope="col">Status</th>
-                        <th scope="col" width="150px">Action</th>
+                        <th>Sl</th>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Content</th>
+                        <th>Likes</th>
+                        <th>Dislikes</th>
+                        <th>Views</th>
+                        <th>Comments</th>
+                        <th>Status</th>
+                        <th width="150px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($blogs as $key => $blog)
                         <tr>
-                            <td class="align-middle">{{ ++$key }}</td>
+                            <td>{{ ++$key }}</td>
 
-                            <td class="align-middle text-center">
-                                <img src="{{ asset('storage/' . $blog->image) }}" alt="Blog Image" class="img-thumbnail rounded"
-                                    width="100" height="80" style="object-fit: cover;">
+                            <td>
+                                <img src="{{ asset('storage/' . $blog->image) }}" alt="Blog Image" class="rounded"
+                                    style="width: 80px; height: 60px; object-fit: cover;">
                             </td>
 
-                            <td class="align-middle">{{ Str::limit($blog->title, 25) }}</td>
+                            <td>{{ Str::limit($blog->title, 25) }}</td>
 
-                            <td class="align-middle">
-                                <span class="badge bg-secondary">{{ $blog->category->name }}</span>
+                            <td>
+                                <span class="badge bg-info">{{ $blog->category->name }}</span>
                             </td>
 
-                            <td class="align-middle">
-                                {{ Str::limit(strip_tags($blog->content), 30) }}
-                            </td>
+                            <td>{{ Str::limit(strip_tags($blog->content), 30) }}</td>
 
-                            <td class="align-middle">
-                                <span class="badge bg-danger">{{ $blog->likes->count() }}</span>
-                            </td>
-                            <td class="align-middle">
-                                <span class="badge bg-warning text-dark">{{ $blog->dislikes->count() }}</span>
-                            </td>
+                            <td><span class="badge bg-success">{{ $blog->likes->count() }}</span></td>
+                            <td><span class="badge bg-danger">{{ $blog->dislikes->count() }}</span></td>
+                            <td><span class="badge bg-warning text-dark">{{ $blog->views->count() }}</span></td>
+                            <td><span class="badge bg-secondary">{{ $blog->comments->count() }}</span></td>
 
-                            <td class="align-middle">
-                                <span class="badge bg-info text-dark">{{ $blog->views->count() }}</span>
-                            </td>
+                            <td>{!! general_status($blog->status) !!}</td>
 
-                            <td class="align-middle">
-                                <span class="badge bg-success">{{ $blog->comments->count() }}</span>
-                            </td>
-
-                            <td class="align-middle">{!! general_status($blog->status) !!}</td>
-
-                            <td class="align-middle">
-                                <a wire:navigate class="btn btn-sm btn-outline-info me-1"
+                            <td>
+                                <a wire:navigate class="btn btn-sm btn-outline-secondary"
                                     href="{{ route('blog.viewBlogPost', $blog->slug) }}" title="View">
-                                    <i class="mdi mdi-eye"></i>
+                                    <i class="mdi mdi-eye-outline"></i>
                                 </a>
-                                <a wire:navigate class="btn btn-sm btn-outline-primary me-1"
+                                <a wire:navigate class="btn btn-sm btn-outline-primary"
                                     href="{{ route('blog.index', $blog->id) }}" title="Edit">
-                                    <i class="mdi mdi-pencil"></i>
+                                    <i class="mdi mdi-pencil-outline"></i>
                                 </a>
-                                <a onclick="return confirm('Are you sure you want to delete this blog post?');"
+                                <a onclick="return confirm('Are you sure to delete this post?')"
                                     class="btn btn-sm btn-outline-danger" href="{{ route('blog.delete', $blog->id) }}"
                                     title="Delete">
-                                    <i class="mdi mdi-delete"></i>
+                                    <i class="mdi mdi-delete-outline"></i>
                                 </a>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="10" class="text-center text-muted py-4">
+                            <td colspan="11" class="text-muted text-center py-4">
                                 <strong>No Blog Posts Found!</strong>
                             </td>
                         </tr>
                     @endforelse
                 </tbody>
             </table>
-
         </div>
     </div>
 @endsection

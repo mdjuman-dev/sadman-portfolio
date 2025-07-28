@@ -14,7 +14,7 @@ class ContactForm extends Component
     {
         $this->validate([
             'name' => 'required|min:3',
-            'number' => 'required|numeric',
+            'number' => 'nullable|numeric|digits:11',
             'email' => 'required|email',
             'subject' => 'nullable|string',
             'message' => 'required|min:5',
