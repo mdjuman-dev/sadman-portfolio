@@ -50,18 +50,18 @@
                         </li>
                         <li class="d-none d-lg-block">
                             @php
-                            $hour = now()->hour;
-                            if ($hour >= 5 && $hour < 12) {
-                                $greeting='Good Morning' ;
-                                } elseif ($hour>= 12 && $hour < 17) {
-                                    $greeting='Good Afternoon' ;
-                                    } elseif ($hour>= 17 && $hour < 21) {
-                                        $greeting='Good Evening' ;
-                                        } else {
-                                        $greeting='Good Night' ;
-                                        }
-                                        @endphp
-                                        <h5 class="mb-0">{{ $greeting }}, {{ Auth::user()->name }} Sir</h5>
+                                $hour = now()->hour;
+                                if ($hour >= 5 && $hour < 12) {
+                                    $greeting = 'Good Morning';
+                                } elseif ($hour >= 12 && $hour < 17) {
+                                    $greeting = 'Good Afternoon';
+                                } elseif ($hour >= 17 && $hour < 21) {
+                                    $greeting = 'Good Evening';
+                                } else {
+                                    $greeting = 'Good Night';
+                                }
+                            @endphp
+                            <h5 class="mb-0">{{ $greeting }}, {{ Auth::user()->name }} Sir</h5>
                         </li>
                     </ul>
 
@@ -127,7 +127,7 @@
                 <div id="sidebar-menu">
 
                     <div class="logo-box">
-                        <a class='logo logo-light' href='index.html'>
+                        <a class='logo logo-light' target="_blank" href='{{route('home')}}'>
                             <span class="logo-sm">
                                 <img src="{{ asset('backend/assets/images/logo-sm.png')}}" alt="" height="22">
                             </span>
@@ -135,7 +135,7 @@
                                 <img src="{{ asset('backend/assets/images/logo-light.png')}}" alt="" height="24">
                             </span>
                         </a>
-                        <a class='logo logo-dark' href='index.html'>
+                        <a class='logo logo-dark' target="_blank" href='{{route('home')}}'>
                             <span class="logo-sm">
                                 <img src="{{ asset('backend/assets/images/logo-sm.png')}}" alt="" height="22">
                             </span>
@@ -203,46 +203,46 @@
                 y: 'top',
             },
             types: [{
-                    type: 'success',
-                    background: 'green',
-                    icon: {
-                        className: 'mdi mdi-check-circle-outline',
-                        tagName: 'span',
-                        color: 'white'
-                    }
-                },
-                {
-                    type: 'error',
-                    background: '#d32f2f',
-                    icon: {
-                        className: 'mdi mdi-alert-circle-outline',
-                        tagName: 'span',
-                        color: 'white'
-                    }
+                type: 'success',
+                background: 'green',
+                icon: {
+                    className: 'mdi mdi-check-circle-outline',
+                    tagName: 'span',
+                    color: 'white'
                 }
+            },
+            {
+                type: 'error',
+                background: '#d32f2f',
+                icon: {
+                    className: 'mdi mdi-alert-circle-outline',
+                    tagName: 'span',
+                    color: 'white'
+                }
+            }
             ]
         });
 
         @if(session('success'))
-        notyf.success({
-            message: "{{ session('success') }}",
-            icon: {
-                className: 'mdi mdi-check-circle-outline',
-                tagName: 'span',
-                color: 'white'
-            }
-        });
+            notyf.success({
+                message: "{{ session('success') }}",
+                icon: {
+                    className: 'mdi mdi-check-circle-outline',
+                    tagName: 'span',
+                    color: 'white'
+                }
+            });
         @endif
 
         @if(session('error'))
-        notyf.error({
-            message: "{{ session('error') }}",
-            icon: {
-                className: 'mdi mdi-alert-circle-outline',
-                tagName: 'span',
-                color: 'white'
-            }
-        });
+            notyf.error({
+                message: "{{ session('error') }}",
+                icon: {
+                    className: 'mdi mdi-alert-circle-outline',
+                    tagName: 'span',
+                    color: 'white'
+                }
+            });
         @endif
     </script>
     @livewireScripts

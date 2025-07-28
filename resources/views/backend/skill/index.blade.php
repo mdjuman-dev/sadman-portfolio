@@ -1,5 +1,5 @@
 @extends('layouts.backend')
-@section('title', 'Skills |')
+@section('title', 'All Skills |')
 @section('backend')
 <div class="container-fluid mt-2">
     <div class="row">

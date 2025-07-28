@@ -30,9 +30,8 @@ class ContactForm extends Component
 
         // মেইল পাঠানো
         Mail::to('mdjumann57955@gmail.com')->send(new ContactNotification($contact));
-
-        $this->dispatch('success');
         $this->reset();
+        $this->dispatch('success');
     }
 
     public function render()

@@ -77,4 +77,12 @@
             <span>Category</span>
         </a>
     </li>
+
+    <!-- Contect -->
+    <li>
+        <a wire:navigate href="{{ route('contect.index') }}">
+            <i data-feather="user"></i>
+            <span>Client Message</span>
+        </a>
+    </li>
 </ul>

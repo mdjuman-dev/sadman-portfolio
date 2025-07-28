@@ -7,10 +7,11 @@ use App\Models\Skill;
 use App\Models\Education;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 
 class MainHomeController extends Controller
 {
-    
+
     function about()
     {
         $skills = Skill::select('id', 'name', 'percentage', 'category', 'duration', 'delay', 'status')->where('status', true)->get();
@@ -23,7 +24,7 @@ class MainHomeController extends Controller
 
     function contact()
     {
-        return view('frontend.contact');
+        return view('frontend.contact', compact('contects'));
     }
     function project()
     {
