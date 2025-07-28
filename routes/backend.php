@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\Category;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ContectController;
 use App\Http\Controllers\Backend\EducationController;
+use App\Http\Controllers\Backend\TechnologyController;
 use Illuminate\Mail\Mailables\Content;
 
 Route::middleware('auth')->prefix('admin/')->group(function () {
@@ -71,6 +72,12 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
     Route::controller(ContectController::class)->prefix('contect/')->name('contect.')->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/view/{id}', 'view')->name('view');
+        Route::get('/delete/{id}', 'delete')->name('delete');
+    });
+    //*Category Routes
+    Route::controller(TechnologyController::class)->prefix('technology/')->name('technology.')->group(function () {
+        Route::get('/{id?}', 'index')->name('index');
+        Route::post('/store-or-pdate/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
         Route::get('/delete/{id}', 'delete')->name('delete');
     });
 });

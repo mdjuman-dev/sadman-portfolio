@@ -28,15 +28,15 @@
                                 </td>
                                 <td>{{$contect->email}}</td>
                                 <td>{{$contect->number}}</td>
-                                <td>{{$contect->subject}}</td>
-                                <td>{{$contect->message}}</td>
+                                <td>{{Str::limit($contect->subject, 20)}}</td>
+                                <td>{{Str::limit($contect->message, 30)}}</td>
 
                                 <td>
                                     <a wire:navigate class="btn btn-sm btn-outline-info me-1"
                                         href="{{ route('contect.view', $contect->id) }}" title="View">
                                         <i class="mdi mdi-eye"></i>
                                     </a>
-                                    <a onclick="return confirm('Are you sure you want to delete this blog post?');"
+                                    <a onclick="return confirm('Are you sure you want to delete this Client Message?');"
                                         class="btn btn-sm btn-outline-danger" href="{{ route('contect.delete', $contect->id) }}"
                                         title="Delete">
                                         <i class="mdi mdi-delete"></i>
@@ -50,7 +50,7 @@
                         @endforelse
                     </tbody><!-- end tbody -->
                 </table><!-- end table -->
-                <div class="text-end">
+                <div class="text-end mt-4">
                     <div class="text-end d-block">{{$contects->links() }}</div>
                 </div>
             </div>

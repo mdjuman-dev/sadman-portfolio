@@ -26,7 +26,7 @@ class BlogController extends Controller
 
     function viewBlogPost($slug)
     {
-        $blogs = Blog::latest()->with('comments', 'likes', 'views',)->where('slug', $slug)->firstOrFail();
+        $blogs = Blog::latest()->with('comments', 'likes', 'views', )->where('slug', $slug)->firstOrFail();
         return view('backend.blog.view', compact('blogs'));
     }
 
@@ -52,6 +52,9 @@ class BlogController extends Controller
         $blog->slug = Str::slug($request->title);
         $blog->category_id = $request->category_id;
         $blog->content = $request->content;
+        if ($id) {
+            $blog->status = $request->has('status');
+        }
         $blog->meta_title = $request->meta_title;
         $blog->meta_keyword = $request->meta_keyword;
         $blog->meta_description = $request->meta_description;

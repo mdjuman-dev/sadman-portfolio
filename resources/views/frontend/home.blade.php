@@ -493,7 +493,9 @@
                                 acted </p>
                         </div>
                     </div>
-                    <livewire:contact-form />
+                    <div class="col-lg-7">
+                        <livewire:contact-form />
+                    </div>
                 </div>
             </div>
         </div>

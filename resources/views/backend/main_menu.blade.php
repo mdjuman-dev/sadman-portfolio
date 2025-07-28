@@ -85,4 +85,11 @@
             <span>Client Message</span>
         </a>
     </li>
+    <!-- Technology -->
+    <li>
+        <a wire:navigate href="{{ route('technology.index') }}">
+            <i data-feather="user"></i>
+            <span>Technology</span>
+        </a>
+    </li>
 </ul>
