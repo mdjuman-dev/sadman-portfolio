@@ -78,4 +78,15 @@ class ProjectController extends Controller
         $msg = $id ? "Project Update Successfully" : "Project Added Successfully";
         return redirect()->route('project.allProject')->with('success', $msg);
     }
+
+    function delete($id)
+    {
+        $project = Project::findOrFail($id);
+        // Delete main image
+        if (Storage::disk('public')->exists($project->image)) {
+            Storage::disk('public')->delete($project->image);
+        }
+        $project->delete();
+        return redirect()->route('project.allProject')->with('success', 'Project deleted successfully.');
+    }
 }

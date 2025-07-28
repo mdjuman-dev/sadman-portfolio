@@ -55,7 +55,7 @@
                                     <i class="mdi mdi-pencil"></i>
                                 </a>
                                 <a href="{{ route('project.delete', $items->id) }}" class="btn btn-sm btn-outline-danger"
-                                    onclick="return confirm('Are you sure to delete this item?')" title="Delete">
+                                    onclick="return confirm('Are you sure to delete this Project?')" title="Delete">
                                     <i class="mdi mdi-delete"></i>
                                 </a>
                             </td>
