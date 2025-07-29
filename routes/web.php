@@ -16,7 +16,7 @@ Route::controller(MainHomeController::class)->group(function () {
     Route::get('/project', 'project')->name('project');
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/service-details', 'serviceDatails')->name('service-datails');
-    Route::get('/project-details', 'projectDatails')->name('project-datails');
+    Route::get('/project-details/{slig}', 'projectDatails')->name('project-datails');
 });
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'home')->name('home');

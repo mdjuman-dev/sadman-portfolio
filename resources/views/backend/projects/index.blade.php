@@ -10,7 +10,7 @@
                         <div class="col-lg-8">
                             <div class="card shadow">
                                 <div class="card-header">
-                                    <h5 class="card-title text-center">Project Conten</h5>
+                                    <h5 class="card-title text-center">Project Contenet</h5>
                                 </div>
                                 <div class="card-body">
                                     <!-- Title -->
@@ -41,7 +41,7 @@
                                                 <label for="project_link">Project Link</label>
                                                 <input type="text" name="project_link" class="form-control"
                                                     placeholder="Project project live link"
-                                                    value="{{ old('project_link', $editProject?->project_link) }}">
+                                                    value="{{ old('project_link', $editProject?->live_link) }}">
                                                 @error('project_link')
                                                     <small class="text-danger"> {{ $message }}</small>
                                                 @enderror

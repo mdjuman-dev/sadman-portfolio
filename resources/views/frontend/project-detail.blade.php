@@ -25,71 +25,34 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="project-details-thumnail-wrap">
-                        <img src="{{ asset('frontend/assets/images/projects-details/thumnail-img.png')}}" alt="thumbnail">
+                        <img src="{{ asset('storage/' . $project->image)}}" alt="thumbnail">
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="project-details-content-wrap">
-                        <h2 class="title">Supporting Health Initiatives</h2>
-                        <p class="docs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took a galltype and scrambled it to make a type specimen book. It has survived not
-                            only five centuries tinto electronic typesetting remaining essentially unchanged</p>
-                        <p class="docs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            print</p>
+                        <h2 class="title">{{$project->title}}</h2>
+                        <p class="docs">{!! $project->content !!}</p>
 
                         <div class="check-box-wrap">
                             <ul>
                                 <li>
-                                    <h4 class="check-box-item"><span><i
-                                                class="fa-solid fa-circle-check"></i></span>Ui/visual Design</h4>
+                                    <h4 class="check-box-item">
+                                        Project Technologies
+                                    </h4>
                                 </li>
-                                <li>
-                                    <h4 class="check-box-item"><span><i class="fa-solid fa-circle-check"></i></span>App
-                                        Development</h4>
-                                </li>
-                                <li>
-                                    <h4 class="check-box-item"><span><i class="fa-solid fa-circle-check"></i></span>Software
-                                        Developer</h4>
-                                </li>
+                                @foreach ($project->technology as $items)
+
+                                    <li>
+                                        <h4 class="check-box-item">
+                                            <span>
+                                                <i class="fa-solid fa-circle-check"></i>
+                                            </span>{{$items}}
+                                        </h4>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
-                        <h2 class="mini-title">Elevate Your Business with IT Solutions</h2>
-                        <p class="docs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took a galltype and scrambled it to make a type specimen book. It has survived not
-                            only five centuries tinto electronic typesetting remaining essentially unchanged</p>
-                        <div class="project-details-swiper-wrapper">
-                            <div class="swiper project-details-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="project-details-img">
-                                            <img src="{{ asset('frontend/assets/images/projects-details/project-detials-swiper-img-1.jpg')}}"
-                                                alt="swiper-img">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="project-details-img">
-                                            <img src="{{ asset('frontend/assets/images/projects-details/project-detials-swiper-img-2.png')}}"
-                                                alt="swiper-img">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="project-details-img">
-                                            <img src="{{ asset('frontend/assets/images/projects-details/project-detials-swiper-img-1.jpg')}}"
-                                                alt="swiper-img">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-details-swiper-btn">
-                                <div class="project-swiper-button-prev"><span><i
-                                            class="fa-solid fa-arrow-left"></i></span>Previous</div>
-                                <div class="project-swiper-button-next">Next <span><i
-                                            class="fa-solid fa-arrow-right"></i></span></div>
-                            </div>
-                        </div>
+
                     </div>
                     <!-- Tpm Get In touch start -->
                     <section class="get-in-touch-area pt--80">
@@ -111,10 +74,11 @@
                             <h3 class="title">Project Details</h3>
                         </div>
                         <div class="body">
-                            <div class="project-details-info">Name: <span>Hosting vps</span></div>
-                            <div class="project-details-info">Author: <span>Nadimul Islam</span></div>
-                            <div class="project-details-info">Date: <span>23 January,2024</span></div>
-                            <div class="project-details-info">Tags: <span>Host Web Design</span></div>
+                            <div class="project-details-info">Author: <span>{{$project->author}}</span></div>
+                            <div class="project-details-info">Date: <span>{{$project->project_date}}</span></div>
+                            <div class="project-details-info">Project Link: <a target="_blank"
+                                    href="{{$project->live_link}}"><span class="link">{{$project->live_link}}</a></span>
+                            </div>
                         </div>
                     </div>
                 </div>

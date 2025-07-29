@@ -8,6 +8,7 @@ use App\Models\Education;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Models\Project;
 
 class MainHomeController extends Controller
 {
@@ -28,7 +29,8 @@ class MainHomeController extends Controller
     }
     function project()
     {
-        return view('frontend.project');
+        $projects = Project::where('status', true)->latest()->paginate(6);
+        return view('frontend.project', compact('projects'));
     }
     function blogDatails()
     {
@@ -38,8 +40,9 @@ class MainHomeController extends Controller
     {
         return view('frontend.service-detail');
     }
-    function projectDatails()
+    function projectDatails($slug)
     {
-        return view('frontend.project-detail');
+        $project = Project::where('status', true)->orWhere('slug', $slug)->firstOrFail();
+        return view('frontend.project-detail', compact('project'));
     }
 }
