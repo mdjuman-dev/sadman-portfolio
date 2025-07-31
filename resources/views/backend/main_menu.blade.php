@@ -102,9 +102,9 @@
         </a>
         <div class="collapse" id="services" data-bs-parent="#side-menu">
             <ul class="nav flex-column ms-3">
-                <li><a class="nav-link" wire:navigate href="{{ route('service.category.index') }}">Add Service Category</a></li>
+                <li><a class="nav-link" wire:navigate href="{{ route('service.category.index') }}"> Category</a></li>
                 <li><a class="nav-link" wire:navigate href="{{ route('service.index') }}">Add Service</a></li>
-                <li><a class="nav-link" wire:navigate href="{{ route('project.allProject') }}">All Services</a></li>
+                <li><a class="nav-link" wire:navigate href="{{ route('service.allServices') }}">All Services</a></li>
             </ul>
         </div>
     </li>

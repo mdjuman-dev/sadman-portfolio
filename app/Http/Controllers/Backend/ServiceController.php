@@ -2,71 +2,67 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Servics;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ServiceCategory;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
+use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
-    public function index()
+    public function index($id = null)
     {
-        $categories = ServiceCategory::get();
-        return view('backend.service.index', compact('categories'));
+        $editService = null;
+        if ($id) {
+            $editService = Service::findOrFail($id);
+        }
+        $services = Service::latest()->get();
+        $categories = ServiceCategory::latest()->get();
+        return view('backend.service.index', compact('categories', 'editService', 'services'));
     }
-
+    function allServices()
+    {
+        $services = Service::with('serviceCategory')->latest()->get();
+        return view('backend.service.all', compact('services'));
+    }
+    function view($slug)
+    {
+        $viewService = Service::where('slug', $slug)->with('serviceCategory')->first();
+        return view('backend.service.view', compact('viewService'));
+    }
     public function storeOrUpdate(Request $request, $id = null)
     {
+
         $request->validate([
-            'name' => 'required',
+            'title' => 'required',
             'category_id' => 'required',
             'description' => 'required',
+            'image' => $id ? 'nullable|image' : 'required|image',
         ]);
 
-        $baseSlug = Str::slug($request->name);
-        $slug = $baseSlug;
-        $i = 1;
+        $serviceSlug = Str::slug(Str::words($request->title, 10, ''));
 
-        while (
-            Servics::where('slug', $slug)
-            ->when($id, fn($q) => $q->where('id', '!=', $id)) 
-            ->exists()
-        ) {
-            $slug = $baseSlug . '-' . $i++;
+        $service = Service::findOrNew($id);
+        $service->title = $request->title;
+        $service->slug = $serviceSlug;
+        $service->service_category_id = $request->category_id;
+        $service->content = $request->description;
+        if ($id) {
+            $service->status = $request->has('status');
         }
-        //! data not saving
-        //! check names
-        $data = [
-            'title' => $request->title,
-            'category_id' => $request->category_id,
-            'content' => $request->description,
-            'status' => $request->has('status'),
-            'slug' => $slug,
-        ];
-        dd($data);
 
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = uniqid('service_') . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/services'), $imageName);
-            $data['image'] = 'uploads/services/' . $imageName;
-        }
-
-        if ($id) {
-            $service = Servics::findOrFail($id);
-
-            // Delete old image if new uploaded
-            if ($request->hasFile('image') && $service->image && file_exists(public_path($service->image))) {
-                unlink(public_path($service->image));
+            if ($service->image) {
+                Storage::disk('public')->delete($service->image);
             }
-
-            $service->update($data);
-        } else {
-            $service = Servics::create($data);
+            $image = $request->file('image');
+            $imageName = Str::slug($request->title) . '.' . $image->getClientOriginalExtension();
+            $imagePath = $image->storeAs('service', $imageName, 'public');
+            $service->image = $imagePath;
         }
-
-        return redirect()->route('service.index')
-            ->with('success', $id ? 'Service updated successfully.' : 'Service created successfully.');
+        $service->save();
+        $msg = $id ? 'Service updated successfully.' : 'Service created successfully.';
+        return redirect()->route('service.allServices')->with('success', $msg);
     }
 }

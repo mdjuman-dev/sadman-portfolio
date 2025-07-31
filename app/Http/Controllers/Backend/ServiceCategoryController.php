@@ -9,7 +9,8 @@ use App\Http\Controllers\Controller;
 
 class ServiceCategoryController extends Controller
 {
-    function index($id = null){
+    function index($id = null)
+    {
         $categories = ServiceCategory::get();
         $editCategory = null;
         if ($id) {
@@ -20,48 +21,23 @@ class ServiceCategoryController extends Controller
 
     public function storeOrUpdate(Request $request, $id = null)
     {
+
         $request->validate([
-            'name' => 'required',
+            'name' => 'unique:service_categories,slug,' . $id,
         ]);
-    
-        $slug = $this->uniqueSlug($request->name, $id);
-    
-        $data = [
-            'name' => $request->name,
-            'slug' => $slug,
-            'status' => $request->has('status'),
-        ];
-    
+        $serviceCategory = ServiceCategory::findOrNew($id);
+        $serviceCategory->name = $request->name;
+        $serviceCategory->slug = $request->slug;
         if ($id) {
-            $serviceCategory = ServiceCategory::findOrFail($id);
-            $serviceCategory->update($data);
-        } else {
-            $serviceCategory = ServiceCategory::create(attributes: $data);
+            $serviceCategory->status = $request->has('status');
         }
-
-
-    
-        return redirect()->route('service.category.index')
-            ->with('success', $id ? 'Service Category updated successfully.' : 'Service Category created successfully.');
+        $serviceCategory->save();
+        $msg = $id ? 'Service Category updated successfully.' : 'Service Category created successfully.';
+        return redirect()->route('service.category.index')->with('success', $msg);
     }
-    
 
-    function uniqueSlug($name, $id = null)
+    function delete($id)
     {
-        $slug = Str::slug($name);
-        $originalSlug = $slug;
-        $count = 1;
-    
-        while (ServiceCategory::where('slug', $slug)
-            ->when($id, fn($q) => $q->where('id', '!=', $id))
-            ->exists()) {
-            $slug = $originalSlug . '-' . $count++;
-        }
-    
-        return $slug;
-    }
-
-    function delete($id){
         $serviceCategory = ServiceCategory::findOrFail($id);
         $serviceCategory->delete();
         return redirect()->route('service.category.index')->with('success', 'Service Category deleted successfully.');

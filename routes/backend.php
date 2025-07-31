@@ -108,14 +108,14 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
     Route::controller(ServiceCategoryController::class)->prefix('service-category/')->name('service.category.')->group(function () {
         Route::get('/{id?}', 'index')->name('index');
         Route::post('/store-or-update/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
-        Route::get('/edit/{id}', 'index')->name('edit');
         Route::get('/delete/{id}', 'delete')->name('delete');
     });
     //*Services Routes
     Route::controller(ServiceController::class)->prefix('service/')->name('service.')->group(function () {
+        Route::get('/all-services', 'allServices')->name('allServices');
         Route::get('/{id?}', 'index')->name('index');
+        Route::get('view/{id}', 'view')->name('view');
         Route::post('/store-or-update/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
-        Route::get('/edit/{id}', 'index')->name('edit');
         Route::get('/delete/{id}', 'delete')->name('delete');
     });
 });
