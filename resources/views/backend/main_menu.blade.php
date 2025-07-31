@@ -94,4 +94,18 @@
             <i data-feather="cpu"></i> <span>Technology</span>
         </a>
     </li>
+    <!-- Service -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#services" data-bs-toggle="collapse" aria-expanded="false"
+            aria-controls="services">
+            <i data-feather="settings"></i> <span>Services</span> <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="services" data-bs-parent="#side-menu">
+            <ul class="nav flex-column ms-3">
+                <li><a class="nav-link" wire:navigate href="{{ route('service.category.index') }}">Add Service Category</a></li>
+                <li><a class="nav-link" wire:navigate href="{{ route('service.index') }}">Add Service</a></li>
+                <li><a class="nav-link" wire:navigate href="{{ route('project.allProject') }}">All Services</a></li>
+            </ul>
+        </div>
+    </li>
 </ul>

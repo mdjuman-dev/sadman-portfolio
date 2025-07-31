@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Servics extends Model
 {
     protected $guarded = ['id'];
+
+    function serviceCategory()
+    {
+        return $this->belongsTo(ServiceCategory::class);
+    }
 }

@@ -10,11 +10,13 @@ use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\backend\BannerController;
 use App\Http\Controllers\Backend\ContectController;
 use App\Http\Controllers\Backend\ProjectController;
+use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\SitemapController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\TechnologyController;
+use App\Http\Controllers\Backend\ServiceCategoryController;
 
 Route::middleware('auth')->prefix('admin/')->group(function () {
 
@@ -101,6 +103,21 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
         Route::post('/tracking', 'updateTracking')->name('tracking.update');
     });
     Route::get('sitemap/download', [SitemapController::class, 'download'])->name('sitemap.download');
+
+    //*Services Categoty Routes
+    Route::controller(ServiceCategoryController::class)->prefix('service-category/')->name('service.category.')->group(function () {
+        Route::get('/{id?}', 'index')->name('index');
+        Route::post('/store-or-update/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
+        Route::get('/edit/{id}', 'index')->name('edit');
+        Route::get('/delete/{id}', 'delete')->name('delete');
+    });
+    //*Services Routes
+    Route::controller(ServiceController::class)->prefix('service/')->name('service.')->group(function () {
+        Route::get('/{id?}', 'index')->name('index');
+        Route::post('/store-or-update/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
+        Route::get('/edit/{id}', 'index')->name('edit');
+        Route::get('/delete/{id}', 'delete')->name('delete');
+    });
 });
 
 require __DIR__ . '/auth.php';

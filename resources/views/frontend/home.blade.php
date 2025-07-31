@@ -32,11 +32,11 @@
                             <div class="find-me-on mt--40 tmp-scroll-trigger tmp-fade-in animation-order-2">
                                 <h2 class="find-me-on-title">Find me on</h2>
                                 <div class="social-link banner">
-                                    <a href="{{ $globalSettings->instagram }}""><i class=" fa-brands fa-instagram"></i></a>
-                                    <a href="{{ $globalSettings->linkedin  }}""><i class=" fa-brands
+                                    <a target="_blank" href="{{ $globalSettings->instagram }}"><i class=" fa-brands fa-instagram"></i></a>
+                                    <a target="_blank" href="{{ $globalSettings->linkedin  }}"><i class=" fa-brands
                                         fa-linkedin-in"></i></a>
-                                    <a href="{{ $globalSettings->twitter   }}""><i class=" fa-brands fa-twitter"></i></a>
-                                    <a href="{{ $globalSettings->facebook  }}""><i class=" fa-brands fa-facebook-f"></i></a>
+                                    <a target="_blank" href="{{ $globalSettings->twitter   }}"><i class=" fa-brands fa-twitter"></i></a>
+                                    <a target="_blank" href="{{ $globalSettings->facebook  }}"><i class=" fa-brands fa-facebook-f"></i></a>
                                 </div>
                             </div>
                         </div>
