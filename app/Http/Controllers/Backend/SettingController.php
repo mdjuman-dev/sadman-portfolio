@@ -30,6 +30,10 @@ class SettingController extends Controller
         $settings->name = $request->name;
         $settings->email = $request->email;
         $settings->phone = $request->phone;
+        $settings->facebook = $request->facebook;
+        $settings->linkedin = $request->linkedin;
+        $settings->instagram = $request->instagram;
+        $settings->twitter = $request->twitter;
         $settings->address = $request->address;
 
         // Upload logo

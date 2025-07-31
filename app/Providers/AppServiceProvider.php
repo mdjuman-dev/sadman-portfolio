@@ -6,6 +6,7 @@ use App\Models\Setting;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,8 +28,11 @@ class AppServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->group(base_path('routes/backend.php'));
 
-        $globalSettings = Setting::first();
-        View::share('globalSettings', $globalSettings);
+
+        if (Schema::hasTable('settings')) {
+            $globalSettings = Setting::first();
+            View::share('globalSettings', $globalSettings);
+        }
 
     }
 }

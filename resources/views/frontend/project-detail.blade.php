@@ -40,16 +40,18 @@
                                         Project Technologies
                                     </h4>
                                 </li>
-                                @foreach ($project->technology as $items)
-
-                                    <li>
-                                        <h4 class="check-box-item">
-                                            <span>
-                                                <i class="fa-solid fa-circle-check"></i>
-                                            </span>{{$items}}
-                                        </h4>
-                                    </li>
-                                @endforeach
+                                @if ($project->technology)
+                                    @foreach ($project->technology as $items)
+                                        <li>
+                                            <h4 class="check-box-item">
+                                                <span>
+                                                    <i class="fa-solid fa-circle-check"></i>
+                                                </span>{{$items}}
+                                            </h4>
+                                        </li>
+                                    @endforeach
+                                @endif
+                                
                             </ul>
                         </div>
 

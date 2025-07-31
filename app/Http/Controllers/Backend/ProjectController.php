@@ -42,21 +42,23 @@ class ProjectController extends Controller
             'author' => 'nullable|string|max:100',
             'project_link' => 'nullable|url|max:255',
             'project_date' => 'nullable|string|max:100',
+            'category' => 'required|string|max:100',
             'technology' => 'nullable|array|min:1',
             'technology.*' => 'string|max:100',
             'meta_title' => 'nullable|string|max:255',
             'meta_keyword' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:500',
         ]);
-
+        $projectSlug = Str::slug(Str::words($request->title, 5, ''));
         $project = Project::findOrNew($id);
         $project->title = $request->title;
-        $project->slug = Str::slug($request->title);
+        $project->slug = $projectSlug . '-' . $project->id;
         $project->content = $request->content;
         $project->author = $request->author;
         $project->live_link = $request->project_link;
         $project->project_date = $request->project_date;
         $project->technology = $request->technology;
+        $project->category = $request->category;
         if ($id) {
             $project->status = $request->has('status');
         }

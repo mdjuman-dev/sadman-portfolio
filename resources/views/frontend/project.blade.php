@@ -43,6 +43,7 @@
                                     <h3 class="portfolio-card-title"><a class="link"
                                             href="{{ route('project-datails', $items->slug) }}">{{$items->title}}</a>
                                     </h3>
+                                    <p class="portfoli-card-para">{{$items->category}}</p>
                                 </div>
                             </div>
                         </div>

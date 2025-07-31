@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="#">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/' . $globalSettings?->favicon)}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ isset($globalSettings->favicon) ? asset('storage/' . $globalSettings?->favicon) : asset('default-favicon.png')}}}}">
 
-    <title> {{ env("APP_NAME") }}</title>
+    <title> {{isset($globalSettings->name) ? $globalSettings->name : env("APP_NAME") }}</title>
     <!-- Bootstrap min css -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/vendor/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/swiper.css') }}">
@@ -41,9 +41,9 @@
                     <div class="header-content">
                         <div class="logo">
                             <a href="{{ route('home') }}" wire:navigate>
-                                <img class="logo-dark" src="{{ asset('storage/' . $globalSettings?->logo)}}"
+                                <img class="logo-dark" src="{{ isset($globalSettings->logo) ? asset('storage/' . $globalSettings?->logo) : asset('default-logo.png')}}"
                                     alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
-                                <img class="logo-white" src="{{ asset('frontend/assets/images/logo/logo-white.png')}}"
+                                <img class="logo-white" src="{{ asset('default-logo.png')}}"
                                     alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                             </a>
                         </div>
@@ -80,10 +80,10 @@
                         <div class="tmp-header-right">
                             <div class="social-share-wrapper d-none d-md-block">
                                 <div class="social-link">
-                                    <a href="index-03.html#"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="index-03.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                    <a href="index-03.html#"><i class="fa-brands fa-twitter"></i></a>
-                                    <a href="index-03.html#"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="{{ $globalSettings->instagram }}"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="{{ $globalSettings->linkedin  }}"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="{{ $globalSettings->twitter   }}"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="{{ $globalSettings->facebook  }}"><i class="fa-brands fa-facebook-f"></i></a>
                                 </div>
                             </div>
                             <div class="actions-area">
@@ -109,10 +109,10 @@
             <div class="inner">
                 <div class="top-area">
                     <a href="{{ route('home') }}" class="logo">
-                        <img class="logo-dark" src="{{ asset('frontend/assets/images/logo/white-logo-reeni.png')}}"
-                            alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
-                        <img class="logo-white" src="{{ asset('frontend/assets/images/logo/logo-white.png')}}"
-                            alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
+                        <img class="logo-dark" src="{{isset($globalSettings->logo) ? asset('storage/' . $globalSettings?->logo) : asset('default-logo.png') }}"
+                            alt="Logo">
+                        <img class="logo-white" src="{{ isset($globalSettings->logo) ? asset('storage/' . $globalSettings?->logo) : asset('default-logo.png')}}"
+                            alt="Logo">
                     </a>
                     <div class="close-icon-area">
                         <button class="tmp-round-action-btn close_side_menu_active">
@@ -136,7 +136,7 @@
                             <i class="fa-solid fa-phone"></i>
                             <div class="information tmp-link-animation">
                                 <span>Call Now</span>
-                                <a href="index-03.html#" class="number">+92 (8800) - 98670</a>
+                                <a href="tel:{{$globalSettings->phone}}" class="number">{{$globalSettings->phone}}</a>
                             </div>
                         </div>
                         <!-- single contact information end -->
@@ -146,7 +146,7 @@
                             <i class="fa-solid fa-envelope"></i>
                             <div class="information tmp-link-animation">
                                 <span>Mail Us</span>
-                                <a href="index-03.html#" class="number">example@info.com</a>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{$globalSettings->email}}" class="number">{{$globalSettings->email}}</a>
                             </div>
                         </div>
                         <!-- single contact information end -->
@@ -156,7 +156,7 @@
                             <i class="fa-solid fa-location-crosshairs"></i>
                             <div class="information tmp-link-animation">
                                 <span>My Address</span>
-                                <span class="number">66 Broklyant, New York 3269</span>
+                                <span class="number">{{$globalSettings->address}}</span>
                             </div>
                         </div>
                         <!-- single contact information end -->
@@ -165,10 +165,10 @@
                     <div class="social-wrapper mt--20">
                         <span class="subtitle">find with me</span>
                         <div class="social-link">
-                            <a href="index-03.html#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="index-03.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="index-03.html#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="index-03.html#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="{{ $globalSettings->instagram }}"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="{{ $globalSettings->linkedin  }}"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="{{ $globalSettings->twitter   }}"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="{{ $globalSettings->facebook  }}"><i class="fa-brands fa-facebook-f"></i></a>
                         </div>
                     </div>
                     <!-- social area end -->
@@ -229,10 +229,10 @@
                 <div class="social-wrapper mt--40">
                     <span class="subtitle">find with me</span>
                     <div class="social-link">
-                        <a href="index-03.html#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="index-03.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="index-03.html#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="index-03.html#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="{{ $globalSettings->instagram }}"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="{{ $globalSettings->linkedin  }}"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="{{ $globalSettings->twitter   }}"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="{{ $globalSettings->facebook  }}"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
                 <!-- social area end -->
@@ -254,7 +254,7 @@
                         <div class="single-footer-wrapper border-right mr--20">
                             <div class="logo">
                                 <a href="{{route('home')}}" wire:navigate>
-                                    <img src="{{ asset('frontend/assets/images/logo/white-logo-reeni-2.png')}}"
+                                    <img src="{{ isset($globalSettings->logo) ? asset('storage/' . $globalSettings?->logo) : asset('default-logo.png')}}"
                                         alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                                 </a>
                             </div>
@@ -289,18 +289,30 @@
                         <div class="single-footer-wrapper contact-wrap">
                             <h5 class="ft-title">Contact </h5>
                             <ul class="ft-link tmp-link-animation">
-                                <li><span class="ft-icon"><i class="fa-solid fa-envelope"></i></span><a
-                                        href="index-03.html#">nafiz125@gmail.com</a></li>
-                                <li><span class="ft-icon"><i class="fa-solid fa-location-dot"></i></span>3891
-                                    Ranchview Dr. Richardson</li>
-                                <li><span class="ft-icon"><i class="fa-solid fa-phone"></i></span><a
-                                        href="index-03.html#">01245789321</a></li>
+                                <li>
+                                    <span class="ft-icon">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </span>
+                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{$globalSettings->email}}">{{$globalSettings->email}}</a>
+                                </li>
+                                <li>
+                                    <span class="ft-icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </span>
+                                {{$globalSettings->address}}
+                                </li>
+                                <li>
+                                    <span class="ft-icon">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </span>
+                                    <a target="_blank" href="tel:{{$globalSettings->number}}">{{$globalSettings->phone}}</a>
+                                </li>
                             </ul>
                             <div class="social-link footer">
-                                <a href="index-03.html#"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="index-03.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                <a href="index-03.html#"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="index-03.html#"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="{{ $globalSettings->instagram }}"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="{{ $globalSettings->linkedin  }}"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="{{ $globalSettings->twitter   }}"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="{{ $globalSettings->facebook  }}"><i class="fa-brands fa-facebook-f"></i></a>
                             </div>
                         </div>
                     </div>

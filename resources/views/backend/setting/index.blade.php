@@ -43,7 +43,7 @@
                             <input type="text" name="name" class="form-control"
                                 value="{{ old('name', $settings->name ?? '') }}">
                         </div>
-                        <div class="row">
+                        <div class="row mt-2">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="">Email</label>
@@ -60,10 +60,50 @@
                             </div>
                         </div>
 
+
+
+
+                        <div class="row mt-2">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="">Facebook Link</label>
+                                    <input type="text" name="facebook" class="form-control"
+                                        value="{{ old('facebook', $settings->facebook ?? '') }}">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="">Instagram Link</label>
+                                    <input type="text" name="instagram" class="form-control"
+                                        value="{{ old('instagram', $settings->instagram ?? '') }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="">Linkedin</label>
+                                    <input type="text" name="linkedin" class="form-control"
+                                        value="{{ old('linkedin', $settings->linkedin ?? '') }}">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="">Twitter Link</label>
+                                    <input type="text" name="twitter" class="form-control"
+                                        value="{{ old('twitter', $settings->twitter ?? '') }}">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                         <div class="form-group mt-2">
                             <label for="">Address</label>
-                            <input type="text" name="address" class="form-control"
-                                value="{{ old('address', $settings->address ?? '') }}">
+                            <textarea type="text" name="address"
+                                class="form-control">{{ old('address', $settings->address ?? '') }}</textarea>
                         </div>
 
                         <div class="row mt-2">

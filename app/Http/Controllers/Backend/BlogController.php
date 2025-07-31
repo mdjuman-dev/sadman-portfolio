@@ -47,9 +47,11 @@ class BlogController extends Controller
             'meta_description' => 'nullable|string',
         ]);
 
+        $blogSlug = Str::slug(Str::words($request->title, 5, ''));
+
         $blog = Blog::findOrNew($id);
         $blog->title = $request->title;
-        $blog->slug = Str::slug($request->title);
+        $blog->slug = $blogSlug . '-' . $blog->id;
         $blog->category_id = $request->category_id;
         $blog->content = $request->content;
         if ($id) {

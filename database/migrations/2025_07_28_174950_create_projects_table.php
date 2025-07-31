@@ -16,8 +16,10 @@ return new class extends Migration {
             $table->mediumText('title');
             $table->string('slug')->unique();
             $table->longText('content');
+            $table->string('category')->nullable();
             $table->json('technology')->nullable();
             $table->string('author')->nullable();
+            $table->string('project_date')->nullable();
             $table->string('live_link')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_keyword')->nullable();

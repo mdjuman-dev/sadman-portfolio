@@ -36,9 +36,13 @@
                             <td>{{ Str::limit($items->title, 30) }}</td>
 
                             <td>
-                                @foreach ($items->technology as $tech)
-                                    <span class="badge bg-secondary mb-1">{{ $tech }}</span>
-                                @endforeach
+                                @if ($items->technology)
+                                    @foreach ($items->technology as $tech)
+                                        <span class="badge bg-secondary mb-1">{{ $tech }}</span>
+                                    @endforeach
+                                @else
+                                    N/N
+                                @endif
                             </td>
 
                             <td>{{ Str::limit(strip_tags($items->content), 40) }}</td>
