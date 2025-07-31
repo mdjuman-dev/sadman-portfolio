@@ -1,18 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Mail\Mailables\Content;
+use App\Http\Controllers\Backend\Category;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\backend\BannerController;
-use App\Http\Controllers\Backend\BlogController;
-use App\Http\Controllers\Backend\Category;
-use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ContectController;
-use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ProjectController;
+use App\Http\Controllers\Backend\SitemapController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\TechnologyController;
-use Illuminate\Mail\Mailables\Content;
 
 Route::middleware('auth')->prefix('admin/')->group(function () {
 
@@ -89,6 +90,7 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
         Route::post('/store-or-pdate/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
         Route::get('/delete/{id}', 'delete')->name('delete');
     });
+    Route::get('sitemap/download', [SitemapController::class, 'download'])->name('sitemap.download');
 });
 
 require __DIR__ . '/auth.php';

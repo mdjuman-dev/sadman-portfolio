@@ -1,12 +1,18 @@
 <?php
 
+use App\Http\Controllers\Backend\SitemapController;
 use App\Livewire\Comment;
 use App\Livewire\ContactForm;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\MainHomeController;
+use App\Models\Project;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+
 
 
 
@@ -28,3 +34,5 @@ Route::controller(BlogController::class)->group(function () {
 });
 Route::post('/comment', [Comment::class])->name('comment');
 Route::get('/contact', ContactForm::class)->name('contact');
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
