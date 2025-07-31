@@ -11,6 +11,7 @@ use App\Http\Controllers\backend\BannerController;
 use App\Http\Controllers\Backend\ContectController;
 use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\SitemapController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\TechnologyController;
@@ -99,6 +100,7 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
         Route::post('/seo', 'updateSeo')->name('seo.update');
         Route::post('/tracking', 'updateTracking')->name('tracking.update');
     });
+    Route::get('sitemap/download', [SitemapController::class, 'download'])->name('sitemap.download');
 });
 
 require __DIR__ . '/auth.php';

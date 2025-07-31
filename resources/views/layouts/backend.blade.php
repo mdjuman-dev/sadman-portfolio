@@ -66,6 +66,12 @@
                     </ul>
 
                     <ul class="list-unstyled topnav-menu mb-0 d-flex align-items-center">
+
+                        <li class="d-none d-sm-flex">
+                            <a href="{{ route('sitemap.download') }}" class="btn btn-primary btn-sm">
+                                <i class="mdi mdi-download"></i> Sitemap
+                            </a>
+                        </li>
                         <li class="d-none d-sm-flex">
                             <a href="{{ route('settings.index') }}" class="nav-link dropdown-toggle nav-user me-0">
                                 <i data-feather="settings"></i>
