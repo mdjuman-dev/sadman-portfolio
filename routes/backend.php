@@ -1,18 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Mail\Mailables\Content;
+use App\Http\Controllers\Backend\Category;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\backend\BannerController;
-use App\Http\Controllers\Backend\BlogController;
-use App\Http\Controllers\Backend\Category;
-use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ContectController;
-use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ProjectController;
+use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\TechnologyController;
-use Illuminate\Mail\Mailables\Content;
 
 Route::middleware('auth')->prefix('admin/')->group(function () {
 
@@ -88,6 +89,15 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
         Route::get('/{id?}', 'index')->name('index');
         Route::post('/store-or-pdate/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
         Route::get('/delete/{id}', 'delete')->name('delete');
+    });
+
+
+    //*setting Routes
+    Route::prefix('/setting')->controller(SettingController::class)->name('settings.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::post('/general', 'updateGeneral')->name('general.update');
+        Route::post('/seo', 'updateSeo')->name('seo.update');
+        Route::post('/tracking', 'updateTracking')->name('tracking.update');
     });
 });
 

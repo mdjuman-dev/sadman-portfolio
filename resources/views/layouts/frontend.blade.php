@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="#">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/' . $globalSettings?->favicon)}}">
 
     <title> {{ env("APP_NAME") }}</title>
     <!-- Bootstrap min css -->
@@ -41,30 +41,38 @@
                     <div class="header-content">
                         <div class="logo">
                             <a href="{{ route('home') }}" wire:navigate>
-                                <img class="logo-dark" src="{{ asset('frontend/assets/images/logo/white-logo-reeni-2.png')}}" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
-                                <img class="logo-white" src="{{ asset('frontend/assets/images/logo/logo-white.png')}}" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
+                                <img class="logo-dark" src="{{ asset('storage/' . $globalSettings?->logo)}}"
+                                    alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
+                                <img class="logo-white" src="{{ asset('frontend/assets/images/logo/logo-white.png')}}"
+                                    alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                             </a>
                         </div>
                         <nav class="tmp-mainmenu-nav d-none d-xl-block">
                             <ul class="tmp-mainmenu">
                                 <li>
-                                    <a class="{{ Route::is('home') ? 'active' :'' }}" href="{{ route('home') }}" wire:navigate>Home</a>
+                                    <a class="{{ Route::is('home') ? 'active' : '' }}" href="{{ route('home') }}"
+                                        wire:navigate>Home</a>
                                 </li>
                                 <li>
-                                    <a class="{{ Route::is('about') ? 'active' :'' }}" href="{{ route('about') }}" wire:navigate>About</a>
+                                    <a class="{{ Route::is('about') ? 'active' : '' }}" href="{{ route('about') }}"
+                                        wire:navigate>About</a>
                                 </li>
                                 <li>
-                                    <a class="{{ Route::is('services') ? 'active' :'' }}" href="{{ route('services') }}" wire:navigate>Services</a>
+                                    <a class="{{ Route::is('services') ? 'active' : '' }}" href="{{ route('services') }}"
+                                        wire:navigate>Services</a>
                                 </li>
                                 <li>
-                                    <a class="{{ Route::is('project') ? 'active' :'' }}" href="{{ route('project') }}" wire:navigate>Project</a>
+                                    <a class="{{ Route::is('project') ? 'active' : '' }}" href="{{ route('project') }}"
+                                        wire:navigate>Project</a>
                                 </li>
                                 <li>
-                                    <a class="{{ Route::is('blog') ? 'active' :'' }}" href="{{ route('blog') }}" wire:navigate>Blog</a>
+                                    <a class="{{ Route::is('blog') ? 'active' : '' }}" href="{{ route('blog') }}"
+                                        wire:navigate>Blog</a>
                                 </li>
 
                                 <li>
-                                    <a class="{{ Route::is('contact') ? 'active' :'' }}" href="{{route("contact")}}" wire:navigate>Contact</a>
+                                    <a class="{{ Route::is('contact') ? 'active' : '' }}" href="{{route("contact")}}"
+                                        wire:navigate>Contact</a>
                                 </li>
                             </ul>
 
@@ -80,10 +88,12 @@
                             </div>
                             <div class="actions-area">
                                 <div class="tmp-side-collups-area d-none d-xl-block">
-                                    <button class="tmp-menu-bars tmp_button_active"><i class="fa-regular fa-bars-staggered"></i></button>
+                                    <button class="tmp-menu-bars tmp_button_active"><i
+                                            class="fa-regular fa-bars-staggered"></i></button>
                                 </div>
                                 <div class="tmp-side-collups-area d-block d-xl-none">
-                                    <button class="tmp-menu-bars humberger_menu_active"><i class="fa-regular fa-bars-staggered"></i></button>
+                                    <button class="tmp-menu-bars humberger_menu_active"><i
+                                            class="fa-regular fa-bars-staggered"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -99,8 +109,10 @@
             <div class="inner">
                 <div class="top-area">
                     <a href="{{ route('home') }}" class="logo">
-                        <img class="logo-dark" src="{{ asset('frontend/assets/images/logo/white-logo-reeni.png')}}" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
-                        <img class="logo-white" src="{{ asset('frontend/assets/images/logo/logo-white.png')}}" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
+                        <img class="logo-dark" src="{{ asset('frontend/assets/images/logo/white-logo-reeni.png')}}"
+                            alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
+                        <img class="logo-white" src="{{ asset('frontend/assets/images/logo/logo-white.png')}}"
+                            alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                     </a>
                     <div class="close-icon-area">
                         <button class="tmp-round-action-btn close_side_menu_active">
@@ -115,7 +127,8 @@
                         </a>
                     </div>
                     <h5 class="title mt--30">Freelancer delivering exceptional Webflow, and Next.js solutions.</h5>
-                    <p class="disc">I am a skilled freelancer specializing in Webflow development, Figma design, and Next.js projects. I deliver creative, dynamic, and user-centric web solutions.
+                    <p class="disc">I am a skilled freelancer specializing in Webflow development, Figma design, and
+                        Next.js projects. I deliver creative, dynamic, and user-centric web solutions.
                     </p>
                     <div class="short-contact-area">
                         <!-- single contact information -->
@@ -171,8 +184,10 @@
                 <div class="header-top">
                     <div class="logo">
                         <a href="index.html" class="logo-area">
-                            <img class="logo-dark" src="{{ asset('frontend/assets/images/logo/white-logo-reeni.png')}}" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
-                            <img class="logo-white" src="{{ asset('frontend/assets/images/logo/logo-white.png')}}" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
+                            <img class="logo-dark" src="{{ asset('frontend/assets/images/logo/white-logo-reeni.png')}}"
+                                alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
+                            <img class="logo-white" src="{{ asset('frontend/assets/images/logo/logo-white.png')}}"
+                                alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                         </a>
 
                     </div>
@@ -184,23 +199,29 @@
                 </div>
                 <ul class="tmp-mainmenu">
                     <li>
-                        <a class="{{ Route::is('home') ? 'active' :'' }}" href="{{ route('home') }}" wire:navigate>Home</a>
+                        <a class="{{ Route::is('home') ? 'active' : '' }}" href="{{ route('home') }}"
+                            wire:navigate>Home</a>
                     </li>
                     <li>
-                        <a class="{{ Route::is('about') ? 'active' :'' }}" href="{{ route('about') }}" wire:navigate>About</a>
+                        <a class="{{ Route::is('about') ? 'active' : '' }}" href="{{ route('about') }}"
+                            wire:navigate>About</a>
                     </li>
                     <li>
-                        <a class="{{ Route::is('services') ? 'active' :'' }}" href="{{ route('services') }}" wire:navigate>Services</a>
+                        <a class="{{ Route::is('services') ? 'active' : '' }}" href="{{ route('services') }}"
+                            wire:navigate>Services</a>
                     </li>
                     <li>
-                        <a class="{{ Route::is('project') ? 'active' :'' }}" href="{{ route('project') }}" wire:navigate>Project</a>
+                        <a class="{{ Route::is('project') ? 'active' : '' }}" href="{{ route('project') }}"
+                            wire:navigate>Project</a>
                     </li>
                     <li>
-                        <a class="{{ Route::is('blog') ? 'active' :'' }}" href="{{ route('blog') }}" wire:navigate>Blog</a>
+                        <a class="{{ Route::is('blog') ? 'active' : '' }}" href="{{ route('blog') }}"
+                            wire:navigate>Blog</a>
                     </li>
 
                     <li>
-                        <a class="{{ Route::is('contact') ? 'active' :'' }}" href="{{route("contact")}}" wire:navigate>Contact</a>
+                        <a class="{{ Route::is('contact') ? 'active' : '' }}" href="{{route("contact")}}"
+                            wire:navigate>Contact</a>
                     </li>
                 </ul>
 
@@ -233,7 +254,8 @@
                         <div class="single-footer-wrapper border-right mr--20">
                             <div class="logo">
                                 <a href="{{route('home')}}" wire:navigate>
-                                    <img src="{{ asset('frontend/assets/images/logo/white-logo-reeni-2.png')}}" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
+                                    <img src="{{ asset('frontend/assets/images/logo/white-logo-reeni-2.png')}}"
+                                        alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                                 </a>
                             </div>
                             <p class="description"><span>Get Ready</span> To <br> Create Great</p>
@@ -267,10 +289,12 @@
                         <div class="single-footer-wrapper contact-wrap">
                             <h5 class="ft-title">Contact </h5>
                             <ul class="ft-link tmp-link-animation">
-                                <li><span class="ft-icon"><i class="fa-solid fa-envelope"></i></span><a href="index-03.html#">nafiz125@gmail.com</a></li>
+                                <li><span class="ft-icon"><i class="fa-solid fa-envelope"></i></span><a
+                                        href="index-03.html#">nafiz125@gmail.com</a></li>
                                 <li><span class="ft-icon"><i class="fa-solid fa-location-dot"></i></span>3891
                                     Ranchview Dr. Richardson</li>
-                                <li><span class="ft-icon"><i class="fa-solid fa-phone"></i></span><a href="index-03.html#">01245789321</a></li>
+                                <li><span class="ft-icon"><i class="fa-solid fa-phone"></i></span><a
+                                        href="index-03.html#">01245789321</a></li>
                             </ul>
                             <div class="social-link footer">
                                 <a href="index-03.html#"><i class="fa-brands fa-instagram"></i></a>
@@ -292,8 +316,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="main-wrapper">
-                        <p class="copy-right-para">© InversWeb <script>
-                            </script> | All Rights Reserved</p>
+                        <p class="copy-right-para">© InversWeb
+                            <script>
+                            </script> | All Rights Reserved
+                        </p>
                         <ul>
                             <li><a href="index-03.html#">Trams & Condition</a></li>
                             <li><a href="index-03.html#">Privacy Policy</a></li>
@@ -351,12 +377,21 @@
             <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
                 <use xlink:href="#wave"></use>
             </svg>
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 20" style="display: none;">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 560 20" style="display: none;">
                 <symbol id="wave">
-                    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z" fill="#"></path>
-                    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z" fill="#"></path>
-                    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z" fill="#"></path>
-                    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z" fill="#"></path>
+                    <path
+                        d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"
+                        fill="#"></path>
+                    <path
+                        d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"
+                        fill="#"></path>
+                    <path
+                        d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"
+                        fill="#"></path>
+                    <path
+                        d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"
+                        fill="#"></path>
                 </symbol>
             </svg>
 

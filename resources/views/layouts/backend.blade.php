@@ -67,6 +67,11 @@
 
                     <ul class="list-unstyled topnav-menu mb-0 d-flex align-items-center">
                         <li class="d-none d-sm-flex">
+                            <a href="{{ route('settings.index') }}" class="nav-link dropdown-toggle nav-user me-0">
+                                <i data-feather="settings"></i>
+                            </a>
+                        </li>
+                        <li class="d-none d-sm-flex">
                             <button type="button" class="btn nav-link" data-toggle="fullscreen">
                                 <i data-feather="maximize" class="align-middle fullscreen noti-icon"></i>
                             </button>
