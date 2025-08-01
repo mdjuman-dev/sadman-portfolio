@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Models\Blog;
 use App\Models\Skill;
+use App\Models\Contact;
+use App\Models\Project;
+use App\Models\Service;
 use App\Models\Education;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
-use App\Models\Project;
+use App\Models\ServiceCategory;
 
 class MainHomeController extends Controller
 {
@@ -20,7 +22,8 @@ class MainHomeController extends Controller
     }
     function services()
     {
-        return view('frontend.services');
+        $services = Service::select('id', 'title', 'content','slug', 'status')->where('status', true)->get();
+        return view('frontend.services', compact('services'));
     }
 
     function contact()
