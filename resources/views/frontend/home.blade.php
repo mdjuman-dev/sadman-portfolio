@@ -1,5 +1,8 @@
 @extends('layouts.frontend')
 @section('frontend')
+@php
+$banner = $banner[0];
+@endphp
     <!-- tmp banner area start -->
     <div class="rpp-banner-three-area">
         <div class="container">
@@ -8,7 +11,7 @@
                     <div class="col-lg-4">
                         <div class="inner">
                             <span class="sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">Hello i’m</span>
-                            <h1 class="title tmp-scroll-trigger tmp-fade-in animation-order-2">Brooklyn Simmons</h1>
+                            <h1 class="title tmp-scroll-trigger tmp-fade-in animation-order-2">{{ $banner->name }}</h1>
                             <div class="button-area-banner-three tmp-scroll-trigger tmp-fade-in animation-order-3">
                                 <a class="tmp-btn hover-icon-reverse radius-round" href="{{ route('project') }}"
                                     wire:navigate>
@@ -25,9 +28,7 @@
                         <div class="banner-right-content">
                             <div class="about-me tmp-scroll-trigger tmp-fade-in animation-order-1">
                                 <h3 class="title">About Me</h3>
-                                <p class="para tmp-title-split">A personal <span>portfolio</span> is a collection of to your
-                                    work, that
-                                    is achievements, and a skills that <span>web design</span> highlights in your </p>
+                                <p class="para tmp-title-split">{{ $banner->about }} </p>
                             </div>
                             <div class="find-me-on mt--40 tmp-scroll-trigger tmp-fade-in animation-order-2">
                                 <h2 class="find-me-on-title">Find me on</h2>
@@ -44,7 +45,7 @@
                 </div>
                 <div class="bg-benner-img-three">
                     <img class="tmp-scroll-trigger tmp-zoom-in animation-order-2"
-                        src="{{ asset('frontend/assets/images/banner/banner-user-image-three.png')}}" alt="banner-img-3">
+                        src="{{ asset('storage/' . $banner->image)}}" alt="banner-img-3">
                 </div>
             </div>
         </div>

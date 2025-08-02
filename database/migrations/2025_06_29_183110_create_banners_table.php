@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('text_one')->nullable();
             $table->string('text_two')->nullable();
             $table->string('cta_text')->nullable();
-            $table->string('cta-link')->nullable();
+            $table->string('cta_link')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

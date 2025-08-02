@@ -65,4 +65,10 @@ class ServiceController extends Controller
         $msg = $id ? 'Service updated successfully.' : 'Service created successfully.';
         return redirect()->route('service.allServices')->with('success', $msg);
     }
+    function serviceShow($slug)
+    {
+        $service = Service::where('slug', $slug)->with('serviceCategory')->firstOrFail();
+        $serviceCategory = ServiceCategory::get();
+        return view('frontend.service-detail', compact('service', 'serviceCategory'));
+    }
 }

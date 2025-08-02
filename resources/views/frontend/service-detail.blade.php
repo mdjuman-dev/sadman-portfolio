@@ -26,33 +26,10 @@
         <div class="row row--40">
             <div class="col-lg-8">
                 <div class="service-thumnail-wrap">
-                    <img src="{{ asset('frontend/assets/images/services/service-detials-thumnail-wrap.png')}}" alt="thumnail-img">
+                    <img src="{{ asset('storage/' . $service->image)}}" alt="{{ $service->title }}">
                 </div>
-                <h2 class="title split-collab">Elevated Designs Personalized the best Experiences</h2>
-                <p class="doc-para">Web designing in a powerful way of just not an only professions, however, in a
-                    passion for our Company. We have to a tendency to believe the idea that smart looking of any
-                    websitet in on visitors.Web designing in a powerful way of just not an only profession Web
-                    designing in a powerful way of just not an only </p>
-                <h2 class="title-mini split-collab">My Experts Areas where i gained skill</h2>
-                <p class="doc-para">Web designing in a powerful way of just not an only professions, however, in a
-                    passion for our Company. We have to a tendency to believe the idea that smart looking of any
-                    websitet in on visitors.Web designing in a powerful way of just not an only profession Web
-                    designing in a powerful way of just not an only</p>
-                <p class="doc-para">Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere
-                    viverra .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentum
-                    ullamcorper viverra laoreet Aliquam eros </p>
-
-                <h2 class="title-mini split-collab">My Experts Areas where i gained skill</h2>
-                <p class="doc-para">Web designing in a powerful way of just not an only professions, however, in a
-                    passion for our Company. We have to a tendency to believe the idea that smart looking of any
-                    websitet in on visitors.Web designing in a powerful way of just not an only profession Web
-                    designing in a powerful way of just not an only</p>
-                <p class="doc-para">Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere
-                    viverra .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentum
-                    ullamcorper viverra laoreet Aliquam eros </p>
-                <p class="doc-para">viverra laoreet matti ullamcorper posuere
-                    viverra .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentum
-                    ullamcorper viverra laoreet Aliquam eros</p>
+                <h2 class="title split-collab">{{ $service->title }}</h2>
+                {!! $service->content !!}
 
             </div>
             <div class="col-lg-4">
@@ -61,30 +38,12 @@
                         <h3 class="title">Service Category</h3>
                     </div>
                     <div class="body">
+                        @foreach ($serviceCategory as $category)
                         <a href="service-details.html#" class="single-service">
-                            <p class="service-title">TechPros</p>
+                            <p class="service-title">{{ $category->name }}</p>
                             <span class="service-icon"><i class="fa-solid fa-angle-right"></i></span>
                         </a>
-                        <a href="service-details.html#" class="single-service">
-                            <p class="service-title"> NetWorks</p>
-                            <span class="service-icon"><i class="fa-solid fa-angle-right"></i></span>
-                        </a>
-                        <a href="service-details.html#" class="single-service">
-                            <p class="service-title">DataMasters</p>
-                            <span class="service-icon"><i class="fa-solid fa-angle-right"></i></span>
-                        </a>
-                        <a href="service-details.html#" class="single-service">
-                            <p class="service-title">Dibetics section</p>
-                            <span class="service-icon"><i class="fa-solid fa-angle-right"></i></span>
-                        </a>
-                        <a href="service-details.html#" class="single-service">
-                            <p class="service-title">DigitalSolutions</p>
-                            <span class="service-icon"><i class="fa-solid fa-angle-right"></i></span>
-                        </a>
-                        <a href="service-details.html#" class="single-service">
-                            <p class="service-title">CodeGenius</p>
-                            <span class="service-icon"><i class="fa-solid fa-angle-right"></i></span>
-                        </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
