@@ -14,7 +14,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input name="name" value="{{ $banner->name }}" id="name" type="text" class="form-control">
+                                <input name="name" value="{{ $banner?->name }}" id="name" type="text" class="form-control">
                                 @error('name')
                                 <span class="text-danger"> {{ $message }} </span>
                                 @enderror
@@ -23,7 +23,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="about">About Me</label>
-                                <textarea name="about" id="about" type="text" class="form-control">{{ $banner->about }}</textarea>
+                                <textarea name="about" id="about" type="text" class="form-control">{{ $banner?->about }}</textarea>
                                 @error('about')
                                 <span class="text-danger"> {{ $message }} </span>
                                 @enderror
@@ -55,7 +55,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="cta_text">CTA Text</label>
-                                <input value="{{ $banner->cta_text }}" name="cta_text" id="cta_text" type="text" class="form-control">
+                                <input value="{{ $banner?->cta_text }}" name="cta_text" id="cta_text" type="text" class="form-control">
                                 @error('cta_text')
                                 <span class="text-danger"> {{ $message }} </span>
                                 @enderror   
@@ -64,7 +64,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="cta_link">CTA Link</label>
-                                <input value="{{ $banner->cta_link }}" name="cta_link" id="cta_link" type="text" class="form-control">
+                                <input value="{{ $banner?->cta_link }}" name="cta_link" id="cta_link" type="text" class="form-control">
                                 @error('cta_link')
                                 <span class="text-danger"> {{ $message }} </span>
                                 @enderror
