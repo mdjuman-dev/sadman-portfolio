@@ -68,6 +68,11 @@
                     <ul class="list-unstyled topnav-menu mb-0 d-flex align-items-center">
 
                         <li class="d-none d-sm-flex">
+                            <button type="submit" id="cacheClear" class="btn btn-primary btn-sm mx-1">Clear
+                                Cache</button>
+                        </li>
+
+                        <li class="d-none d-sm-flex">
                             <a href="{{ route('sitemap.download') }}" class="btn btn-primary btn-sm">
                                 <i class="mdi mdi-download"></i> Sitemap
                             </a>
@@ -117,8 +122,6 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-
-
                             </div>
                         </li>
 
@@ -140,35 +143,32 @@
                     <div class="logo-box">
                         <a class='logo logo-light' target="_blank" href='{{route('home')}}'>
                             <span class="logo-sm">
-                                <img src="{{ asset('backend/assets/images/logo-sm.png')}}" alt="" height="22">
+                                <img src="{{ asset('storage/' . $globalSettings?->logo)}}" alt="site logo"
+                                    width="150px">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ asset('backend/assets/images/logo-light.png')}}" alt="" height="24">
+                                <img src="{{ asset('storage/' . $globalSettings?->logo)}}" alt="site logo"
+                                    width="150px">
                             </span>
                         </a>
                         <a class='logo logo-dark' target="_blank" href='{{route('home')}}'>
                             <span class="logo-sm">
-                                <img src="{{ asset('backend/assets/images/logo-sm.png')}}" alt="" height="22">
+                                <img src="{{ asset('logo.png')}}" alt="site logo" width="150px">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ asset('backend/assets/images/logo-dark.png')}}" alt="" height="24">
+                                <img src="{{ asset('logo.png')}}" alt="site logo" width="150px">
                             </span>
                         </a>
                     </div>
-
                     @include('backend.main_menu')
-
                 </div>
                 <!-- End Sidebar -->
-
                 <div class="clearfix"></div>
-
             </div>
         </div>
         <!-- Left Sidebar End -->
         <div class="content-page">
             @yield('backend')
-
             <!-- Footer Start -->
             <footer class="footer">
                 <div class="container-fluid">
@@ -181,14 +181,12 @@
                 </div>
             </footer>
             <!-- end Footer -->
-
         </div>
     </div>
     <!-- END wrapper -->
 
     <!-- Vendor -->
     <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
-    <script src="https://apexcharts.com/samples/assets/stock-prices.js"></script>
     <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
@@ -205,56 +203,82 @@
     <script src="{{ asset('backend/assets/js/filepond-plugin-image-preview.js') }}"></script>
     <script src="{{ asset('backend/assets/js/filepond.js') }}"></script>
     <script>
-        const notyf = new Notyf({
-            duration: 5000,
-            ripple: true,
-            dismissible: true,
-            position: {
-                x: 'right',
-                y: 'top',
-            },
-            types: [{
-                type: 'success',
-                background: 'green',
-                icon: {
-                    className: 'mdi mdi-check-circle-outline',
-                    tagName: 'span',
-                    color: 'white'
+        $(document).ready(function () {
+
+            const notyf = new Notyf({
+                duration: 5000,
+                ripple: true,
+                dismissible: true,
+                position: {
+                    x: 'right',
+                    y: 'top',
+                },
+                types: [{
+                    type: 'success',
+                    background: 'green',
+                    icon: {
+                        className: 'mdi mdi-check-circle-outline',
+                        tagName: 'span',
+                        color: 'white'
+                    }
+                },
+                {
+                    type: 'error',
+                    background: '#d32f2f',
+                    icon: {
+                        className: 'mdi mdi-alert-circle-outline',
+                        tagName: 'span',
+                        color: 'white'
+                    }
                 }
-            },
-            {
-                type: 'error',
-                background: '#d32f2f',
-                icon: {
-                    className: 'mdi mdi-alert-circle-outline',
-                    tagName: 'span',
-                    color: 'white'
-                }
-            }
-            ]
+                ]
+            });
+            $('#cacheClear').on('click', function () {
+                $('#preloader').show();
+                $.ajax({
+                    type: "GET",
+                    url: "{{ route('cache.clear') }}",
+                    success: res => {
+                        $('#preloader').hide();
+                        console.log(res.msg);
+                        notyf.success({
+                            message: res.msg,
+                            icon: {
+                                className: 'mdi mdi-check-circle-outline',
+                                tagName: 'span',
+                                color: 'white'
+                            }
+                        });
+                    },
+                    error: err => {
+                        $('#preloader').hide();
+                        Command: toastr["error"]('Something went wrong..');
+                        console.log(err);
+                    }
+                });
+            });
+            @if(session('success'))
+                notyf.success({
+                    message: "{{ session('success') }}",
+                    icon: {
+                        className: 'mdi mdi-check-circle-outline',
+                        tagName: 'span',
+                        color: 'white'
+                    }
+                });
+            @endif
+
+            @if(session('error'))
+                notyf.error({
+                    message: "{{ session('error') }}",
+                    icon: {
+                        className: 'mdi mdi-alert-circle-outline',
+                        tagName: 'span',
+                        color: 'white'
+                    }
+                });
+            @endif
         });
-
-        @if(session('success'))
-            notyf.success({
-                message: "{{ session('success') }}",
-                icon: {
-                    className: 'mdi mdi-check-circle-outline',
-                    tagName: 'span',
-                    color: 'white'
-                }
-            });
-        @endif
-
-        @if(session('error'))
-            notyf.error({
-                message: "{{ session('error') }}",
-                icon: {
-                    className: 'mdi mdi-alert-circle-outline',
-                    tagName: 'span',
-                    color: 'white'
-                }
-            });
-        @endif
     </script>
     @livewireScripts
     @stack('scripts')

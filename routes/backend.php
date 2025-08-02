@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Mail\Mailables\Content;
 use App\Http\Controllers\Backend\Category;
 use App\Http\Controllers\ProfileController;
@@ -73,18 +75,21 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
         Route::post('/store-update/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
         Route::get('/delete/{id}', 'delete')->name('delete');
     });
+
     //*Category Routes
     Route::controller(ContectController::class)->prefix('contect/')->name('contect.')->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/view/{id}', 'view')->name('view');
         Route::get('/delete/{id}', 'delete')->name('delete');
     });
+
     //*Category Routes
     Route::controller(TechnologyController::class)->prefix('technology/')->name('technology.')->group(function () {
         Route::get('/{id?}', 'index')->name('index');
         Route::post('/store-or-pdate/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
         Route::get('/delete/{id}', 'delete')->name('delete');
     });
+
     //*Category Routes
     Route::controller(ProjectController::class)->prefix('project/')->name('project.')->group(function () {
         Route::get('/all-project', 'allProject')->name('allProject');
@@ -93,7 +98,6 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
         Route::post('/store-or-pdate/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
         Route::get('/delete/{id}', 'delete')->name('delete');
     });
-
 
     //*setting Routes
     Route::prefix('/setting')->controller(SettingController::class)->name('settings.')->group(function () {
@@ -110,6 +114,7 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
         Route::post('/store-or-update/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
         Route::get('/delete/{id}', 'delete')->name('delete');
     });
+
     //*Services Routes
     Route::controller(ServiceController::class)->prefix('service/')->name('service.')->group(function () {
         Route::get('/all-services', 'allServices')->name('allServices');
@@ -118,6 +123,19 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
         Route::post('/store-or-update/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
         Route::get('/delete/{id}', 'delete')->name('delete');
     });
+    //*Cachs Clear Routes
+    Route::get('cache-clear', function () {
+        try {
+            Artisan::call('cache:clear');
+            Artisan::call('optimize:clear');
+            Cache::flush();
+            Artisan::call('cache:forget spatie.permission.cache');
+            return response()->json(['status' => 'success', 'msg' => 'Cache cleared successfully.'], 200);
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json(['message' => $th->getMessage()], 500);
+        }
+    })->name('cache.clear');
 });
 
 require __DIR__ . '/auth.php';

@@ -113,6 +113,9 @@
                                     <input type="file" name="logo" id="logo">
                                 </div>
                                 <img width="80px" src="{{ asset('storage/' . $settings?->logo) }}" alt="logo">
+                                @error('logo')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -120,6 +123,9 @@
                                     <input type="file" name="favicon" id="faveicon">
                                 </div>
                                 <img width="80px" src="{{ asset('storage/' . $settings?->favicon) }}" alt="Favicon">
+                                @error('favicon')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                         </div>
 
