@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Models\Banner;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -20,13 +21,10 @@ class BannerController extends Controller
         $request->validate([
             "name" => "required",
             "about" => "required",
+            "image" => "required",
         ]);
-    
-        $banner = Banner::first();
-        if (!$banner) {
-            $banner = new Banner();
-        }
-    
+
+        $banner = Banner::firstOrNew();
         $banner->name = $request->name;
         $banner->about = $request->about;
         $banner->text_one = $request->text_one;
@@ -34,19 +32,21 @@ class BannerController extends Controller
         $banner->cta_text = $request->cta_text;
         $banner->cta_link = $request->cta_link;
         $banner->status = $request->status ? true : false;
-    
+
         if ($request->hasFile('image')) {
 
             if ($banner->image && Storage::disk('public')->exists($banner->image)) {
                 Storage::disk('public')->delete($banner->image);
             }
-    
-            $imagePath = $request->file('image')->store('banners', 'public');
+
+            $image = $request->file('image');
+            $imageName = Str::slug($request->name) . '.' . $image->getClientOriginalExtension();
+            $imagePath = $image->storeAs('banners', $imageName, 'public');
             $banner->image = $imagePath;
         }
-    
+
         $banner->save();
-    
+
         return redirect()->back()->with('success', 'Banner saved successfully!');
     }
 }

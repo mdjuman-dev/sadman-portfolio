@@ -17,7 +17,7 @@ class HomeController extends Controller
         $skills = Skill::select('id', 'name', 'percentage', 'category', 'duration', 'delay', 'status')->where('status', true)->get();
         $educations = Education::select('id', 'degree', 'institution', 'start_date', 'end_date', 'description')->where('status', true)->get();
         $blogs = Blog::where('status', true)->select('title', 'image', 'created_at', 'slug')->limit(3)->get();
-        $banner = Banner::select('name', 'id', 'image', 'about', 'cta_text', 'cta_link')->get();
+        $banner = Banner::select('name', 'id', 'image', 'about',)->first();
         return view('frontend.home', compact(
             'skills',
             'educations',
