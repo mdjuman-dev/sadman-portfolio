@@ -9,7 +9,7 @@ use Spatie\Sitemap\Sitemap;
 use Illuminate\Http\Request;
 use Spatie\Sitemap\Tags\Url;
 use App\Http\Controllers\Controller;
-
+use App\Models\Service;
 
 class SitemapController extends Controller
 {
@@ -42,14 +42,14 @@ class SitemapController extends Controller
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                 ->setPriority(0.9));
         }
-        //Services Sitemap
-        // $Services = Servics::all();
-        // foreach ($Services as $Servics) {
-        //     $sitemap->add(Url::create("/service-details/{$Servics->slug}")
-        //         ->setLastModificationDate($Servics->updated_at)
-        //         ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-        //         ->setPriority(0.9));
-        // }
+        // Services Sitemap
+        $services = Service::all();
+        foreach ($services as $service) {
+            $sitemap->add(Url::create("/service-details/{$service->slug}")
+                ->setLastModificationDate($service->updated_at)
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                ->setPriority(0.9));
+        }
         return $sitemap->toResponse(request());
     }
 
@@ -92,6 +92,17 @@ class SitemapController extends Controller
             $sitemap->add(
                 Url::create("/project-details/{$project->slug}")
                     ->setLastModificationDate($project->updated_at)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                    ->setPriority(0.9)
+            );
+        }
+
+        // Services URLs
+        $services = Service::all();
+        foreach ($services as $service) {
+            $sitemap->add(
+                Url::create("/service-details/{$service->slug}")
+                    ->setLastModificationDate($service->updated_at)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                     ->setPriority(0.9)
             );

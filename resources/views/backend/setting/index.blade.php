@@ -37,7 +37,6 @@
             <div class="tab-pane fade show active" id="general" role="tabpanel">
                 <form action="{{ route('settings.general.update') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-
                     <div class="form-group mt-2">
                         <label for="">Site Name</label>
                         <input type="text" name="name" class="form-control"
@@ -59,9 +58,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
 
                     <div class="row mt-2">
                         <div class="col-lg-6">
@@ -111,6 +107,9 @@
                             <div class="form-group">
                                 <label for="">Site Logo</label>
                                 <input type="file" name="logo" id="logo">
+                                @error('logo')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <img width="80px" src="{{ asset('storage/' . $settings?->logo) }}" alt="logo">
                             @error('logo')
@@ -120,7 +119,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="">Favicon</label>
-                                <input type="file" name="favicon" id="faveicon">
+                                <input type="file" name="favicon" id="favicon">
                             </div>
                             <img width="80px" src="{{ asset('storage/' . $settings?->favicon) }}" alt="Favicon">
                             @error('favicon')
@@ -197,8 +196,9 @@
 <script>
     $(document).ready(function() {
         $('#preloader').fadeOut(500);
+
         FilePond.registerPlugin(FilePondPluginImagePreview);
-        $('#logo, #faveicon').filepond({
+        $('#logo, #favicon').filepond({
             storeAsFile: true,
             allowReorder: true,
         });

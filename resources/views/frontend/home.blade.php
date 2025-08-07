@@ -65,7 +65,7 @@
                     <div class="service-card-icon">
                         <i class="fa-light fa-pen-ruler"></i>
                     </div>
-                    <h4 class="service-title"><a href="service-details.html">Web Design</a></h4>
+                    <h4 class="service-title"><a href="service-details.html">Web Development</a></h4>
                     <p class="service-para">120 Projects</p>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                     <div class="service-card-icon">
                         <i class="fa-light fa-bezier-curve"></i>
                     </div>
-                    <h4 class="service-title"><a href="service-details.html">Ui/Ux Design</a></h4>
+                    <h4 class="service-title"><a href="service-details.html">Web Design</a></h4>
                     <p class="service-para">241 Projects</p>
                 </div>
             </div>
@@ -158,6 +158,7 @@
 <!-- Tpm Counter Area End -->
 
 <!-- Tpm Latest Service Area Start -->
+@if (count($services)>0)
 <section class="latest-service-area tmp-section-gapTop">
     <div class="container">
         <div class="section-head mb--60">
@@ -172,21 +173,13 @@
         </div>
         <div class="row">
             <div class="col-lg-6">
+                @foreach ($services as $key=>$service )
                 <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    <h2 class="service-card-num"><span>01.</span>A Portfolio of Creativity</h2>
-                    <p class="service-para">Business consulting consultants provide expert advice and guida the a
-                        businesses to help theme their performance efficiency</p>
+                    <h2 class="service-card-num"><span>{{ ++$key }}.</span>{{$service->title}}</h2>
+                    <p class="service-para">{!! $service->content !!}</p>
                 </div>
-                <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
-                    <h2 class="service-card-num"><span>02.</span>My Portfolio of Innovation</h2>
-                    <p class="service-para">My work is driven by the belief that thoughtful design and strategic
-                        planning can empower brands, transform businesses</p>
-                </div>
-                <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
-                    <h2 class="service-card-num"><span>03.</span>A Showcase of My Projects</h2>
-                    <p class="service-para">In this portfolio, you’ll find a curated selection of projects that
-                        highlight my skills in [Main Areas, e.g., responsive web design</p>
-                </div>
+                @endforeach
+
             </div>
             <div class="col-lg-6">
                 <div class="service-card-user-image">
@@ -198,6 +191,8 @@
         </div>
     </div>
 </section>
+@endif
+
 <!-- Tpm Latest Service Area End -->
 
 <!-- tmp skill area start -->
@@ -383,7 +378,52 @@
     </div>
 </div>
 <!-- Tpm Our Supported Company Area End -->
+<!-- Tpm Our Project Area start -->
+<!-- Tpm Latest Portfolio Area Start -->
+<div class="latest-portfolio-area custom-column-grid">
+    <div class="container">
+        <div class="section-head mb--60">
+            <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                <span class="subtitle">Latest Portfolio</span>
+            </div>
+            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Transforming Ideas into Exceptional </h2>
+            <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">Business consulting consultants provide expert advice and guida
+                businesses to help them improve their performance, efficiency, and organizational</p>
+        </div>
+        <div class="row">
+            @foreach ($projects as $key=>$items)
+            <div class="col-lg-6 col-md-6">
+                <div class="latest-portfolio-card  tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-{{ ++$key }}">
+                    <div class="portfoli-card-img">
+                        <div class="img-box v2">
+                            <a wire:navigate href="{{route('project-details',$items->slug)}}">
+                                <img class="img-primary hidden-on-mobile" src="{{asset('storage/'.$items->image)}}" alt="{{$items->title}}">
+                                <img class="img-secondary" src="{{asset('storage/'.$items->image)}}" alt="{{$items->title}}">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content-wrap">
+                        <div class="content-left">
+                            <h3 class="portfolio-card-title"><a wire:navigate class="link" href="{{route('project-details',$items->slug)}}">{{$items->title}}</a>
+                            </h3>
+                            <p class="portfoli-card-para">{{$items->category}}</p>
+                        </div>
+                        <a wire:navigate href="{{route('project-details',$items->slug)}}" class="tmp-arrow-icon-btn">
+                            <div class="btn-inner">
+                                <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
+                                <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
 
+
+        </div>
+    </div>
+</div>
+<!-- Tpm Latest Portfolio Area End -->
 <!-- Tpm Testimonial Area Start -->
 <section class="testimonial-area tmp-section-gapTop">
     <div class="container">

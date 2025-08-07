@@ -22,7 +22,7 @@ class MainHomeController extends Controller
     }
     function services()
     {
-        $services = Service::select('id', 'title', 'content','slug', 'status')->where('status', true)->get();
+        $services = Service::select('id', 'title', 'content', 'slug', 'status')->where('status', true)->get();
         return view('frontend.services', compact('services'));
     }
 
@@ -35,15 +35,8 @@ class MainHomeController extends Controller
         $projects = Project::where('status', true)->latest()->paginate(6);
         return view('frontend.project', compact('projects'));
     }
-    function blogDatails()
-    {
-        return view('frontend.blog-detail');
-    }
-    function serviceDatails()
-    {
-        return view('frontend.service-detail');
-    }
-    function projectDatails($slug)
+
+    function projectDetails($slug)
     {
         $project = Project::where('status', true)->orWhere('slug', $slug)->firstOrFail();
         return view('frontend.project-detail', compact('project'));

@@ -59,6 +59,7 @@
             <ul class="nav flex-column ms-4">
                 <li><a class="nav-link" wire:navigate href="{{ route('blog.index') }}">Add Blog</a></li>
                 <li><a class="nav-link" wire:navigate href="{{ route('blog.allBlog') }}">All Blogs</a></li>
+                <li> <a class="nav-link d-flex align-items-center gap-2" wire:navigate href="{{ route('category.index') }}">Category</a></li>
             </ul>
         </div>
     </li>
@@ -80,10 +81,7 @@
 
     <!-- Category -->
     <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2" wire:navigate href="{{ route('category.index') }}">
-            <i data-feather="grid"></i>
-            <span>Category</span>
-        </a>
+
     </li>
 
     <!-- Client Messages -->

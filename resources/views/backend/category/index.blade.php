@@ -17,7 +17,7 @@
                                 <input name="name" type="text" class="form-control"
                                     value="{{ old('name', $editCategory?->name) }}" placeholder="Name">
                                 @error('name')
-                                <small>{{ $message }}</small>
+                                <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                             @if ($editCategory)

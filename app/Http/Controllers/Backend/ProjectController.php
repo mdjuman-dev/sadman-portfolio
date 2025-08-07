@@ -52,7 +52,7 @@ class ProjectController extends Controller
         $projectSlug = Str::slug(Str::words($request->title, 5, ''));
         $project = Project::findOrNew($id);
         $project->title = $request->title;
-        $project->slug = $projectSlug . '-' . $project->id;
+        $project->slug = $projectSlug;
         $project->content = $request->content;
         $project->author = $request->author;
         $project->live_link = $request->project_link;
