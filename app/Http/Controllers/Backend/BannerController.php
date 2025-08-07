@@ -18,35 +18,32 @@ class BannerController extends Controller
 
     public function createOrUpdate(Request $request)
     {
+        // Validation
         $request->validate([
-            "name" => "required",
-            "about" => "required",
-            "image" => "required",
+            'name' => 'required|string|max:255',
+            'about' => 'nullable|string',
+            'status' => 'nullable|boolean',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'profession' => 'nullable|array',
+            'profession.*' => 'nullable|string|max:255',
         ]);
 
         $banner = Banner::firstOrNew();
         $banner->name = $request->name;
         $banner->about = $request->about;
-        $banner->text_one = $request->text_one;
-        $banner->text_two = $request->text_two;
-        $banner->cta_text = $request->cta_text;
-        $banner->cta_link = $request->cta_link;
         $banner->status = $request->status ? true : false;
-
+        $banner->profession = json_encode($request->profession);
         if ($request->hasFile('image')) {
-
             if ($banner->image && Storage::disk('public')->exists($banner->image)) {
                 Storage::disk('public')->delete($banner->image);
             }
-
             $image = $request->file('image');
-            $imageName = Str::slug($request->name) . '.' . $image->getClientOriginalExtension();
+            $imageName = Str::slug($request->name) . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
             $imagePath = $image->storeAs('banners', $imageName, 'public');
             $banner->image = $imagePath;
         }
-
         $banner->save();
 
-        return redirect()->back()->with('success', 'Banner saved successfully!');
+        return back()->with('success', 'Banner saved successfully.');
     }
 }

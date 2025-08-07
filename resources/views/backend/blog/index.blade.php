@@ -101,15 +101,16 @@
 <script src="{{ asset('backend/assets/js/rte.js') }}"></script>
 
 <script>
-    // Rich Text Editor Init
-    var editor = new RichTextEditor("#rte-content");
-
-    // FilePond Init
-    FilePond.registerPlugin(FilePondPluginImagePreview);
-
-    $('.file-pond').filepond({
-        storeAsFile: true,
-        allowReorder: true,
+    $(document).ready(function() {
+        $('#preloader').fadeOut(500);
+        // Rich Text Editor Init
+        var editor = new RichTextEditor("#rte-content");
+        // FilePond Init
+        FilePond.registerPlugin(FilePondPluginImagePreview);
+        $('.file-pond').filepond({
+            storeAsFile: true,
+            allowReorder: true,
+        });
     });
 </script>
 @endpush

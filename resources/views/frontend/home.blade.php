@@ -1,48 +1,55 @@
 @extends('layouts.frontend')
 @section('frontend')
 <!-- tmp banner area start -->
-<div class="rpp-banner-three-area">
+<div class="banner-right-thumbnail-area tmp-section-gap" id="home">
     <div class="container">
-        <div class="banner-three-main-wrapper">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="inner">
-                        <span class="sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">Hello i’m</span>
-                        <h1 class="title tmp-scroll-trigger tmp-fade-in animation-order-2">{{ $banner?->name }}</h1>
-                        <div class="button-area-banner-three tmp-scroll-trigger tmp-fade-in animation-order-3">
-                            <a class="tmp-btn hover-icon-reverse radius-round" href="{{ route('project') }}"
-                                wire:navigate>
-                                <span class="icon-reverse-wrapper">
-                                    <span class="btn-text">View Portfolio</span>
-                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+        <div class="row align-items-center pt--50">
+            <div class="col-lg-7">
+                <div class="banner-right-thumb-left-content">
+                    <span class="pre-title">Welcome to my world</span>
+                    <h1 class="title">I’m
+                        {{$banner->name}} <br> A
+                        <span class="header-caption">
+                            <span class="cd-headline clip is-full-width">
+                                <span class="cd-words-wrapper" style="width: 266.875px;">
+                                    @php
+                                    $professions = json_decode($banner->profession);
+                                    $professionList = explode(',', $professions[0]);
+                                    @endphp
+
+                                    @foreach($professionList as $index => $item)
+                                    <b class="theme-gradient {{ $index == 0 ? 'is-visible' : 'is-hidden' }}">{{ trim($item) }}</b>
+                                    @endforeach
                                 </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="banner-right-content">
-                        <div class="about-me tmp-scroll-trigger tmp-fade-in animation-order-1">
-                            <h3 class="title">About Me</h3>
-                            <p class="para tmp-title-split">{{ $banner?->about }} </p>
-                        </div>
-                        <div class="find-me-on mt--40 tmp-scroll-trigger tmp-fade-in animation-order-2">
-                            <h2 class="find-me-on-title">Find me on</h2>
-                            <div class="social-link banner">
-                                <a target="_blank" href="{{ $globalSettings?->instagram }}"><i class=" fa-brands fa-instagram"></i></a>
-                                <a target="_blank" href="{{ $globalSettings?->linkedin  }}"><i class=" fa-brands
-                                        fa-linkedin-in"></i></a>
-                                <a target="_blank" href="{{ $globalSettings?->twitter   }}"><i class=" fa-brands fa-twitter"></i></a>
-                                <a target="_blank" href="{{ $globalSettings?->facebook  }}"><i class=" fa-brands fa-facebook-f"></i></a>
-                            </div>
+                            </span>
+                        </span>
+                    </h1>
+                    <p class="disc">{{$banner->about}}</p>
+                    <div class="find-me-on">
+                        <h2 class="find-me-on-title">Find me on</h2>
+                        <div class="social-link banner">
+                            @if ($globalSettings->instagram )
+                            <a href="{{ $globalSettings->instagram }}"><i class="fa-brands fa-instagram"></i></a>
+                            @endif
+                            @if ($globalSettings->linkedin)
+                            <a href="{{ $globalSettings->linkedin }}"><i class="fa-brands fa-linkedin-in"></i></a>
+                            @endif
+                            @if ($globalSettings->twitter)
+                            <a href="{{ $globalSettings->twitter }}"><i class="fa-brands fa-twitter"></i></a>
+                            @endif
+                            @if ($globalSettings->facebook )
+                            <a href="{{ $globalSettings->facebook }}"><i class="fa-brands fa-facebook-f"></i></a>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bg-benner-img-three">
-                <img class="tmp-scroll-trigger tmp-zoom-in animation-order-2"
-                    src="{{ asset('storage/' . $banner?->image)}}" alt="banner-img-3">
+            <div class="col-lg-5">
+                <div class="">
+                    <div class="thumbnail-right-inner-main-image tmponhover">
+                        <img src="{{asset('storage/'.$banner->image)}}" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

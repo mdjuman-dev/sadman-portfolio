@@ -31,12 +31,51 @@
         #nprogress .peg {
             box-shadow: 0 0 10px #287f71, 0 0 5px #287f71 !important;
         }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
 <!-- body start -->
 
 <body data-menu-color="light" data-sidebar="default">
+
+    <div id="preloader">
+        <div class="spinner-border text-primary"></div>
+    </div>
+
+
+
     <div id="app-layout">
         <!-- Topbar Start -->
         <div class="topbar-custom">
@@ -50,18 +89,18 @@
                         </li>
                         <li class="d-none d-lg-block">
                             @php
-                                $hour = now()->hour;
-                                if ($hour >= 5 && $hour < 12) {
-                                    $greeting = 'Good Morning';
-                                } elseif ($hour >= 12 && $hour < 17) {
-                                    $greeting = 'Good Afternoon';
-                                } elseif ($hour >= 17 && $hour < 21) {
-                                    $greeting = 'Good Evening';
-                                } else {
-                                    $greeting = 'Good Night';
-                                }
-                            @endphp
-                            <h5 class="mb-0">{{ $greeting }}, {{ Auth::user()->name }} Sir</h5>
+                            $hour = now()->hour;
+                            if ($hour >= 5 && $hour < 12) {
+                                $greeting='Good Morning' ;
+                                } elseif ($hour>= 12 && $hour < 17) {
+                                    $greeting='Good Afternoon' ;
+                                    } elseif ($hour>= 17 && $hour < 21) {
+                                        $greeting='Good Evening' ;
+                                        } else {
+                                        $greeting='Good Night' ;
+                                        }
+                                        @endphp
+                                        <h5 class="mb-0">{{ $greeting }}, {{ Auth::user()->name }} Sir</h5>
                         </li>
                     </ul>
 
@@ -203,8 +242,8 @@
     <script src="{{ asset('backend/assets/js/filepond-plugin-image-preview.js') }}"></script>
     <script src="{{ asset('backend/assets/js/filepond.js') }}"></script>
     <script>
-        $(document).ready(function () {
-
+        $(document).ready(function() {
+            $('#preloader').fadeOut(500);
             const notyf = new Notyf({
                 duration: 5000,
                 ripple: true,
@@ -214,26 +253,26 @@
                     y: 'top',
                 },
                 types: [{
-                    type: 'success',
-                    background: 'green',
-                    icon: {
-                        className: 'mdi mdi-check-circle-outline',
-                        tagName: 'span',
-                        color: 'white'
+                        type: 'success',
+                        background: 'green',
+                        icon: {
+                            className: 'mdi mdi-check-circle-outline',
+                            tagName: 'span',
+                            color: 'white'
+                        }
+                    },
+                    {
+                        type: 'error',
+                        background: '#d32f2f',
+                        icon: {
+                            className: 'mdi mdi-alert-circle-outline',
+                            tagName: 'span',
+                            color: 'white'
+                        }
                     }
-                },
-                {
-                    type: 'error',
-                    background: '#d32f2f',
-                    icon: {
-                        className: 'mdi mdi-alert-circle-outline',
-                        tagName: 'span',
-                        color: 'white'
-                    }
-                }
                 ]
             });
-            $('#cacheClear').on('click', function () {
+            $('#cacheClear').on('click', function() {
                 $('#preloader').show();
                 $.ajax({
                     type: "GET",
@@ -258,25 +297,25 @@
                 });
             });
             @if(session('success'))
-                notyf.success({
-                    message: "{{ session('success') }}",
-                    icon: {
-                        className: 'mdi mdi-check-circle-outline',
-                        tagName: 'span',
-                        color: 'white'
-                    }
-                });
+            notyf.success({
+                message: "{{ session('success') }}",
+                icon: {
+                    className: 'mdi mdi-check-circle-outline',
+                    tagName: 'span',
+                    color: 'white'
+                }
+            });
             @endif
 
             @if(session('error'))
-                notyf.error({
-                    message: "{{ session('error') }}",
-                    icon: {
-                        className: 'mdi mdi-alert-circle-outline',
-                        tagName: 'span',
-                        color: 'white'
-                    }
-                });
+            notyf.error({
+                message: "{{ session('error') }}",
+                icon: {
+                    className: 'mdi mdi-alert-circle-outline',
+                    tagName: 'span',
+                    color: 'white'
+                }
+            });
             @endif
         });
     </script>

@@ -17,6 +17,7 @@
         </div>
     </div>
 </div>
+@if (count($blogs))
 <!-- Breadcrumb Area End -->
 <div class="blog-classic-area-wrapper tmp-section-gap">
     <div class="container">
@@ -82,6 +83,7 @@
                     </div>
                 </div>
                 @endforeach
+
                 <div class="tmp-pagination-button">
                     {{-- Previous Page Link --}}
                     @if ($blogs->onFirstPage())
@@ -106,6 +108,8 @@
                     <span class="pagination-btn disabled"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
                     @endif
                 </div>
+
+
             </div>
             <div class="col-lg-4">
                 <div class="tmp-sidebar">
@@ -184,4 +188,15 @@
         </div>
     </div>
 </div>
+@else
+<div class="container">
+    <div class="col-lg-6 m-auto tmp-section-gap">
+        <div class="signle-side-bar recent-post-area tmponhover " style="--x: 205px; --y: 301px;">
+            <div class="header text-center">
+                <h3 class="title my-5">Blog No Found</h3>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
 @endsection

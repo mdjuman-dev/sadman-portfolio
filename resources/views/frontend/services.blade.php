@@ -18,7 +18,7 @@
     </div>
 </div>
 <!-- Breadcrumb Area End -->
-
+@if(count($services))
 <!-- Latest Service Area Start -->
 <section class="latest-service-area tmp-section-gap">
     <div class="container">
@@ -35,5 +35,15 @@
     </div>
 </section>
 <!-- Latest Service Area End -->
-
+@else
+<div class="container">
+    <div class="col-lg-6 m-auto tmp-section-gap">
+        <div class="signle-side-bar recent-post-area tmponhover " style="--x: 205px; --y: 301px;">
+            <div class="header text-center">
+                <h3 class="title my-5">Service No Found</h3>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
 @endsection

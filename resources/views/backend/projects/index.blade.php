@@ -107,16 +107,19 @@
 <script src="{{ asset('backend/assets/js/rte.js') }}"></script>
 <script src="{{ asset('backend/assets/js/select2.min.js') }}"></script>
 <script>
-    // Rich Text Editor Init
-    var editor = new RichTextEditor("#content");
-    // FilePond Init
-    FilePond.registerPlugin(FilePondPluginImagePreview);
-    $('.file-pond').filepond({
-        storeAsFile: true,
-        allowReorder: true,
+    $(document).ready(function() {
+        $('#preloader').fadeOut(500);
+        // Rich Text Editor Init
+        var editor = new RichTextEditor("#content");
+        // FilePond Init
+        FilePond.registerPlugin(FilePondPluginImagePreview);
+        $('.file-pond').filepond({
+            storeAsFile: true,
+            allowReorder: true,
+        });
+        // select 2 
+        $('#technology').select2();
     });
-    // select 2 
-    $('#technology').select2();
 </script>
 @endpush
 @endsection
