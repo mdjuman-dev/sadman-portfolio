@@ -15,7 +15,7 @@
                             <div class="col-lg-6">Add Education</div>
                             <div class="col-lg-6 text-end">
                                 <button class="btn btn-{{ $education?->id ? 'warning' : 'primary' }}" type="submit">
-                                    {{ $education?->id ? 'Update' : 'Submit' }}
+                                    <i class="mdi mdi-content-save pe-1"></i> {{ $education?->id ? 'Update' : 'Submit' }}
                                 </button>
 
                             </div>

@@ -57,7 +57,7 @@
                             <label class="form-check-label" for="flexSwitchCheckChecked">Status</label>
                         </div>
                         @endif
-                        <button class="btn btn-primary mt-2" type="submit">Submit</button>
+                        <button class="btn btn-primary mt-2" type="submit"> <i class="mdi mdi-content-save pe-1"></i>Submit</button>
                     </form>
                 </div>
             </div>

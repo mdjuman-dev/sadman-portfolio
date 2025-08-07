@@ -10,7 +10,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-lg-6">Add Skill</div>
-                            <div class="col-lg-6 text-end"><button class="btn btn-primary" type="submit">Submit</button></div>
+                            <div class="col-lg-6 text-end"><button class="btn btn-primary" type="submit"><i class="mdi mdi-content-save pe-1"></i>Submit</button></div>
                         </div>
                     </div>
                     <div class="card-body">

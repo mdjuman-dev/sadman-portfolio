@@ -67,8 +67,8 @@
             </div>
 
             <div class="text-end">
-                <button class="btn btn-success px-4">
-                    <i class="bi bi-check-circle me-1"></i> Update
+                <button class="btn btn-primary px-2">
+                    <i class="mdi mdi-content-save pe-1"></i>Update
                 </button>
             </div>
         </form>

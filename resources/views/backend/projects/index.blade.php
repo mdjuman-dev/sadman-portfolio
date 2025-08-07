@@ -73,7 +73,7 @@
                             @if ($editProject)
                             <x-form.status name="status" label="Status" status="{{ $editProject->status }}" class="mt-2" />
                             @endif
-                            <button class="btn btn-sm btn-primary mt-2">Submit</button>
+                            <button class="btn btn-primary mt-2"> <i class="mdi mdi-content-save pe-1"></i>Submit</button>
                         </div>
                     </div>
                 </div>

@@ -14,7 +14,7 @@
                                     <div class="row">
                                         <div class="col-lg-6">Add Category</div>
                                         <div class="col-lg-6 text-end">
-                                            <button class="btn btn-{{ $editCategory ? 'warning' : 'primary' }}" type="submit"> {{ $editCategory ? 'Update' : 'Submit' }}</button>
+                                            <button class="btn btn-{{ $editCategory ? 'warning' : 'primary' }}" type="submit"> <i class="mdi mdi-content-save pe-1"></i>{{ $editCategory ? 'Update' : 'Submit' }}</button>
                                         </div>
                                     </div>
                                 </div>

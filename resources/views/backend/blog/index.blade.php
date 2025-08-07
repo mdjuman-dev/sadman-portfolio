@@ -82,7 +82,7 @@
             </div>
             @endif
 
-            <button class="btn btn-primary mt-2">{{ $editBlog?->id ? 'Update' : 'Submit' }}</button>
+            <button class="btn btn-primary mt-2"> <i class="mdi mdi-content-save pe-1"></i>{{ $editBlog?->id ? 'Update' : 'Submit' }}</button>
         </form>
     </div>
 </div>

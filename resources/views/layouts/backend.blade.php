@@ -107,8 +107,9 @@
                     <ul class="list-unstyled topnav-menu mb-0 d-flex align-items-center">
 
                         <li class="d-none d-sm-flex">
-                            <button type="submit" id="cacheClear" class="btn btn-primary btn-sm mx-1">Clear
-                                Cache</button>
+                            <button type="submit" id="cacheClear" class="btn btn-primary btn-sm mx-1">
+                                <i class="mdi mdi-broom"></i>
+                                Clear Cache</button>
                         </li>
 
                         <li class="d-none d-sm-flex">
@@ -131,10 +132,10 @@
                         <li class="dropdown notification-list topbar-dropdown">
                             <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown"
                                 href="index.html#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="{{ asset('backend/assets/images/users/user-2.jpg') }}" alt="user-image"
+                                <img src="https://api.dicebear.com/9.x/initials/svg?seed={{ Auth()->user()->name }}" alt="user-image"
                                     class="rounded-circle">
                                 <span class="pro-user-name ms-1">
-                                    John Smith <i class="mdi mdi-chevron-down"></i>
+                                    {{Auth::user()->name}} <i class="mdi mdi-chevron-down"></i>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
@@ -144,7 +145,7 @@
                                 </div>
 
                                 <!-- item-->
-                                <a class='dropdown-item notify-item' href='{{ route('profile.edit') }}'>
+                                <a class='dropdown-item notify-item' href='{{ route('profile.index') }}'>
                                     <i class="mdi mdi-account-circle-outline fs-16 align-middle"></i>
                                     <span>My Account</span>
                                 </a>
