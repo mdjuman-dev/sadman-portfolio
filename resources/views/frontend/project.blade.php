@@ -29,20 +29,20 @@
                 <div class="latest-portfolio-card v5 tmp-hover-link animation-order-{{++$key}}">
                     <div class="portfoli-card-img">
                         <div class="img-box v2">
-                            <a href="{{ route('project-datails', $items->slug) }}">
+                            <a href="{{ route('project-details', $items->slug) }}">
                                 <img class="img-primary hidden-on-mobile" src="{{ asset('storage/' . $items->image)}}"
                                     alt="Blog Thumbnail">
                                 <img class="img-secondary" src="{{ asset('storage/' . $items->image)}}"
                                     alt="BLog Thumbnail">
                             </a>
                         </div>
-                        <a href="{{ route('project-datails', $items->slug) }}" class="img-link-icon"><i
+                        <a href="{{ route('project-details', $items->slug) }}" class="img-link-icon"><i
                                 class="fa-solid fa-arrow-up-long"></i></a>
                     </div>
                     <div class="portfolio-card-content-wrap">
                         <div class="content-left">
                             <h3 class="portfolio-card-title"><a class="link"
-                                    href="{{ route('project-datails', $items->slug) }}">{{$items->title}}</a>
+                                    href="{{ route('project-details', $items->slug) }}">{{$items->title}}</a>
                             </h3>
                             <p class="portfoli-card-para">{{$items->category}}</p>
                         </div>

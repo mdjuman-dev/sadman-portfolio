@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\SkillController;
 use App\Http\Controllers\backend\BannerController;
+use App\Http\Controllers\Backend\ReviewController;
 use App\Http\Controllers\Backend\ContectController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\ProjectController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\Backend\SitemapController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\TechnologyController;
+use App\Http\Controllers\Backend\AboutCounterController;
 use App\Http\Controllers\Backend\ServiceCategoryController;
 
 Route::middleware('auth')->prefix('admin/')->group(function () {
@@ -123,6 +125,20 @@ Route::middleware('auth')->prefix('admin/')->group(function () {
         Route::put('/update', 'update')->name('update');
         Route::put('/update-password', 'updatePassword')->name('updatePassword');
         Route::post('/check-password', 'checkCurrentPassword')->name('checkPassword');
+    });
+
+    //*About Me Routes
+    Route::controller(AboutCounterController::class)->prefix('/about')->name('about.')->group(function () {
+        Route::get('/{id?}', 'index')->name('index');
+        Route::post('/store-counter', 'storeCouter')->name('store.counter');
+    });
+
+    //*Add Clint Review Routes
+    Route::controller(ReviewController::class)->prefix('/review')->name('review.')->group(function () {
+        Route::get('/show-page/{id?}', 'showReview')->name('showReview');
+        Route::get('/{id?}', 'index')->name('index');
+        Route::post('/store-or-update/{id?}', 'storeOrUpdate')->name('storeOrUpdate');
+        Route::get('/delete/{id}', 'delete')->name('delete');
     });
 
     //*Cachs Clear Routes

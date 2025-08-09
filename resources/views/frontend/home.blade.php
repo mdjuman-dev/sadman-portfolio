@@ -101,61 +101,186 @@
 </section>
 <!-- Tpm Service Area End -->
 
-<!-- Tpm Counter Area Start -->
-<section class="counter-area">
+<!-- tmp service area ends -->
+
+@if (isset($counter))
+<!-- tmp About Me Start -->
+<section class="about-us-area tmp-section-gapBottom" id="about">
     <div class="container">
-        <div class="row g-5">
-            <div class="col-12 col-lg-6 col-xl-6 col-xxl-6">
-                <div
-                    class="year-of-expariance-wrapper bg-blur-style-one tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    <div class="year-expariance-wrap">
-                        <!-- <h2 class="year-number"><span class="counter">25 </span> </h2> -->
-                        <h2 class="counter year-number"><span class="odometer" data-count="25">00</span>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-us-left-content-wrap bg-vactor-one">
+                    <div class="years-of-experience-card tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <h2 class="counter card-title">
+                            <span class="odometer odometer-auto-theme odometer-triggered"
+                                data-count="{{ $counter->years }}">
+                                <div class="odometer-inside"><span class="odometer-digit"><span
+                                            class="odometer-digit-spacer">8</span><span
+                                            class="odometer-digit-inner"><span class="odometer-ribbon"><span
+                                                    class="odometer-ribbon-inner"><span
+                                                        class="odometer-value">1</span></span></span></span></span><span
+                                        class="odometer-digit"><span class="odometer-digit-spacer">8</span><span
+                                            class="odometer-digit-inner"><span class="odometer-ribbon"><span
+                                                    class="odometer-ribbon-inner"><span
+                                                        class="odometer-value">0</span></span></span></span></span>
+                                </div>
+                            </span>+
                         </h2>
-                        <h3 class="year-title">Years Of <br> experience</h3>
+                        <p class="card-para">years of experience</p>
                     </div>
-                    <p class="year-para">Business consulting consultants provide expert advice and guida the a
-                        businesses to help theme their performance efficiency</p>
+                    <div class="design-card tmp-scroll-trigger tmp-fade-in animation-order-2">
+                        <div class="design-card-img">
+                            <div class="icon"><i class="fa-sharp fa-thin fa-lock"></i></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Ui/Ux Design</h3>
+                            <p class="card-para">241 Projects</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-6 col-xl-6 col-xxl-6">
-                <div class="counter-area-right-content">
-                    <div class="row g-5">
-                        <div class="col-lg-6 col-sm-6 col-12">
-                            <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                <h3 class="counter counter-title"><span class="odometer" data-count="20">00</span>k+
-                                </h3>
-                                <p class="counter-para">Our Project Complete</p>
+            <div class="col-lg-6">
+                <div class="about-us-right-content-wrap">
+                    <div class="section-head text-align-left mb--50">
+                        <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <span class="subtitle">About Me</span>
+                        </div>
+                        <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
+                            {!! $counter->title !!}
+                        </h2>
+                        <p class="description tmp-scroll-trigger tmp-fade-in animation-order-3">
+                            {{ $counter->dec }}
+                        </p>
+                    </div>
+                    <div class="about-us-section-card row g-5">
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="about-us-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4"
+                                style="--x: 271px; --y: 47px;">
+                                <div class="card-head">
+                                    <div class="logo-img">
+                                        <img class="lazy" src="{{ asset('frontend/assets/images/about/logo-1.svg') }}" alt="logo">
+                                    </div>
+                                    <h3 class="card-title">Business Solutions</h3>
+                                </div>
+                                <p class="card-para">Each one showcases my approach and dedication to detail,
+                                    creativity
+                                </p>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-sm-6 col-12">
-                            <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
-                                <h3 class="counter counter-title"><span class="odometer" data-count="10">00</span>k+
-                                </h3>
-                                <p class="counter-para">Our Natural Products</p>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="about-us-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-5">
+                                <div class="card-head">
+                                    <div class="logo-img">
+                                        <img class="lazy" src="{{ asset('frontend/assets/images/about/logo-1.svg') }}" alt="logo">
+                                    </div>
+                                    <h3 class="card-title">Profit Partners</h3>
+                                </div>
+                                <p class="card-para">Business consulting consul us to a provide expert advice
+                                    businesses
+                                </p>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-sm-6 col-12">
-                            <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
-                                <h3 class="counter counter-title"><span class="odometer" data-count="200">00</span>+
-                                </h3>
-                                <p class="counter-para">Clients Reviews</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-6 col-12">
-                            <div class="counter-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
-                                <h3 class="counter counter-title"><span class="odometer" data-count="1000">00</span>+
-                                </h3>
-                                <p class="counter-para">our Satisfied Clientd</p>
-                            </div>
-                        </div>
+
+                    </div>
+                    <div class="about-btn mt--40 tmp-scroll-trigger tmp-fade-in animation-order-6">
+                        <a wire:navigate class="tmp-btn hover-icon-reverse radius-round" href="{{route('about')}}">
+                            <span class="icon-reverse-wrapper">
+                                <span class="btn-text">Read More About Me</span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Tpm Counter Area End -->
+<!-- tmp About Me end -->
+
+<!-- tmp counter area start -->
+<div class="counter-funfacts-area ">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="counter-card tmp-scroll-trigger tmp-fade-in tmponhover animation-order-1">
+                    <h3 class="counter counter-title"><span class="odometer odometer-auto-theme odometer-triggered"
+                            data-count="{{ $counter->project_complete }}">
+                            <div class="odometer-inside"><span class="odometer-digit"><span
+                                        class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span
+                                            class="odometer-ribbon"><span class="odometer-ribbon-inner"><span
+                                                    class="odometer-value">2</span></span></span></span></span><span
+                                    class="odometer-digit"><span class="odometer-digit-spacer">8</span><span
+                                        class="odometer-digit-inner"><span class="odometer-ribbon"><span
+                                                class="odometer-ribbon-inner"><span
+                                                    class="odometer-value">0</span></span></span></span></span>
+                            </div>
+                        </span>+
+                    </h3>
+                    <p class="counter-para">Our Project Complete</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="counter-card tmp-scroll-trigger tmp-fade-in tmponhover animation-order-2">
+                    <h3 class="counter counter-title"><span class="odometer odometer-auto-theme odometer-triggered"
+                            data-count="{{ $counter->natural_product }}">
+                            <div class="odometer-inside"><span class="odometer-digit"><span
+                                        class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span
+                                            class="odometer-ribbon"><span class="odometer-ribbon-inner"><span
+                                                    class="odometer-value">1</span></span></span></span></span><span
+                                    class="odometer-digit"><span class="odometer-digit-spacer">8</span><span
+                                        class="odometer-digit-inner"><span class="odometer-ribbon"><span
+                                                class="odometer-ribbon-inner"><span
+                                                    class="odometer-value">0</span></span></span></span></span>
+                            </div>
+                        </span>+
+                    </h3>
+                    <p class="counter-para">Our Natural Products</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="counter-card tmp-scroll-trigger tmp-fade-in tmponhover animation-order-3">
+                    <h3 class="counter counter-title"><span class="odometer odometer-auto-theme odometer-triggered"
+                            data-count="{{ $counter->clients_reviews }}">
+                            <div class="odometer-inside"><span class="odometer-digit"><span
+                                        class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span
+                                            class="odometer-ribbon"><span class="odometer-ribbon-inner"><span
+                                                    class="odometer-value">2</span></span></span></span></span><span
+                                    class="odometer-digit"><span class="odometer-digit-spacer">8</span><span
+                                        class="odometer-digit-inner"><span class="odometer-ribbon"><span
+                                                class="odometer-ribbon-inner"><span
+                                                    class="odometer-value">0</span></span></span></span></span><span
+                                    class="odometer-digit"><span class="odometer-digit-spacer">8</span><span
+                                        class="odometer-digit-inner"><span class="odometer-ribbon"><span
+                                                class="odometer-ribbon-inner"><span
+                                                    class="odometer-value">0</span></span></span></span></span>
+                            </div>
+                        </span>+
+                    </h3>
+                    <p class="counter-para">Clients Reviews</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="counter-card tmp-scroll-trigger tmp-fade-in tmponhover animation-order-4">
+                    <h3 class="counter counter-title"><span class="odometer odometer-auto-theme odometer-triggered"
+                            data-count="{{ $counter->satisfied_clientd }}">
+                            <div class="odometer-inside"><span class="odometer-digit"><span
+                                        class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span
+                                            class="odometer-ribbon"><span class="odometer-ribbon-inner"><span
+                                                    class="odometer-value">2</span></span></span></span></span>
+                            </div>
+                        </span>+
+                    </h3>
+                    <p class="counter-para">our Satisfied Clientd</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
+<!-- tmp counter area end -->
 
 <!-- Tpm Latest Service Area Start -->
 @if (count($services)>0)
@@ -264,7 +389,7 @@
 
 <!-- Tpm Education Experience Area Start -->
 @if(count($educations) > 0)
-<section class="education-experience tmp-section-gapTop">
+<section class="education-experience tmp-section-gap">
     <div class="container">
         <h2 class="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">Education <span><img
                     src="{{ asset('frontend/assets/images/custom-line/custom-line.png')}}" alt="custom-line"></span>
@@ -322,62 +447,7 @@
 @endif
 <!-- Tpm Education Experience Area End -->
 
-<!-- Tpm Our Supported Company Area Start -->
-<div class="our-supported-company-area tmp-section-gap">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-1.svg')}}"
-                        alt="Reeni - Personal Portfolio HTML Template">
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-2">
-                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-2.svg')}}"
-                        alt="Reeni - Personal Portfolio HTML Template">
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-3">
-                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-3.svg')}}"
-                        alt="Reeni - Personal Portfolio HTML Template">
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-4">
-                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-4.svg')}}"
-                        alt="Reeni - Personal Portfolio HTML Template">
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-5">
-                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-5.svg')}}"
-                        alt="Reeni - Personal Portfolio HTML Template">
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-6">
-                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-6.svg')}}"
-                        alt="Reeni - Personal Portfolio HTML Template">
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-7">
-                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-7.svg')}}"
-                        alt="Reeni - Personal Portfolio HTML Template">
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-8">
-                    <img src="{{ asset('frontend/assets/images/our-supported-company/company-logo-8.svg')}}"
-                        alt="Reeni - Personal Portfolio HTML Template">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Tpm Our Supported Company Area End -->
+
 <!-- Tpm Our Project Area start -->
 <!-- Tpm Latest Portfolio Area Start -->
 <div class="latest-portfolio-area custom-column-grid">
@@ -425,6 +495,8 @@
 </div>
 <!-- Tpm Latest Portfolio Area End -->
 <!-- Tpm Testimonial Area Start -->
+@if (count($reviews)>0)
+
 <section class="testimonial-area tmp-section-gapTop">
     <div class="container">
         <div class="section-head mb--50">
@@ -441,70 +513,22 @@
                 <div class="swiper-testimonials-area-wrapper-card">
                     <div class="swiper swiper-testimonials-2">
                         <div class="swiper-wrapper">
+                            @foreach ($reviews as $key=>$items)
+
                             <div class="swiper-slide">
                                 <div class="testimonial-card tmponhover style-2 tmp-scroll-trigger animation-order-1">
                                     <div class="content">
                                         <div class="testimonital-icon">
-                                            <img src="{{ asset('frontend/assets/images/icons/quote.svg')}}"
+                                            <img style="width:120px; height: 120px; border-radius: 50%;" src="{{isset($items->image) ? asset('storage/'.$items->image) :asset('frontend/assets/images/icons/quote.svg')}}"
                                                 alt="testimonial-icon">
                                         </div>
-                                        <h2 class="text-doc">A personal portfolio is a curated collection of an
-                                            individual's professional work, showcasing their skilA personal portfolio is
-                                            a curated collection of an individual's professional work, showcasing their
-                                            skills, </h2>
-                                        <h3 class="card-title">Cameron Williamson</h3>
-                                        <p class="card-para">Ui/Ux Designer</p>
+                                        <h2 class="text-doc">{{$items->message}}</h2>
+                                        <h3 class="card-title">{{$items->name}}</h3>
+                                        <p class="card-para">{{$items->profetion}}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-card tmponhover style-2 tmp-scroll-trigger animation-order-2">
-                                    <div class="content">
-                                        <div class="testimonital-icon">
-                                            <img src="{{ asset('frontend/assets/images/icons/quote.svg')}}"
-                                                alt="testimonial-icon">
-                                        </div>
-                                        <h2 class="text-doc">A personal portfolio is a curated collection of an
-                                            individual's professional work, showcasing their skilA personal portfolio is
-                                            a curated collection of an individual's professional work, showcasing their
-                                            skills, </h2>
-                                        <h3 class="card-title">Leslie Alexander</h3>
-                                        <p class="card-para">Ui/Ux Designer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-card tmponhover style-2 tmp-scroll-trigger animation-order-1">
-                                    <div class="content">
-                                        <div class="testimonital-icon">
-                                            <img src="{{ asset('frontend/assets/images/icons/quote.svg')}}"
-                                                alt="testimonial-icon">
-                                        </div>
-                                        <h2 class="text-doc">A personal portfolio is a curated collection of an
-                                            individual's professional work, showcasing their skilA personal portfolio is
-                                            a curated collection of an individual's professional work, showcasing their
-                                            skills, </h2>
-                                        <h3 class="card-title">Cameron Williamson</h3>
-                                        <p class="card-para">Ui/Ux Designer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-card tmponhover style-2 tmp-scroll-trigger animation-order-2">
-                                    <div class="content">
-                                        <div class="testimonital-icon">
-                                            <img src="{{ asset('frontend/assets/images/icons/quote.svg')}}"
-                                                alt="testimonial-icon">
-                                        </div>
-                                        <h2 class="text-doc">A personal portfolio is a curated collection of an
-                                            individual's professional work, showcasing their skilA personal portfolio is
-                                            a curated collection of an individual's professional work, showcasing their
-                                            skills, </h2>
-                                        <h3 class="card-title">Leslie Alexander</h3>
-                                        <p class="card-para">Ui/Ux Designer</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -515,6 +539,8 @@
         </div>
     </div>
 </section>
+@endif
+
 <!-- Tpm Testimonial Area End -->
 
 <!-- Tpm Blog and news Area Start -->
